@@ -29,30 +29,39 @@ namespace WindowsFormsApplication1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //reading in from text file
-            System.IO.StreamReader file = new System.IO.StreamReader("C:\\Users\\hasaan.ausat\\Desktop\\Gateway-20151226.txt");
 
-            //getting line count of the text file
-            int logLineCount = File.ReadLines(@"C:\\Users\\hasaan.ausat\\Desktop\\Gateway-20151226.txt").Count();
+            var fileCount = (from doc in Directory.EnumerateFiles(@"C:\\Users\\hasaan.ausat\\Desktop\\Logs", "*.log", SearchOption.AllDirectories)
+                             select doc).Count();
 
-            for (int i = 0; i < logLineCount; i++)
+            string[] dirs = Directory.GetFiles(@"C:\\Users\\hasaan.ausat\\Desktop\\Logs");
+            
+            for (int j = 0; j < fileCount; j++)
             {
+                  //reading in from text file
+                   System.IO.StreamReader file = new System.IO.StreamReader(dirs[j]);
 
-                //saving text from file to variable
-                string tempLogs = file.ReadLine();
+                   //getting line count of the text file
+                   int logLineCount = File.ReadLines(dirs[j]).Count();
 
-                //getting length of each line
-                int logLength = tempLogs.Length;
-                int lastChar = logLength - 63;
+                   for (int i = 0; i < logLineCount; i++)
+                   {
 
-                //assigning substrings to temp variables
-                string tempDate = tempLogs.Substring(0, 10);
-                string tempTime = tempLogs.Substring(11, 8);
-                string tempType = tempLogs.Substring(34, 11);
-                string tempId = tempLogs.Substring(54, 4);
-                string tempDetails = tempLogs.Substring(63, lastChar);
+                       //saving text from file to variable
+                       string tempLogs = file.ReadLine();
 
-                dataGridView1.Rows.Add(tempDate, tempTime, tempType, tempId, tempDetails);
+                       //getting length of each line
+                       int logLength = tempLogs.Length;
+                       int lastChar = logLength - 63;
+
+                       //assigning substrings to temp variables
+                       string tempDate = tempLogs.Substring(0, 10);
+                       string tempTime = tempLogs.Substring(11, 8);
+                       string tempType = tempLogs.Substring(34, 11);
+                       string tempId = tempLogs.Substring(54, 4);
+                       string tempDetails = tempLogs.Substring(63, lastChar);
+
+                       dataGridView1.Rows.Add(tempDate, tempTime, tempType, tempId, tempDetails); 
+                   } 
             }
         }
     }
