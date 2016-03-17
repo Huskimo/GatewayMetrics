@@ -35,7 +35,7 @@ namespace WindowsFormsApplication1
             //getting line count of the text file
             int logLineCount = File.ReadLines(@"C:\\Users\\hasaan.ausat\\Desktop\\Gateway-20151226.txt").Count();
 
-            for (int i = 0; i < logLineCount - 1; i++)
+            for (int i = 0; i < logLineCount; i++)
             {
 
                 //saving text from file to variable

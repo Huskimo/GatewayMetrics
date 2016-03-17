@@ -1,0 +1,510 @@
+2015-12-26T14:56:47.1778130Z	Type=Information     	ID=1180    	[01d13feda308f40188389000.eml:Outbound/default:WIN-SCOF9BOCHV8UCeG00000001@WIN-SCOF9BOCHV8] Start message processing. Message details: 
+2015-12-26T14:56:47.1778130Z	Type=Information     	ID=1180    	  Sender=[sender@swaks.ex2013.egress-test.com] 
+2015-12-26T09:33:22.2917613Z	Type=Start           	ID=29902   	[esdxgateway] started. Details: [ 
+2015-12-26T09:33:22.2917613Z	Type=Start           	ID=29902   	  GatewayWebService => disabled 
+2015-12-26T09:33:22.2917613Z	Type=Start           	ID=29902   	  GatewayListener (4.50.14617.0) => started 
+2015-12-26T09:33:22.2917613Z	Type=Start           	ID=29902   	  GatewayScheduler (4.50.14617.0) => started 
+2015-12-26T09:33:22.2917613Z	Type=Start           	ID=29902   	]
+2015-12-26T09:34:28.0577614Z	Type=Information     	ID=1253    	Statistics: [badmailSize=0; computerName=WIN-SCOF9BOCHV8; cpu=8; freeC="31216/61.1%"; freeRamMB=3554; lastSentAt=; lastSyncAt=; queueSize=0; retrySize=0; sent=0; startedAt="Sat, 26 Dec 2015 09:34:27 GMT"; version="4.50.14617.0"; wsetKB=45728]
+2015-12-26T09:34:28.0577615Z	Type=Information     	ID=30100   	Task [LogStatistics] completed successfully.
+2015-12-26T10:04:28.5767616Z	Type=Information     	ID=1253    	Statistics: [badmailSize=0; computerName=WIN-SCOF9BOCHV8; cpu=0; freeC="30984/60.6%"; freeRamMB=3550; lastSentAt=; lastSyncAt=; queueSize=0; retrySize=0; sent=0; startedAt="Sat, 26 Dec 2015 09:34:27 GMT"; version="4.50.14617.0"; wsetKB=46264]
+2015-12-26T10:04:28.5767617Z	Type=Information     	ID=30100   	Task [LogStatistics] completed successfully.
+2015-12-26T10:34:29.0957618Z	Type=Information     	ID=1253    	Statistics: [badmailSize=0; computerName=WIN-SCOF9BOCHV8; cpu=0; freeC="30976/60.6%"; freeRamMB=3479; lastSentAt=; lastSyncAt=; queueSize=0; retrySize=0; sent=0; startedAt="Sat, 26 Dec 2015 09:34:27 GMT"; version="4.50.14617.0"; wsetKB=46176]
+2015-12-26T10:34:29.0957619Z	Type=Information     	ID=30100   	Task [LogStatistics] completed successfully.
+2015-12-26T11:04:29.6157620Z	Type=Information     	ID=1253    	Statistics: [badmailSize=0; computerName=WIN-SCOF9BOCHV8; cpu=0; freeC="30976/60.6%"; freeRamMB=3330; lastSentAt=; lastSyncAt=; queueSize=0; retrySize=0; sent=0; startedAt="Sat, 26 Dec 2015 09:34:27 GMT"; version="4.50.14617.0"; wsetKB=46288]
+2015-12-26T11:04:29.6157621Z	Type=Information     	ID=30100   	Task [LogStatistics] completed successfully.
+2015-12-26T11:04:49.9755055Z	Type=Information     	ID=29904   	[esdxgateway]. Configuration changes detected.
+2015-12-26T11:04:50.1317622Z	Type=Stop            	ID=29906   	[esdxgateway]. All modules stopped.
+2015-12-26T11:04:50.1935056Z	Type=Information     	ID=29905   	[esdxgateway]. Re-initializing service
+2015-12-26T11:04:51.8811966Z	Type=Start           	ID=29902   	[esdxgateway] started. Details: [ 
+2015-12-26T11:04:51.8811966Z	Type=Start           	ID=29902   	  GatewayWebService => disabled 
+2015-12-26T11:04:51.8811966Z	Type=Start           	ID=29902   	  GatewayListener (4.50.14617.0) => started 
+2015-12-26T11:04:51.8811966Z	Type=Start           	ID=29902   	  GatewayScheduler (4.50.14617.0) => started 
+2015-12-26T11:04:51.8811966Z	Type=Start           	ID=29902   	]
+2015-12-26T11:05:52.5371967Z	Type=Information     	ID=1253    	Statistics: [badmailSize=0; computerName=WIN-SCOF9BOCHV8; cpu=6; freeC="30975/60.6%"; freeRamMB=3253; lastSentAt=; lastSyncAt=; queueSize=0; retrySize=0; sent=0; startedAt="Sat, 26 Dec 2015 11:05:51 GMT"; version="4.50.14617.0"; wsetKB=51128]
+2015-12-26T11:05:52.5371968Z	Type=Information     	ID=30100   	Task [LogStatistics] completed successfully.
+2015-12-26T11:06:29.0225057Z	Type=Information     	ID=29904   	[esdxgateway]. Configuration changes detected.
+2015-12-26T11:06:29.0371969Z	Type=Stop            	ID=29906   	[esdxgateway]. All modules stopped.
+2015-12-26T11:06:29.2875058Z	Type=Information     	ID=29905   	[esdxgateway]. Re-initializing service
+2015-12-26T11:06:30.9282251Z	Type=Start           	ID=29902   	[esdxgateway] started. Details: [ 
+2015-12-26T11:06:30.9282251Z	Type=Start           	ID=29902   	  GatewayWebService => disabled 
+2015-12-26T11:06:30.9282251Z	Type=Start           	ID=29902   	  GatewayListener (4.50.14617.0) => started 
+2015-12-26T11:06:30.9282251Z	Type=Start           	ID=29902   	  GatewayScheduler (4.50.14617.0) => started 
+2015-12-26T11:06:30.9282251Z	Type=Start           	ID=29902   	]
+2015-12-26T11:07:31.8812252Z	Type=Information     	ID=1253    	Statistics: [badmailSize=0; computerName=WIN-SCOF9BOCHV8; cpu=3; freeC="30976/60.6%"; freeRamMB=3253; lastSentAt=; lastSyncAt=; queueSize=0; retrySize=0; sent=0; startedAt="Sat, 26 Dec 2015 11:07:31 GMT"; version="4.50.14617.0"; wsetKB=55944]
+2015-12-26T11:07:31.8812253Z	Type=Information     	ID=30100   	Task [LogStatistics] completed successfully.
+2015-12-26T11:11:26.6325059Z	Type=Information     	ID=29904   	[esdxgateway]. Configuration changes detected.
+2015-12-26T11:11:26.6472254Z	Type=Stop            	ID=29906   	[esdxgateway]. All modules stopped.
+2015-12-26T11:11:26.6795060Z	Type=Information     	ID=29905   	[esdxgateway]. Re-initializing service
+2015-12-26T11:11:28.1168439Z	Type=Start           	ID=29902   	[esdxgateway] started. Details: [ 
+2015-12-26T11:11:28.1168439Z	Type=Start           	ID=29902   	  GatewayWebService => disabled 
+2015-12-26T11:11:28.1168439Z	Type=Start           	ID=29902   	  GatewayListener (4.50.14617.0) => started 
+2015-12-26T11:11:28.1168439Z	Type=Start           	ID=29902   	  GatewayScheduler (4.50.14617.0) => started 
+2015-12-26T11:11:28.1168439Z	Type=Start           	ID=29902   	]
+2015-12-26T11:11:29.7418440Z	Type=Stop            	ID=29906   	[esdxgateway]. All modules stopped.
+2015-12-26T11:11:36.4290225Z	Type=Start           	ID=29902   	[esdxgateway] started. Details: [ 
+2015-12-26T11:11:36.4290225Z	Type=Start           	ID=29902   	  GatewayWebService => disabled 
+2015-12-26T11:11:36.4290225Z	Type=Start           	ID=29902   	  GatewayListener (4.50.14617.0) => started 
+2015-12-26T11:11:36.4290225Z	Type=Start           	ID=29902   	  GatewayScheduler (4.50.14617.0) => started 
+2015-12-26T11:11:36.4290225Z	Type=Start           	ID=29902   	]
+2015-12-26T11:12:37.1940226Z	Type=Information     	ID=1253    	Statistics: [badmailSize=0; computerName=WIN-SCOF9BOCHV8; cpu=3; freeC="30973/60.6%"; freeRamMB=3200; lastSentAt=; lastSyncAt=; queueSize=0; retrySize=0; sent=0; startedAt="Sat, 26 Dec 2015 11:12:36 GMT"; version="4.50.14617.0"; wsetKB=46716]
+2015-12-26T11:12:37.1940227Z	Type=Information     	ID=30100   	Task [LogStatistics] completed successfully.
+2015-12-26T11:13:34.1632348Z	Type=Information     	ID=29904   	[esdxgateway]. Configuration changes detected.
+2015-12-26T11:13:34.1940228Z	Type=Stop            	ID=29906   	[esdxgateway]. All modules stopped.
+2015-12-26T11:13:34.2262349Z	Type=Information     	ID=29905   	[esdxgateway]. Re-initializing service
+2015-12-26T11:13:35.7886504Z	Type=Start           	ID=29902   	[esdxgateway] started. Details: [ 
+2015-12-26T11:13:35.7886504Z	Type=Start           	ID=29902   	  GatewayWebService => disabled 
+2015-12-26T11:13:35.7886504Z	Type=Start           	ID=29902   	  GatewayListener (4.50.14617.0) => started 
+2015-12-26T11:13:35.7886504Z	Type=Start           	ID=29902   	  GatewayScheduler (4.50.14617.0) => started 
+2015-12-26T11:13:35.7886504Z	Type=Start           	ID=29902   	]
+2015-12-26T11:14:36.6466505Z	Type=Information     	ID=1253    	Statistics: [badmailSize=0; computerName=WIN-SCOF9BOCHV8; cpu=50; freeC="30973/60.6%"; freeRamMB=3153; lastSentAt=; lastSyncAt=; queueSize=0; retrySize=0; sent=0; startedAt="Sat, 26 Dec 2015 11:14:36 GMT"; version="4.50.14617.0"; wsetKB=51944]
+2015-12-26T11:14:36.6466506Z	Type=Information     	ID=30100   	Task [LogStatistics] completed successfully.
+2015-12-26T11:16:37.7252350Z	Type=Information     	ID=29904   	[esdxgateway]. Configuration changes detected.
+2015-12-26T11:16:37.7406507Z	Type=Stop            	ID=29906   	[esdxgateway]. All modules stopped.
+2015-12-26T11:16:37.7402351Z	Type=Information     	ID=29905   	[esdxgateway]. Re-initializing service
+2015-12-26T11:16:39.2877316Z	Type=Start           	ID=29902   	[esdxgateway] started. Details: [ 
+2015-12-26T11:16:39.2877316Z	Type=Start           	ID=29902   	  GatewayWebService => disabled 
+2015-12-26T11:16:39.2877316Z	Type=Start           	ID=29902   	  GatewayListener (4.50.14617.0) => started 
+2015-12-26T11:16:39.2877316Z	Type=Start           	ID=29902   	  GatewayScheduler (4.50.14617.0) => started 
+2015-12-26T11:16:39.2877316Z	Type=Start           	ID=29902   	]
+2015-12-26T11:17:40.1267317Z	Type=Information     	ID=1253    	Statistics: [badmailSize=0; computerName=WIN-SCOF9BOCHV8; cpu=3; freeC="30973/60.6%"; freeRamMB=3128; lastSentAt=; lastSyncAt=; queueSize=0; retrySize=0; sent=0; startedAt="Sat, 26 Dec 2015 11:17:39 GMT"; version="4.50.14617.0"; wsetKB=56384]
+2015-12-26T11:17:40.1267318Z	Type=Information     	ID=30100   	Task [LogStatistics] completed successfully.
+2015-12-26T11:55:11.4118115Z	Type=Start           	ID=29902   	[esdxgateway] started. Details: [ 
+2015-12-26T11:55:11.4118115Z	Type=Start           	ID=29902   	  GatewayWebService => disabled 
+2015-12-26T11:55:11.4118115Z	Type=Start           	ID=29902   	  GatewayListener (4.50.14617.0) => started 
+2015-12-26T11:55:11.4118115Z	Type=Start           	ID=29902   	  GatewayScheduler (4.50.14617.0) => started 
+2015-12-26T11:55:11.4118115Z	Type=Start           	ID=29902   	]
+2015-12-26T11:56:32.6478116Z	Type=Information     	ID=1253    	Statistics: [badmailSize=0; computerName=WIN-SCOF9BOCHV8; cpu=40; freeC="30973/60.6%"; freeRamMB=3380; lastSentAt=; lastSyncAt=; queueSize=0; retrySize=0; sent=0; startedAt="Sat, 26 Dec 2015 11:56:31 GMT"; version="4.50.14617.0"; wsetKB=46420]
+2015-12-26T11:56:32.6528117Z	Type=Information     	ID=30100   	Task [LogStatistics] completed successfully.
+2015-12-26T12:26:33.1758118Z	Type=Information     	ID=1253    	Statistics: [badmailSize=0; computerName=WIN-SCOF9BOCHV8; cpu=0; freeC="30973/60.6%"; freeRamMB=3291; lastSentAt=; lastSyncAt=; queueSize=0; retrySize=0; sent=0; startedAt="Sat, 26 Dec 2015 11:56:31 GMT"; version="4.50.14617.0"; wsetKB=46772]
+2015-12-26T12:26:33.1758119Z	Type=Information     	ID=30100   	Task [LogStatistics] completed successfully.
+2015-12-26T12:56:33.6958120Z	Type=Information     	ID=1253    	Statistics: [badmailSize=0; computerName=WIN-SCOF9BOCHV8; cpu=0; freeC="30973/60.6%"; freeRamMB=3292; lastSentAt=; lastSyncAt=; queueSize=0; retrySize=0; sent=0; startedAt="Sat, 26 Dec 2015 11:56:31 GMT"; version="4.50.14617.0"; wsetKB=46712]
+2015-12-26T12:56:33.6958121Z	Type=Information     	ID=30100   	Task [LogStatistics] completed successfully.
+2015-12-26T13:26:34.2148122Z	Type=Information     	ID=1253    	Statistics: [badmailSize=0; computerName=WIN-SCOF9BOCHV8; cpu=0; freeC="30973/60.6%"; freeRamMB=3289; lastSentAt=; lastSyncAt=; queueSize=0; retrySize=0; sent=0; startedAt="Sat, 26 Dec 2015 11:56:31 GMT"; version="4.50.14617.0"; wsetKB=46796]
+2015-12-26T13:26:34.2148123Z	Type=Information     	ID=30100   	Task [LogStatistics] completed successfully.
+2015-12-26T13:56:34.7338124Z	Type=Information     	ID=1253    	Statistics: [badmailSize=0; computerName=WIN-SCOF9BOCHV8; cpu=0; freeC="30972/60.6%"; freeRamMB=3291; lastSentAt=; lastSyncAt=; queueSize=0; retrySize=0; sent=0; startedAt="Sat, 26 Dec 2015 11:56:31 GMT"; version="4.50.14617.0"; wsetKB=46880]
+2015-12-26T13:56:34.7338125Z	Type=Information     	ID=30100   	Task [LogStatistics] completed successfully.
+2015-12-26T14:26:35.2528126Z	Type=Information     	ID=1253    	Statistics: [badmailSize=0; computerName=WIN-SCOF9BOCHV8; cpu=0; freeC="30972/60.6%"; freeRamMB=3289; lastSentAt=; lastSyncAt=; queueSize=0; retrySize=0; sent=0; startedAt="Sat, 26 Dec 2015 11:56:31 GMT"; version="4.50.14617.0"; wsetKB=46760]
+2015-12-26T14:26:35.2528127Z	Type=Information     	ID=30100   	Task [LogStatistics] completed successfully.
+2015-12-26T14:56:35.7718128Z	Type=Information     	ID=1253    	Statistics: [badmailSize=0; computerName=WIN-SCOF9BOCHV8; cpu=0; freeC="30972/60.6%"; freeRamMB=3272; lastSentAt=; lastSyncAt=; queueSize=0; retrySize=0; sent=0; startedAt="Sat, 26 Dec 2015 11:56:31 GMT"; version="4.50.14617.0"; wsetKB=46764]
+2015-12-26T14:56:35.7718129Z	Type=Information     	ID=30100   	Task [LogStatistics] completed successfully.
+2015-12-26T14:56:47.1778130Z	Type=Information     	ID=1180    	[01d13feda308f40188389000.eml:Outbound/default:WIN-SCOF9BOCHV8UCeG00000001@WIN-SCOF9BOCHV8] Start message processing. Message details: 
+2015-12-26T14:56:47.1778130Z	Type=Information     	ID=1180    	  Sender=[sender@swaks.ex2013.egress-test.com] 
+2015-12-26T14:56:47.1778130Z	Type=Information     	ID=1180    	  X-Sender=[sender@swaks.ex2013.egress-test.com] 
+2015-12-26T14:56:47.1778130Z	Type=Information     	ID=1180    	  From=[sender@swaks.ex2013.egress-test.com] 
+2015-12-26T14:56:47.1778130Z	Type=Information     	ID=1180    	  Recipients=[hasaan.gateway@hasaan.com] 
+2015-12-26T14:56:47.1778130Z	Type=Information     	ID=1180    	  Subject=[test Sat, 26 Dec 2015 14:56:42 +0000] 
+2015-12-26T14:56:47.1778130Z	Type=Information     	ID=1180    	  X-$Switch=[] 
+2015-12-26T14:56:47.1778130Z	Type=Information     	ID=1180    	  Date=[2015-12-26T14:56:42.0000000+00:00] 
+2015-12-26T14:56:47.1778130Z	Type=Information     	ID=1180    	  Size=[526] 
+2015-12-26T14:56:47.1778130Z	Type=Information     	ID=1180    	  Attachments=[]
+2015-12-26T14:56:57.8028131Z	Type=Warning         	ID=1208    	Switch Server operation 'Policy synchronization' failed. SwitchID: [egress.gateway@hasaan.com?sender@swaks.ex2013.egress-test.com]. Exception: [WebException : The underlying connection was closed: Could not establish trust relationship for the SSL/TLS secure channel. => The remote certificate is invalid according to the validation procedure.]
+2015-12-26T14:56:57.8028132Z	Type=Warning         	ID=1200    	[01d13feda308f40188389000.eml:Outbound/default:WIN-SCOF9BOCHV8UCeG00000001@WIN-SCOF9BOCHV8] An error occurred while processing message. Exception: [GatewayConnectionException(Retry,Store) : Failed to connect to Switch Server => The underlying connection was closed: Could not establish trust relationship for the SSL/TLS secure channel. => The remote certificate is invalid according to the validation procedure.].
+2015-12-26T14:58:45.6158133Z	Type=Information     	ID=1180    	[01d13feda308f40188389000.eml:Outbound/default:WIN-SCOF9BOCHV8UCeG00000001@WIN-SCOF9BOCHV8] Start message processing. Message details: 
+2015-12-26T14:58:45.6158133Z	Type=Information     	ID=1180    	  Sender=[sender@swaks.ex2013.egress-test.com] 
+2015-12-26T14:58:45.6158133Z	Type=Information     	ID=1180    	  X-Sender=[sender@swaks.ex2013.egress-test.com] 
+2015-12-26T14:58:45.6158133Z	Type=Information     	ID=1180    	  From=[sender@swaks.ex2013.egress-test.com] 
+2015-12-26T14:58:45.6158133Z	Type=Information     	ID=1180    	  Recipients=[hasaan.gateway@hasaan.com] 
+2015-12-26T14:58:45.6158133Z	Type=Information     	ID=1180    	  Subject=[test Sat, 26 Dec 2015 14:56:42 +0000] 
+2015-12-26T14:58:45.6158133Z	Type=Information     	ID=1180    	  X-$Switch=[] 
+2015-12-26T14:58:45.6158133Z	Type=Information     	ID=1180    	  Date=[2015-12-26T14:56:42.0000000+00:00] 
+2015-12-26T14:58:45.6158133Z	Type=Information     	ID=1180    	  Size=[526] 
+2015-12-26T14:58:45.6158133Z	Type=Information     	ID=1180    	  Attachments=[]
+2015-12-26T14:58:45.6468134Z	Type=Warning         	ID=1208    	Switch Server operation 'Policy synchronization' failed. SwitchID: [egress.gateway@hasaan.com?sender@swaks.ex2013.egress-test.com]. Exception: [WebException : The underlying connection was closed: Could not establish trust relationship for the SSL/TLS secure channel. => The remote certificate is invalid according to the validation procedure.]
+2015-12-26T14:58:45.6468135Z	Type=Warning         	ID=1200    	[01d13feda308f40188389000.eml:Outbound/default:WIN-SCOF9BOCHV8UCeG00000001@WIN-SCOF9BOCHV8] An error occurred while processing message. Exception: [GatewayConnectionException(Retry,Store) : Failed to connect to Switch Server => The underlying connection was closed: Could not establish trust relationship for the SSL/TLS secure channel. => The remote certificate is invalid according to the validation procedure.].
+2015-12-26T14:59:45.3188136Z	Type=Information     	ID=1180    	[01d13fee0ec18f7f8406d701.eml:Outbound/default:WIN-SCOF9BOCHV8FRaq00000002@WIN-SCOF9BOCHV8] Start message processing. Message details: 
+2015-12-26T14:59:45.3188136Z	Type=Information     	ID=1180    	  Sender=[sender@swaks.ex2013.egress-test.com] 
+2015-12-26T14:59:45.3188136Z	Type=Information     	ID=1180    	  X-Sender=[sender@swaks.ex2013.egress-test.com] 
+2015-12-26T14:59:45.3188136Z	Type=Information     	ID=1180    	  From=[sender@swaks.ex2013.egress-test.com] 
+2015-12-26T14:59:45.3188136Z	Type=Information     	ID=1180    	  Recipients=[bob@user.com] 
+2015-12-26T14:59:45.3188136Z	Type=Information     	ID=1180    	  Subject=[test Sat, 26 Dec 2015 14:59:44 +0000] 
+2015-12-26T14:59:45.3188136Z	Type=Information     	ID=1180    	  X-$Switch=[] 
+2015-12-26T14:59:45.3188136Z	Type=Information     	ID=1180    	  Date=[2015-12-26T14:59:44.0000000+00:00] 
+2015-12-26T14:59:45.3188136Z	Type=Information     	ID=1180    	  Size=[500] 
+2015-12-26T14:59:45.3188136Z	Type=Information     	ID=1180    	  Attachments=[]
+2015-12-26T14:59:45.3658137Z	Type=Warning         	ID=1208    	Switch Server operation 'Policy synchronization' failed. SwitchID: [egress.gateway@hasaan.com?sender@swaks.ex2013.egress-test.com]. Exception: [WebException : The underlying connection was closed: Could not establish trust relationship for the SSL/TLS secure channel. => The remote certificate is invalid according to the validation procedure.]
+2015-12-26T14:59:45.3658138Z	Type=Warning         	ID=1200    	[01d13fee0ec18f7f8406d701.eml:Outbound/default:WIN-SCOF9BOCHV8FRaq00000002@WIN-SCOF9BOCHV8] An error occurred while processing message. Exception: [GatewayConnectionException(Retry,Store) : Failed to connect to Switch Server => The underlying connection was closed: Could not establish trust relationship for the SSL/TLS secure channel. => The remote certificate is invalid according to the validation procedure.].
+2015-12-26T15:01:45.7258139Z	Type=Information     	ID=1180    	[01d13fee0ec18f7f8406d701.eml:Outbound/default:WIN-SCOF9BOCHV8FRaq00000002@WIN-SCOF9BOCHV8] Start message processing. Message details: 
+2015-12-26T15:01:45.7258139Z	Type=Information     	ID=1180    	  Sender=[sender@swaks.ex2013.egress-test.com] 
+2015-12-26T15:01:45.7258139Z	Type=Information     	ID=1180    	  X-Sender=[sender@swaks.ex2013.egress-test.com] 
+2015-12-26T15:01:45.7258139Z	Type=Information     	ID=1180    	  From=[sender@swaks.ex2013.egress-test.com] 
+2015-12-26T15:01:45.7258139Z	Type=Information     	ID=1180    	  Recipients=[bob@user.com] 
+2015-12-26T15:01:45.7258139Z	Type=Information     	ID=1180    	  Subject=[test Sat, 26 Dec 2015 14:59:44 +0000] 
+2015-12-26T15:01:45.7258139Z	Type=Information     	ID=1180    	  X-$Switch=[] 
+2015-12-26T15:01:45.7258139Z	Type=Information     	ID=1180    	  Date=[2015-12-26T14:59:44.0000000+00:00] 
+2015-12-26T15:01:45.7258139Z	Type=Information     	ID=1180    	  Size=[500] 
+2015-12-26T15:01:45.7258139Z	Type=Information     	ID=1180    	  Attachments=[]
+2015-12-26T15:01:45.7568140Z	Type=Warning         	ID=1208    	Switch Server operation 'Policy synchronization' failed. SwitchID: [egress.gateway@hasaan.com?sender@swaks.ex2013.egress-test.com]. Exception: [WebException : The underlying connection was closed: Could not establish trust relationship for the SSL/TLS secure channel. => The remote certificate is invalid according to the validation procedure.]
+2015-12-26T15:01:45.7568141Z	Type=Warning         	ID=1200    	[01d13fee0ec18f7f8406d701.eml:Outbound/default:WIN-SCOF9BOCHV8FRaq00000002@WIN-SCOF9BOCHV8] An error occurred while processing message. Exception: [GatewayConnectionException(Retry,Store) : Failed to connect to Switch Server => The underlying connection was closed: Could not establish trust relationship for the SSL/TLS secure channel. => The remote certificate is invalid according to the validation procedure.].
+2015-12-26T15:03:46.0068142Z	Type=Information     	ID=1180    	[01d13feda308f40188389000.eml:Outbound/default:WIN-SCOF9BOCHV8UCeG00000001@WIN-SCOF9BOCHV8] Start message processing. Message details: 
+2015-12-26T15:03:46.0068142Z	Type=Information     	ID=1180    	  Sender=[sender@swaks.ex2013.egress-test.com] 
+2015-12-26T15:03:46.0068142Z	Type=Information     	ID=1180    	  X-Sender=[sender@swaks.ex2013.egress-test.com] 
+2015-12-26T15:03:46.0068142Z	Type=Information     	ID=1180    	  From=[sender@swaks.ex2013.egress-test.com] 
+2015-12-26T15:03:46.0068142Z	Type=Information     	ID=1180    	  Recipients=[hasaan.gateway@hasaan.com] 
+2015-12-26T15:03:46.0068142Z	Type=Information     	ID=1180    	  Subject=[test Sat, 26 Dec 2015 14:56:42 +0000] 
+2015-12-26T15:03:46.0068142Z	Type=Information     	ID=1180    	  X-$Switch=[] 
+2015-12-26T15:03:46.0068142Z	Type=Information     	ID=1180    	  Date=[2015-12-26T14:56:42.0000000+00:00] 
+2015-12-26T15:03:46.0068142Z	Type=Information     	ID=1180    	  Size=[526] 
+2015-12-26T15:03:46.0068142Z	Type=Information     	ID=1180    	  Attachments=[]
+2015-12-26T15:04:07.5538143Z	Type=Warning         	ID=1208    	Switch Server operation 'Policy synchronization' failed. SwitchID: [egress.gateway@hasaan.com?sender@swaks.ex2013.egress-test.com]. Exception: [InvalidCredentialException : The account sender@swaks.ex2013.egress-test.com is unknown or the password is invalid.]
+2015-12-26T15:04:10.0228144Z	Type=Information     	ID=1181    	[01d13feda308f40188389000.eml:Outbound/default:WIN-SCOF9BOCHV8UCeG00000001@WIN-SCOF9BOCHV8] DEM processing using policy for SwitchID: [egress.gateway@hasaan.com]. Input: 
+2015-12-26T15:04:10.0228144Z	Type=Information     	ID=1181    	  X-$Switch=[] 
+2015-12-26T15:04:10.0228144Z	Type=Information     	ID=1181    	  InSecurityLabelID=[public] 
+2015-12-26T15:04:10.0228144Z	Type=Information     	ID=1181    	  Recipients=[hasaan.gateway@hasaan.com] 
+2015-12-26T15:04:10.0228144Z	Type=Information     	ID=1181    	  Subject=[test Sat, 26 Dec 2015 14:56:42 +0000] 
+2015-12-26T15:04:10.0228144Z	Type=Information     	ID=1181    	  HasRestrictions=[False] 
+2015-12-26T15:04:10.0228144Z	Type=Information     	ID=1181    	  AttachmentsSize=[0] 
+2015-12-26T15:04:10.0228144Z	Type=Information     	ID=1181    	Output: 
+2015-12-26T15:04:10.0228144Z	Type=Information     	ID=1181    	  MessageText=[] 
+2015-12-26T15:04:10.0228144Z	Type=Information     	ID=1181    	  DEMId=[emailPlain] 
+2015-12-26T15:04:10.0228144Z	Type=Information     	ID=1181    	  OutSecurityLabelId=[public] 
+2015-12-26T15:04:10.0228144Z	Type=Information     	ID=1181    	  Tags=[]
+2015-12-26T15:04:10.3818145Z	Type=Warning         	ID=1200    	[01d13feda308f40188389000.eml:Outbound/default:WIN-SCOF9BOCHV8UCeG00000001@WIN-SCOF9BOCHV8] An error occurred while processing message. Exception: [GatewayException(Retry,Store) : Internal mail delivery error => No such host is known].
+2015-12-26T15:04:47.6161436Z	Type=Information     	ID=29904   	[esdxgateway]. Configuration changes detected.
+2015-12-26T15:04:47.9288146Z	Type=Stop            	ID=29906   	[esdxgateway]. All modules stopped.
+2015-12-26T15:04:49.6941437Z	Type=Information     	ID=29905   	[esdxgateway]. Re-initializing service
+2015-12-26T15:04:51.5849543Z	Type=Start           	ID=29902   	[esdxgateway] started. Details: [ 
+2015-12-26T15:04:51.5849543Z	Type=Start           	ID=29902   	  GatewayWebService => disabled 
+2015-12-26T15:04:51.5849543Z	Type=Start           	ID=29902   	  GatewayListener (4.50.14617.0) => started 
+2015-12-26T15:04:51.5849543Z	Type=Start           	ID=29902   	  GatewayScheduler (4.50.14617.0) => started 
+2015-12-26T15:04:51.5849543Z	Type=Start           	ID=29902   	]
+2015-12-26T15:05:52.4289544Z	Type=Information     	ID=1253    	Statistics: [badmailSize=0; computerName=WIN-SCOF9BOCHV8; cpu=3; freeC="30971/60.6%"; freeRamMB=3186; lastSentAt=; lastSyncAt=; queueSize=2; retrySize=2; sent=0; startedAt="Sat, 26 Dec 2015 15:05:51 GMT"; version="4.50.14617.0"; wsetKB=77156]
+2015-12-26T15:05:52.4289545Z	Type=Information     	ID=30100   	Task [LogStatistics] completed successfully.
+2015-12-26T15:06:45.9609546Z	Type=Information     	ID=1180    	[01d13fee0ec18f7f8406d701.eml:Outbound/default:WIN-SCOF9BOCHV8FRaq00000002@WIN-SCOF9BOCHV8] Start message processing. Message details: 
+2015-12-26T15:06:45.9609546Z	Type=Information     	ID=1180    	  Sender=[sender@swaks.ex2013.egress-test.com] 
+2015-12-26T15:06:45.9609546Z	Type=Information     	ID=1180    	  X-Sender=[sender@swaks.ex2013.egress-test.com] 
+2015-12-26T15:06:45.9609546Z	Type=Information     	ID=1180    	  From=[sender@swaks.ex2013.egress-test.com] 
+2015-12-26T15:06:45.9609546Z	Type=Information     	ID=1180    	  Recipients=[bob@user.com] 
+2015-12-26T15:06:45.9609546Z	Type=Information     	ID=1180    	  Subject=[test Sat, 26 Dec 2015 14:59:44 +0000] 
+2015-12-26T15:06:45.9609546Z	Type=Information     	ID=1180    	  X-$Switch=[] 
+2015-12-26T15:06:45.9609546Z	Type=Information     	ID=1180    	  Date=[2015-12-26T14:59:44.0000000+00:00] 
+2015-12-26T15:06:45.9609546Z	Type=Information     	ID=1180    	  Size=[500] 
+2015-12-26T15:06:45.9609546Z	Type=Information     	ID=1180    	  Attachments=[]
+2015-12-26T15:06:53.9759547Z	Type=Information     	ID=1180    	[01d13fef0e42c38026269202.eml:Outbound/default:WIN-SCOF9BOCHV8bnVi00000003@WIN-SCOF9BOCHV8] Start message processing. Message details: 
+2015-12-26T15:06:53.9759547Z	Type=Information     	ID=1180    	  Sender=[hasaan.admin@hasaan.com] 
+2015-12-26T15:06:53.9759547Z	Type=Information     	ID=1180    	  X-Sender=[hasaan.admin@hasaan.com] 
+2015-12-26T15:06:53.9759547Z	Type=Information     	ID=1180    	  From=[hasaan.admin@hasaan.com] 
+2015-12-26T15:06:53.9759547Z	Type=Information     	ID=1180    	  Recipients=[hasaanausat@hotmail.com] 
+2015-12-26T15:06:53.9759547Z	Type=Information     	ID=1180    	  Subject=[Hello from tester  (sent 12/26/2015 3:06:52 PM)] 
+2015-12-26T15:06:53.9759547Z	Type=Information     	ID=1180    	  X-$Switch=[switchId="hasaan.admin@hasaan.com"; labelId="secureMail"; software="outlook plugin/2.31.0.222"] 
+2015-12-26T15:06:53.9759547Z	Type=Information     	ID=1180    	  Date=[2015-12-26T15:06:53.0000000+00:00] 
+2015-12-26T15:06:53.9759547Z	Type=Information     	ID=1180    	  Size=[1131] 
+2015-12-26T15:06:53.9759547Z	Type=Information     	ID=1180    	  Attachments=[]
+2015-12-26T15:07:02.7419548Z	Type=Warning         	ID=1208    	Switch Server operation 'Policy synchronization' failed. SwitchID: [egress.gateway@hasaan.com?sender@swaks.ex2013.egress-test.com]. Exception: [InvalidCredentialException : The account sender@swaks.ex2013.egress-test.com is unknown or the password is invalid.]
+2015-12-26T15:07:04.0539549Z	Type=Information     	ID=1181    	[01d13fef0e42c38026269202.eml:Outbound/default:WIN-SCOF9BOCHV8bnVi00000003@WIN-SCOF9BOCHV8] DEM processing using policy for SwitchID: [hasaan.admin@hasaan.com]. Input: 
+2015-12-26T15:07:04.0539549Z	Type=Information     	ID=1181    	  X-$Switch=[switchId="hasaan.admin@hasaan.com"; labelId="secureMail"; software="outlook plugin/2.31.0.222"] 
+2015-12-26T15:07:04.0539549Z	Type=Information     	ID=1181    	  InSecurityLabelID=[secureMail] 
+2015-12-26T15:07:04.0539549Z	Type=Information     	ID=1181    	  Recipients=[hasaanausat@hotmail.com] 
+2015-12-26T15:07:04.0539549Z	Type=Information     	ID=1181    	  Subject=[Hello from tester  (sent 12/26/2015 3:06:52 PM)] 
+2015-12-26T15:07:04.0539549Z	Type=Information     	ID=1181    	  HasRestrictions=[False] 
+2015-12-26T15:07:04.0539549Z	Type=Information     	ID=1181    	  AttachmentsSize=[0] 
+2015-12-26T15:07:04.0539549Z	Type=Information     	ID=1181    	Output: 
+2015-12-26T15:07:04.0539549Z	Type=Information     	ID=1181    	  MessageText=[] 
+2015-12-26T15:07:04.0539549Z	Type=Information     	ID=1181    	  DEMId=[emailBody] 
+2015-12-26T15:07:04.0539549Z	Type=Information     	ID=1181    	  OutSecurityLabelId=[secureMail] 
+2015-12-26T15:07:04.0539549Z	Type=Information     	ID=1181    	  Tags=[]
+2015-12-26T15:07:04.0859550Z	Type=Information     	ID=1181    	[01d13fee0ec18f7f8406d701.eml:Outbound/default:WIN-SCOF9BOCHV8FRaq00000002@WIN-SCOF9BOCHV8] DEM processing using policy for SwitchID: [egress.gateway@hasaan.com]. Input: 
+2015-12-26T15:07:04.0859550Z	Type=Information     	ID=1181    	  X-$Switch=[] 
+2015-12-26T15:07:04.0859550Z	Type=Information     	ID=1181    	  InSecurityLabelID=[public] 
+2015-12-26T15:07:04.0859550Z	Type=Information     	ID=1181    	  Recipients=[bob@user.com] 
+2015-12-26T15:07:04.0859550Z	Type=Information     	ID=1181    	  Subject=[test Sat, 26 Dec 2015 14:59:44 +0000] 
+2015-12-26T15:07:04.0859550Z	Type=Information     	ID=1181    	  HasRestrictions=[False] 
+2015-12-26T15:07:04.0859550Z	Type=Information     	ID=1181    	  AttachmentsSize=[0] 
+2015-12-26T15:07:04.0859550Z	Type=Information     	ID=1181    	Output: 
+2015-12-26T15:07:04.0859550Z	Type=Information     	ID=1181    	  MessageText=[] 
+2015-12-26T15:07:04.0859550Z	Type=Information     	ID=1181    	  DEMId=[emailPlain] 
+2015-12-26T15:07:04.0859550Z	Type=Information     	ID=1181    	  OutSecurityLabelId=[public] 
+2015-12-26T15:07:04.0859550Z	Type=Information     	ID=1181    	  Tags=[]
+2015-12-26T15:07:04.1479551Z	Type=Warning         	ID=1200    	[01d13fee0ec18f7f8406d701.eml:Outbound/default:WIN-SCOF9BOCHV8FRaq00000002@WIN-SCOF9BOCHV8] An error occurred while processing message. Exception: [GatewayException(Retry,Store) : Internal mail delivery error => No such host is known].
+2015-12-26T15:07:06.8199552Z	Type=Warning         	ID=1200    	[01d13fef0e42c38026269202.eml:Outbound/default:WIN-SCOF9BOCHV8bnVi00000003@WIN-SCOF9BOCHV8] An error occurred while processing message. Exception: [GatewayException(Retry,Store) : Internal mail delivery error => No such host is known].
+2015-12-26T15:08:15.3669553Z	Type=Information     	ID=1180    	[01d13fef0e42c38026269202.eml:Outbound/default:WIN-SCOF9BOCHV8bnVi00000003@WIN-SCOF9BOCHV8] Start message processing. Message details: 
+2015-12-26T15:08:15.3669553Z	Type=Information     	ID=1180    	  Sender=[hasaan.admin@hasaan.com] 
+2015-12-26T15:08:15.3669553Z	Type=Information     	ID=1180    	  X-Sender=[hasaan.admin@hasaan.com] 
+2015-12-26T15:08:15.3669553Z	Type=Information     	ID=1180    	  From=[hasaan.admin@hasaan.com] 
+2015-12-26T15:08:15.3669553Z	Type=Information     	ID=1180    	  Recipients=[hasaanausat@hotmail.com] 
+2015-12-26T15:08:15.3669553Z	Type=Information     	ID=1180    	  Subject=[Hello from tester  (sent 12/26/2015 3:06:52 PM)] 
+2015-12-26T15:08:15.3669553Z	Type=Information     	ID=1180    	  X-$Switch=[switchId="hasaan.admin@hasaan.com"; labelId="secureMail"; software="outlook plugin/2.31.0.222"] 
+2015-12-26T15:08:15.3669553Z	Type=Information     	ID=1180    	  Date=[2015-12-26T15:06:53.0000000+00:00] 
+2015-12-26T15:08:15.3669553Z	Type=Information     	ID=1180    	  Size=[1131] 
+2015-12-26T15:08:15.3669553Z	Type=Information     	ID=1180    	  Attachments=[]
+2015-12-26T15:08:15.4299554Z	Type=Information     	ID=1180    	[01d13fef3ecac78beedb5803.eml:Outbound/default:WIN-SCOF9BOCHV8WuaY00000004@WIN-SCOF9BOCHV8] Start message processing. Message details: 
+2015-12-26T15:08:15.4299554Z	Type=Information     	ID=1180    	  Sender=[sender@swaks.ex2013.egress-test.com] 
+2015-12-26T15:08:15.4299554Z	Type=Information     	ID=1180    	  X-Sender=[sender@swaks.ex2013.egress-test.com] 
+2015-12-26T15:08:15.4299554Z	Type=Information     	ID=1180    	  From=[sender@swaks.ex2013.egress-test.com] 
+2015-12-26T15:08:15.4299554Z	Type=Information     	ID=1180    	  Recipients=[bob@user.com] 
+2015-12-26T15:08:15.4299554Z	Type=Information     	ID=1180    	  Subject=[test Sat, 26 Dec 2015 15:08:14 +0000] 
+2015-12-26T15:08:15.4299554Z	Type=Information     	ID=1180    	  X-$Switch=[] 
+2015-12-26T15:08:15.4299554Z	Type=Information     	ID=1180    	  Date=[2015-12-26T15:08:14.0000000+00:00] 
+2015-12-26T15:08:15.4299554Z	Type=Information     	ID=1180    	  Size=[500] 
+2015-12-26T15:08:15.4299554Z	Type=Information     	ID=1180    	  Attachments=[]
+2015-12-26T15:08:16.5859555Z	Type=Warning         	ID=1208    	Switch Server operation 'Policy synchronization' failed. SwitchID: [egress.gateway@hasaan.com?sender@swaks.ex2013.egress-test.com]. Exception: [InvalidCredentialException : The account sender@swaks.ex2013.egress-test.com is unknown or the password is invalid.]
+2015-12-26T15:08:16.6169556Z	Type=Information     	ID=1181    	[01d13fef0e42c38026269202.eml:Outbound/default:WIN-SCOF9BOCHV8bnVi00000003@WIN-SCOF9BOCHV8] DEM processing using policy for SwitchID: [hasaan.admin@hasaan.com]. Input: 
+2015-12-26T15:08:16.6169556Z	Type=Information     	ID=1181    	  X-$Switch=[switchId="hasaan.admin@hasaan.com"; labelId="secureMail"; software="outlook plugin/2.31.0.222"] 
+2015-12-26T15:08:16.6169556Z	Type=Information     	ID=1181    	  InSecurityLabelID=[secureMail] 
+2015-12-26T15:08:16.6169556Z	Type=Information     	ID=1181    	  Recipients=[hasaanausat@hotmail.com] 
+2015-12-26T15:08:16.6169556Z	Type=Information     	ID=1181    	  Subject=[Hello from tester  (sent 12/26/2015 3:06:52 PM)] 
+2015-12-26T15:08:16.6169556Z	Type=Information     	ID=1181    	  HasRestrictions=[False] 
+2015-12-26T15:08:16.6169556Z	Type=Information     	ID=1181    	  AttachmentsSize=[0] 
+2015-12-26T15:08:16.6169556Z	Type=Information     	ID=1181    	Output: 
+2015-12-26T15:08:16.6169556Z	Type=Information     	ID=1181    	  MessageText=[] 
+2015-12-26T15:08:16.6169556Z	Type=Information     	ID=1181    	  DEMId=[emailBody] 
+2015-12-26T15:08:16.6169556Z	Type=Information     	ID=1181    	  OutSecurityLabelId=[secureMail] 
+2015-12-26T15:08:16.6169556Z	Type=Information     	ID=1181    	  Tags=[]
+2015-12-26T15:08:16.7729557Z	Type=Information     	ID=1181    	[01d13fef3ecac78beedb5803.eml:Outbound/default:WIN-SCOF9BOCHV8WuaY00000004@WIN-SCOF9BOCHV8] DEM processing using policy for SwitchID: [egress.gateway@hasaan.com]. Input: 
+2015-12-26T15:08:16.7729557Z	Type=Information     	ID=1181    	  X-$Switch=[] 
+2015-12-26T15:08:16.7729557Z	Type=Information     	ID=1181    	  InSecurityLabelID=[public] 
+2015-12-26T15:08:16.7729557Z	Type=Information     	ID=1181    	  Recipients=[bob@user.com] 
+2015-12-26T15:08:16.7729557Z	Type=Information     	ID=1181    	  Subject=[test Sat, 26 Dec 2015 15:08:14 +0000] 
+2015-12-26T15:08:16.7729557Z	Type=Information     	ID=1181    	  HasRestrictions=[False] 
+2015-12-26T15:08:16.7729557Z	Type=Information     	ID=1181    	  AttachmentsSize=[0] 
+2015-12-26T15:08:16.7729557Z	Type=Information     	ID=1181    	Output: 
+2015-12-26T15:08:16.7729557Z	Type=Information     	ID=1181    	  MessageText=[] 
+2015-12-26T15:08:16.7729557Z	Type=Information     	ID=1181    	  DEMId=[emailPlain] 
+2015-12-26T15:08:16.7729557Z	Type=Information     	ID=1181    	  OutSecurityLabelId=[public] 
+2015-12-26T15:08:16.7729557Z	Type=Information     	ID=1181    	  Tags=[]
+2015-12-26T15:08:16.7729558Z	Type=Warning         	ID=1200    	[01d13fef3ecac78beedb5803.eml:Outbound/default:WIN-SCOF9BOCHV8WuaY00000004@WIN-SCOF9BOCHV8] An error occurred while processing message. Exception: [GatewayException(Retry,Store) : Internal mail delivery error => No such host is known].
+2015-12-26T15:08:16.8669559Z	Type=Warning         	ID=1200    	[01d13fef0e42c38026269202.eml:Outbound/default:WIN-SCOF9BOCHV8bnVi00000003@WIN-SCOF9BOCHV8] An error occurred while processing message. Exception: [GatewayException(Retry,Store) : Internal mail delivery error => No such host is known].
+2015-12-26T15:10:15.6329560Z	Type=Information     	ID=1180    	[01d13fef3ecac78beedb5803.eml:Outbound/default:WIN-SCOF9BOCHV8WuaY00000004@WIN-SCOF9BOCHV8] Start message processing. Message details: 
+2015-12-26T15:10:15.6329560Z	Type=Information     	ID=1180    	  Sender=[sender@swaks.ex2013.egress-test.com] 
+2015-12-26T15:10:15.6329560Z	Type=Information     	ID=1180    	  X-Sender=[sender@swaks.ex2013.egress-test.com] 
+2015-12-26T15:10:15.6329560Z	Type=Information     	ID=1180    	  From=[sender@swaks.ex2013.egress-test.com] 
+2015-12-26T15:10:15.6329560Z	Type=Information     	ID=1180    	  Recipients=[bob@user.com] 
+2015-12-26T15:10:15.6329560Z	Type=Information     	ID=1180    	  Subject=[test Sat, 26 Dec 2015 15:08:14 +0000] 
+2015-12-26T15:10:15.6329560Z	Type=Information     	ID=1180    	  X-$Switch=[] 
+2015-12-26T15:10:15.6329560Z	Type=Information     	ID=1180    	  Date=[2015-12-26T15:08:14.0000000+00:00] 
+2015-12-26T15:10:15.6329560Z	Type=Information     	ID=1180    	  Size=[500] 
+2015-12-26T15:10:15.6329560Z	Type=Information     	ID=1180    	  Attachments=[]
+2015-12-26T15:10:27.1799561Z	Type=Warning         	ID=1208    	Switch Server operation 'Policy synchronization' failed. SwitchID: [egress.gateway@hasaan.com?sender@swaks.ex2013.egress-test.com]. Exception: [InvalidCredentialException : The account sender@swaks.ex2013.egress-test.com is unknown or the password is invalid.]
+2015-12-26T15:10:27.3359562Z	Type=Information     	ID=1181    	[01d13fef3ecac78beedb5803.eml:Outbound/default:WIN-SCOF9BOCHV8WuaY00000004@WIN-SCOF9BOCHV8] DEM processing using policy for SwitchID: [egress.gateway@hasaan.com]. Input: 
+2015-12-26T15:10:27.3359562Z	Type=Information     	ID=1181    	  X-$Switch=[] 
+2015-12-26T15:10:27.3359562Z	Type=Information     	ID=1181    	  InSecurityLabelID=[public] 
+2015-12-26T15:10:27.3359562Z	Type=Information     	ID=1181    	  Recipients=[bob@user.com] 
+2015-12-26T15:10:27.3359562Z	Type=Information     	ID=1181    	  Subject=[test Sat, 26 Dec 2015 15:08:14 +0000] 
+2015-12-26T15:10:27.3359562Z	Type=Information     	ID=1181    	  HasRestrictions=[False] 
+2015-12-26T15:10:27.3359562Z	Type=Information     	ID=1181    	  AttachmentsSize=[0] 
+2015-12-26T15:10:27.3359562Z	Type=Information     	ID=1181    	Output: 
+2015-12-26T15:10:27.3359562Z	Type=Information     	ID=1181    	  MessageText=[] 
+2015-12-26T15:10:27.3359562Z	Type=Information     	ID=1181    	  DEMId=[emailPlain] 
+2015-12-26T15:10:27.3359562Z	Type=Information     	ID=1181    	  OutSecurityLabelId=[public] 
+2015-12-26T15:10:27.3359562Z	Type=Information     	ID=1181    	  Tags=[]
+2015-12-26T15:10:27.3359563Z	Type=Warning         	ID=1200    	[01d13fef3ecac78beedb5803.eml:Outbound/default:WIN-SCOF9BOCHV8WuaY00000004@WIN-SCOF9BOCHV8] An error occurred while processing message. Exception: [GatewayException(Retry,Store) : Internal mail delivery error => No such host is known].
+2015-12-26T15:13:00.3209564Z	Type=Information     	ID=1180    	[01d13fefe89c1bdcd8a13104.eml:Outbound/default:WIN-SCOF9BOCHV88WVA00000005@WIN-SCOF9BOCHV8] Start message processing. Message details: 
+2015-12-26T15:13:00.3209564Z	Type=Information     	ID=1180    	  Sender=[hasaan.admin@hasaan.com] 
+2015-12-26T15:13:00.3209564Z	Type=Information     	ID=1180    	  X-Sender=[hasaan.admin@hasaan.com] 
+2015-12-26T15:13:00.3209564Z	Type=Information     	ID=1180    	  From=[hasaan.admin@hasaan.com] 
+2015-12-26T15:13:00.3209564Z	Type=Information     	ID=1180    	  Recipients=[hasaanausat@hotmail.com] 
+2015-12-26T15:13:00.3209564Z	Type=Information     	ID=1180    	  Subject=[Hello from tester  (sent 12/26/2015 3:12:59 PM)] 
+2015-12-26T15:13:00.3209564Z	Type=Information     	ID=1180    	  X-$Switch=[switchId="hasaan.admin@hasaan.com"; labelId="secureMail"; software="outlook plugin/2.31.0.222"] 
+2015-12-26T15:13:00.3209564Z	Type=Information     	ID=1180    	  Date=[2015-12-26T15:13:00.0000000+00:00] 
+2015-12-26T15:13:00.3209564Z	Type=Information     	ID=1180    	  Size=[1131] 
+2015-12-26T15:13:00.3209564Z	Type=Information     	ID=1180    	  Attachments=[]
+2015-12-26T15:13:12.9769565Z	Type=Information     	ID=1181    	[01d13fefe89c1bdcd8a13104.eml:Outbound/default:WIN-SCOF9BOCHV88WVA00000005@WIN-SCOF9BOCHV8] DEM processing using policy for SwitchID: [hasaan.admin@hasaan.com]. Input: 
+2015-12-26T15:13:12.9769565Z	Type=Information     	ID=1181    	  X-$Switch=[switchId="hasaan.admin@hasaan.com"; labelId="secureMail"; software="outlook plugin/2.31.0.222"] 
+2015-12-26T15:13:12.9769565Z	Type=Information     	ID=1181    	  InSecurityLabelID=[secureMail] 
+2015-12-26T15:13:12.9769565Z	Type=Information     	ID=1181    	  Recipients=[hasaanausat@hotmail.com] 
+2015-12-26T15:13:12.9769565Z	Type=Information     	ID=1181    	  Subject=[Hello from tester  (sent 12/26/2015 3:12:59 PM)] 
+2015-12-26T15:13:12.9769565Z	Type=Information     	ID=1181    	  HasRestrictions=[False] 
+2015-12-26T15:13:12.9769565Z	Type=Information     	ID=1181    	  AttachmentsSize=[0] 
+2015-12-26T15:13:12.9769565Z	Type=Information     	ID=1181    	Output: 
+2015-12-26T15:13:12.9769565Z	Type=Information     	ID=1181    	  MessageText=[] 
+2015-12-26T15:13:12.9769565Z	Type=Information     	ID=1181    	  DEMId=[emailBody] 
+2015-12-26T15:13:12.9769565Z	Type=Information     	ID=1181    	  OutSecurityLabelId=[secureMail] 
+2015-12-26T15:13:12.9769565Z	Type=Information     	ID=1181    	  Tags=[]
+2015-12-26T15:13:13.1329566Z	Type=Warning         	ID=1200    	[01d13fefe89c1bdcd8a13104.eml:Outbound/default:WIN-SCOF9BOCHV88WVA00000005@WIN-SCOF9BOCHV8] An error occurred while processing message. Exception: [GatewayException(Retry,Store) : Internal mail delivery error => No such host is known].
+2015-12-26T15:13:17.2269567Z	Type=Information     	ID=1180    	[01d13fef0e42c38026269202.eml:Outbound/default:WIN-SCOF9BOCHV8bnVi00000003@WIN-SCOF9BOCHV8] Start message processing. Message details: 
+2015-12-26T15:13:17.2269567Z	Type=Information     	ID=1180    	  Sender=[hasaan.admin@hasaan.com] 
+2015-12-26T15:13:17.2269567Z	Type=Information     	ID=1180    	  X-Sender=[hasaan.admin@hasaan.com] 
+2015-12-26T15:13:17.2269567Z	Type=Information     	ID=1180    	  From=[hasaan.admin@hasaan.com] 
+2015-12-26T15:13:17.2269567Z	Type=Information     	ID=1180    	  Recipients=[hasaanausat@hotmail.com] 
+2015-12-26T15:13:17.2269567Z	Type=Information     	ID=1180    	  Subject=[Hello from tester  (sent 12/26/2015 3:06:52 PM)] 
+2015-12-26T15:13:17.2269567Z	Type=Information     	ID=1180    	  X-$Switch=[switchId="hasaan.admin@hasaan.com"; labelId="secureMail"; software="outlook plugin/2.31.0.222"] 
+2015-12-26T15:13:17.2269567Z	Type=Information     	ID=1180    	  Date=[2015-12-26T15:06:53.0000000+00:00] 
+2015-12-26T15:13:17.2269567Z	Type=Information     	ID=1180    	  Size=[1131] 
+2015-12-26T15:13:17.2269567Z	Type=Information     	ID=1180    	  Attachments=[]
+2015-12-26T15:13:17.2269568Z	Type=Information     	ID=1181    	[01d13fef0e42c38026269202.eml:Outbound/default:WIN-SCOF9BOCHV8bnVi00000003@WIN-SCOF9BOCHV8] DEM processing using policy for SwitchID: [hasaan.admin@hasaan.com]. Input: 
+2015-12-26T15:13:17.2269568Z	Type=Information     	ID=1181    	  X-$Switch=[switchId="hasaan.admin@hasaan.com"; labelId="secureMail"; software="outlook plugin/2.31.0.222"] 
+2015-12-26T15:13:17.2269568Z	Type=Information     	ID=1181    	  InSecurityLabelID=[secureMail] 
+2015-12-26T15:13:17.2269568Z	Type=Information     	ID=1181    	  Recipients=[hasaanausat@hotmail.com] 
+2015-12-26T15:13:17.2269568Z	Type=Information     	ID=1181    	  Subject=[Hello from tester  (sent 12/26/2015 3:06:52 PM)] 
+2015-12-26T15:13:17.2269568Z	Type=Information     	ID=1181    	  HasRestrictions=[False] 
+2015-12-26T15:13:17.2269568Z	Type=Information     	ID=1181    	  AttachmentsSize=[0] 
+2015-12-26T15:13:17.2269568Z	Type=Information     	ID=1181    	Output: 
+2015-12-26T15:13:17.2269568Z	Type=Information     	ID=1181    	  MessageText=[] 
+2015-12-26T15:13:17.2269568Z	Type=Information     	ID=1181    	  DEMId=[emailBody] 
+2015-12-26T15:13:17.2269568Z	Type=Information     	ID=1181    	  OutSecurityLabelId=[secureMail] 
+2015-12-26T15:13:17.2269568Z	Type=Information     	ID=1181    	  Tags=[]
+2015-12-26T15:13:17.4149569Z	Type=Warning         	ID=1200    	[01d13fef0e42c38026269202.eml:Outbound/default:WIN-SCOF9BOCHV8bnVi00000003@WIN-SCOF9BOCHV8] An error occurred while processing message. Exception: [GatewayException(Retry,Store) : Internal mail delivery error => No such host is known].
+2015-12-26T15:13:43.4929570Z	Type=Information     	ID=1180    	[01d13fefe89c1bdcd8a13104.eml:Outbound/default:WIN-SCOF9BOCHV88WVA00000005@WIN-SCOF9BOCHV8] Start message processing. Message details: 
+2015-12-26T15:13:43.4929570Z	Type=Information     	ID=1180    	  Sender=[hasaan.admin@hasaan.com] 
+2015-12-26T15:13:43.4929570Z	Type=Information     	ID=1180    	  X-Sender=[hasaan.admin@hasaan.com] 
+2015-12-26T15:13:43.4929570Z	Type=Information     	ID=1180    	  From=[hasaan.admin@hasaan.com] 
+2015-12-26T15:13:43.4929570Z	Type=Information     	ID=1180    	  Recipients=[hasaanausat@hotmail.com] 
+2015-12-26T15:13:43.4929570Z	Type=Information     	ID=1180    	  Subject=[Hello from tester  (sent 12/26/2015 3:12:59 PM)] 
+2015-12-26T15:13:43.4929570Z	Type=Information     	ID=1180    	  X-$Switch=[switchId="hasaan.admin@hasaan.com"; labelId="secureMail"; software="outlook plugin/2.31.0.222"] 
+2015-12-26T15:13:43.4929570Z	Type=Information     	ID=1180    	  Date=[2015-12-26T15:13:00.0000000+00:00] 
+2015-12-26T15:13:43.4929570Z	Type=Information     	ID=1180    	  Size=[1131] 
+2015-12-26T15:13:43.4929570Z	Type=Information     	ID=1180    	  Attachments=[]
+2015-12-26T15:13:49.9019571Z	Type=Information     	ID=1181    	[01d13fefe89c1bdcd8a13104.eml:Outbound/default:WIN-SCOF9BOCHV88WVA00000005@WIN-SCOF9BOCHV8] DEM processing using policy for SwitchID: [hasaan.admin@hasaan.com]. Input: 
+2015-12-26T15:13:49.9019571Z	Type=Information     	ID=1181    	  X-$Switch=[switchId="hasaan.admin@hasaan.com"; labelId="secureMail"; software="outlook plugin/2.31.0.222"] 
+2015-12-26T15:13:49.9019571Z	Type=Information     	ID=1181    	  InSecurityLabelID=[secureMail] 
+2015-12-26T15:13:49.9019571Z	Type=Information     	ID=1181    	  Recipients=[hasaanausat@hotmail.com] 
+2015-12-26T15:13:49.9019571Z	Type=Information     	ID=1181    	  Subject=[Hello from tester  (sent 12/26/2015 3:12:59 PM)] 
+2015-12-26T15:13:49.9019571Z	Type=Information     	ID=1181    	  HasRestrictions=[False] 
+2015-12-26T15:13:49.9019571Z	Type=Information     	ID=1181    	  AttachmentsSize=[0] 
+2015-12-26T15:13:49.9019571Z	Type=Information     	ID=1181    	Output: 
+2015-12-26T15:13:49.9019571Z	Type=Information     	ID=1181    	  MessageText=[] 
+2015-12-26T15:13:49.9019571Z	Type=Information     	ID=1181    	  DEMId=[emailBody] 
+2015-12-26T15:13:49.9019571Z	Type=Information     	ID=1181    	  OutSecurityLabelId=[secureMail] 
+2015-12-26T15:13:49.9019571Z	Type=Information     	ID=1181    	  Tags=[]
+2015-12-26T15:13:50.0549572Z	Type=Warning         	ID=1200    	[01d13fefe89c1bdcd8a13104.eml:Outbound/default:WIN-SCOF9BOCHV88WVA00000005@WIN-SCOF9BOCHV8] An error occurred while processing message. Exception: [GatewayException(Retry,Store) : Internal mail delivery error => No such host is known].
+2015-12-26T15:15:27.4619573Z	Type=Information     	ID=1180    	[01d13fef3ecac78beedb5803.eml:Outbound/default:WIN-SCOF9BOCHV8WuaY00000004@WIN-SCOF9BOCHV8] Start message processing. Message details: 
+2015-12-26T15:15:27.4619573Z	Type=Information     	ID=1180    	  Sender=[sender@swaks.ex2013.egress-test.com] 
+2015-12-26T15:15:27.4619573Z	Type=Information     	ID=1180    	  X-Sender=[sender@swaks.ex2013.egress-test.com] 
+2015-12-26T15:15:27.4619573Z	Type=Information     	ID=1180    	  From=[sender@swaks.ex2013.egress-test.com] 
+2015-12-26T15:15:27.4619573Z	Type=Information     	ID=1180    	  Recipients=[bob@user.com] 
+2015-12-26T15:15:27.4619573Z	Type=Information     	ID=1180    	  Subject=[test Sat, 26 Dec 2015 15:08:14 +0000] 
+2015-12-26T15:15:27.4619573Z	Type=Information     	ID=1180    	  X-$Switch=[] 
+2015-12-26T15:15:27.4619573Z	Type=Information     	ID=1180    	  Date=[2015-12-26T15:08:14.0000000+00:00] 
+2015-12-26T15:15:27.4619573Z	Type=Information     	ID=1180    	  Size=[500] 
+2015-12-26T15:15:27.4619573Z	Type=Information     	ID=1180    	  Attachments=[]
+2015-12-26T15:15:39.1959574Z	Type=Warning         	ID=1208    	Switch Server operation 'Policy synchronization' failed. SwitchID: [egress.gateway@hasaan.com?sender@swaks.ex2013.egress-test.com]. Exception: [InvalidCredentialException : The account sender@swaks.ex2013.egress-test.com is unknown or the password is invalid.]
+2015-12-26T15:15:39.3519575Z	Type=Information     	ID=1181    	[01d13fef3ecac78beedb5803.eml:Outbound/default:WIN-SCOF9BOCHV8WuaY00000004@WIN-SCOF9BOCHV8] DEM processing using policy for SwitchID: [egress.gateway@hasaan.com]. Input: 
+2015-12-26T15:15:39.3519575Z	Type=Information     	ID=1181    	  X-$Switch=[] 
+2015-12-26T15:15:39.3519575Z	Type=Information     	ID=1181    	  InSecurityLabelID=[public] 
+2015-12-26T15:15:39.3519575Z	Type=Information     	ID=1181    	  Recipients=[bob@user.com] 
+2015-12-26T15:15:39.3519575Z	Type=Information     	ID=1181    	  Subject=[test Sat, 26 Dec 2015 15:08:14 +0000] 
+2015-12-26T15:15:39.3519575Z	Type=Information     	ID=1181    	  HasRestrictions=[False] 
+2015-12-26T15:15:39.3519575Z	Type=Information     	ID=1181    	  AttachmentsSize=[0] 
+2015-12-26T15:15:39.3519575Z	Type=Information     	ID=1181    	Output: 
+2015-12-26T15:15:39.3519575Z	Type=Information     	ID=1181    	  MessageText=[] 
+2015-12-26T15:15:39.3519575Z	Type=Information     	ID=1181    	  DEMId=[emailPlain] 
+2015-12-26T15:15:39.3519575Z	Type=Information     	ID=1181    	  OutSecurityLabelId=[public] 
+2015-12-26T15:15:39.3519575Z	Type=Information     	ID=1181    	  Tags=[]
+2015-12-26T15:15:39.3679576Z	Type=Warning         	ID=1200    	[01d13fef3ecac78beedb5803.eml:Outbound/default:WIN-SCOF9BOCHV8WuaY00000004@WIN-SCOF9BOCHV8] An error occurred while processing message. Exception: [GatewayException(Retry,Store) : Internal mail delivery error => No such host is known].
+2015-12-26T15:18:50.2279577Z	Type=Information     	ID=1180    	[01d13fefe89c1bdcd8a13104.eml:Outbound/default:WIN-SCOF9BOCHV88WVA00000005@WIN-SCOF9BOCHV8] Start message processing. Message details: 
+2015-12-26T15:18:50.2279577Z	Type=Information     	ID=1180    	  Sender=[hasaan.admin@hasaan.com] 
+2015-12-26T15:18:50.2279577Z	Type=Information     	ID=1180    	  X-Sender=[hasaan.admin@hasaan.com] 
+2015-12-26T15:18:50.2279577Z	Type=Information     	ID=1180    	  From=[hasaan.admin@hasaan.com] 
+2015-12-26T15:18:50.2279577Z	Type=Information     	ID=1180    	  Recipients=[hasaanausat@hotmail.com] 
+2015-12-26T15:18:50.2279577Z	Type=Information     	ID=1180    	  Subject=[Hello from tester  (sent 12/26/2015 3:12:59 PM)] 
+2015-12-26T15:18:50.2279577Z	Type=Information     	ID=1180    	  X-$Switch=[switchId="hasaan.admin@hasaan.com"; labelId="secureMail"; software="outlook plugin/2.31.0.222"] 
+2015-12-26T15:18:50.2279577Z	Type=Information     	ID=1180    	  Date=[2015-12-26T15:13:00.0000000+00:00] 
+2015-12-26T15:18:50.2279577Z	Type=Information     	ID=1180    	  Size=[1131] 
+2015-12-26T15:18:50.2279577Z	Type=Information     	ID=1180    	  Attachments=[]
+2015-12-26T15:19:08.4779578Z	Type=Information     	ID=1181    	[01d13fefe89c1bdcd8a13104.eml:Outbound/default:WIN-SCOF9BOCHV88WVA00000005@WIN-SCOF9BOCHV8] DEM processing using policy for SwitchID: [hasaan.admin@hasaan.com]. Input: 
+2015-12-26T15:19:08.4779578Z	Type=Information     	ID=1181    	  X-$Switch=[switchId="hasaan.admin@hasaan.com"; labelId="secureMail"; software="outlook plugin/2.31.0.222"] 
+2015-12-26T15:19:08.4779578Z	Type=Information     	ID=1181    	  InSecurityLabelID=[secureMail] 
+2015-12-26T15:19:08.4779578Z	Type=Information     	ID=1181    	  Recipients=[hasaanausat@hotmail.com] 
+2015-12-26T15:19:08.4779578Z	Type=Information     	ID=1181    	  Subject=[Hello from tester  (sent 12/26/2015 3:12:59 PM)] 
+2015-12-26T15:19:08.4779578Z	Type=Information     	ID=1181    	  HasRestrictions=[False] 
+2015-12-26T15:19:08.4779578Z	Type=Information     	ID=1181    	  AttachmentsSize=[0] 
+2015-12-26T15:19:08.4779578Z	Type=Information     	ID=1181    	Output: 
+2015-12-26T15:19:08.4779578Z	Type=Information     	ID=1181    	  MessageText=[] 
+2015-12-26T15:19:08.4779578Z	Type=Information     	ID=1181    	  DEMId=[emailBody] 
+2015-12-26T15:19:08.4779578Z	Type=Information     	ID=1181    	  OutSecurityLabelId=[secureMail] 
+2015-12-26T15:19:08.4779578Z	Type=Information     	ID=1181    	  Tags=[]
+2015-12-26T15:19:08.6339579Z	Type=Warning         	ID=1200    	[01d13fefe89c1bdcd8a13104.eml:Outbound/default:WIN-SCOF9BOCHV88WVA00000005@WIN-SCOF9BOCHV8] An error occurred while processing message. Exception: [GatewayException(Retry,Store) : Internal mail delivery error => No such host is known].
+2015-12-26T15:19:10.5249580Z	Type=Information     	ID=1180    	[01d13feda308f40188389000.eml:Outbound/default:WIN-SCOF9BOCHV8UCeG00000001@WIN-SCOF9BOCHV8] Start message processing. Message details: 
+2015-12-26T15:19:10.5249580Z	Type=Information     	ID=1180    	  Sender=[sender@swaks.ex2013.egress-test.com] 
+2015-12-26T15:19:10.5249580Z	Type=Information     	ID=1180    	  X-Sender=[sender@swaks.ex2013.egress-test.com] 
+2015-12-26T15:19:10.5249580Z	Type=Information     	ID=1180    	  From=[sender@swaks.ex2013.egress-test.com] 
+2015-12-26T15:19:10.5249580Z	Type=Information     	ID=1180    	  Recipients=[hasaan.gateway@hasaan.com] 
+2015-12-26T15:19:10.5249580Z	Type=Information     	ID=1180    	  Subject=[test Sat, 26 Dec 2015 14:56:42 +0000] 
+2015-12-26T15:19:10.5249580Z	Type=Information     	ID=1180    	  X-$Switch=[] 
+2015-12-26T15:19:10.5249580Z	Type=Information     	ID=1180    	  Date=[2015-12-26T14:56:42.0000000+00:00] 
+2015-12-26T15:19:10.5249580Z	Type=Information     	ID=1180    	  Size=[526] 
+2015-12-26T15:19:10.5249580Z	Type=Information     	ID=1180    	  Attachments=[]
+2015-12-26T15:19:10.6029581Z	Type=Warning         	ID=1208    	Switch Server operation 'Policy synchronization' failed. SwitchID: [egress.gateway@hasaan.com?sender@swaks.ex2013.egress-test.com]. Exception: [InvalidCredentialException : The account sender@swaks.ex2013.egress-test.com is unknown or the password is invalid.]
+2015-12-26T15:19:10.7279582Z	Type=Information     	ID=1181    	[01d13feda308f40188389000.eml:Outbound/default:WIN-SCOF9BOCHV8UCeG00000001@WIN-SCOF9BOCHV8] DEM processing using policy for SwitchID: [egress.gateway@hasaan.com]. Input: 
+2015-12-26T15:19:10.7279582Z	Type=Information     	ID=1181    	  X-$Switch=[] 
+2015-12-26T15:19:10.7279582Z	Type=Information     	ID=1181    	  InSecurityLabelID=[public] 
+2015-12-26T15:19:10.7279582Z	Type=Information     	ID=1181    	  Recipients=[hasaan.gateway@hasaan.com] 
+2015-12-26T15:19:10.7279582Z	Type=Information     	ID=1181    	  Subject=[test Sat, 26 Dec 2015 14:56:42 +0000] 
+2015-12-26T15:19:10.7279582Z	Type=Information     	ID=1181    	  HasRestrictions=[False] 
+2015-12-26T15:19:10.7279582Z	Type=Information     	ID=1181    	  AttachmentsSize=[0] 
+2015-12-26T15:19:10.7279582Z	Type=Information     	ID=1181    	Output: 
+2015-12-26T15:19:10.7279582Z	Type=Information     	ID=1181    	  MessageText=[] 
+2015-12-26T15:19:10.7279582Z	Type=Information     	ID=1181    	  DEMId=[emailPlain] 
+2015-12-26T15:19:10.7279582Z	Type=Information     	ID=1181    	  OutSecurityLabelId=[public] 
+2015-12-26T15:19:10.7279582Z	Type=Information     	ID=1181    	  Tags=[]
+2015-12-26T15:19:10.7279583Z	Type=Warning         	ID=1200    	[01d13feda308f40188389000.eml:Outbound/default:WIN-SCOF9BOCHV8UCeG00000001@WIN-SCOF9BOCHV8] An error occurred while processing message. Exception: [GatewayException(Retry,Store) : Internal mail delivery error => No such host is known].
+2015-12-26T15:22:04.2279584Z	Type=Information     	ID=1180    	[01d13fee0ec18f7f8406d701.eml:Outbound/default:WIN-SCOF9BOCHV8FRaq00000002@WIN-SCOF9BOCHV8] Start message processing. Message details: 
+2015-12-26T15:22:04.2279584Z	Type=Information     	ID=1180    	  Sender=[sender@swaks.ex2013.egress-test.com] 
+2015-12-26T15:22:04.2279584Z	Type=Information     	ID=1180    	  X-Sender=[sender@swaks.ex2013.egress-test.com] 
+2015-12-26T15:22:04.2279584Z	Type=Information     	ID=1180    	  From=[sender@swaks.ex2013.egress-test.com] 
+2015-12-26T15:22:04.2279584Z	Type=Information     	ID=1180    	  Recipients=[bob@user.com] 
+2015-12-26T15:22:04.2279584Z	Type=Information     	ID=1180    	  Subject=[test Sat, 26 Dec 2015 14:59:44 +0000] 
+2015-12-26T15:22:04.2279584Z	Type=Information     	ID=1180    	  X-$Switch=[] 
+2015-12-26T15:22:04.2279584Z	Type=Information     	ID=1180    	  Date=[2015-12-26T14:59:44.0000000+00:00] 
+2015-12-26T15:22:04.2279584Z	Type=Information     	ID=1180    	  Size=[500] 
+2015-12-26T15:22:04.2279584Z	Type=Information     	ID=1180    	  Attachments=[]
+2015-12-26T15:22:10.1969585Z	Type=Warning         	ID=1208    	Switch Server operation 'Policy synchronization' failed. SwitchID: [egress.gateway@hasaan.com?sender@swaks.ex2013.egress-test.com]. Exception: [InvalidCredentialException : The account sender@swaks.ex2013.egress-test.com is unknown or the password is invalid.]
+2015-12-26T15:22:10.3219586Z	Type=Information     	ID=1181    	[01d13fee0ec18f7f8406d701.eml:Outbound/default:WIN-SCOF9BOCHV8FRaq00000002@WIN-SCOF9BOCHV8] DEM processing using policy for SwitchID: [egress.gateway@hasaan.com]. Input: 
+2015-12-26T15:22:10.3219586Z	Type=Information     	ID=1181    	  X-$Switch=[] 
+2015-12-26T15:22:10.3219586Z	Type=Information     	ID=1181    	  InSecurityLabelID=[public] 
+2015-12-26T15:22:10.3219586Z	Type=Information     	ID=1181    	  Recipients=[bob@user.com] 
+2015-12-26T15:22:10.3219586Z	Type=Information     	ID=1181    	  Subject=[test Sat, 26 Dec 2015 14:59:44 +0000] 
+2015-12-26T15:22:10.3219586Z	Type=Information     	ID=1181    	  HasRestrictions=[False] 
+2015-12-26T15:22:10.3219586Z	Type=Information     	ID=1181    	  AttachmentsSize=[0] 
+2015-12-26T15:22:10.3219586Z	Type=Information     	ID=1181    	Output: 
+2015-12-26T15:22:10.3219586Z	Type=Information     	ID=1181    	  MessageText=[] 
+2015-12-26T15:22:10.3219586Z	Type=Information     	ID=1181    	  DEMId=[emailPlain] 
+2015-12-26T15:22:10.3219586Z	Type=Information     	ID=1181    	  OutSecurityLabelId=[public] 
+2015-12-26T15:22:10.3219586Z	Type=Information     	ID=1181    	  Tags=[]
+2015-12-26T15:22:10.3219587Z	Type=Warning         	ID=1200    	[01d13fee0ec18f7f8406d701.eml:Outbound/default:WIN-SCOF9BOCHV8FRaq00000002@WIN-SCOF9BOCHV8] An error occurred while processing message. Exception: [GatewayException(Retry,Store) : Internal mail delivery error => No such host is known].
+2015-12-26T15:28:17.8069588Z	Type=Information     	ID=1180    	[01d13fef0e42c38026269202.eml:Outbound/default:WIN-SCOF9BOCHV8bnVi00000003@WIN-SCOF9BOCHV8] Start message processing. Message details: 
+2015-12-26T15:28:17.8069588Z	Type=Information     	ID=1180    	  Sender=[hasaan.admin@hasaan.com] 
+2015-12-26T15:28:17.8069588Z	Type=Information     	ID=1180    	  X-Sender=[hasaan.admin@hasaan.com] 
+2015-12-26T15:28:17.8069588Z	Type=Information     	ID=1180    	  From=[hasaan.admin@hasaan.com] 
+2015-12-26T15:28:17.8069588Z	Type=Information     	ID=1180    	  Recipients=[hasaanausat@hotmail.com] 
+2015-12-26T15:28:17.8069588Z	Type=Information     	ID=1180    	  Subject=[Hello from tester  (sent 12/26/2015 3:06:52 PM)] 
+2015-12-26T15:28:17.8069588Z	Type=Information     	ID=1180    	  X-$Switch=[switchId="hasaan.admin@hasaan.com"; labelId="secureMail"; software="outlook plugin/2.31.0.222"] 
+2015-12-26T15:28:17.8069588Z	Type=Information     	ID=1180    	  Date=[2015-12-26T15:06:53.0000000+00:00] 
+2015-12-26T15:28:17.8069588Z	Type=Information     	ID=1180    	  Size=[1131] 
+2015-12-26T15:28:17.8069588Z	Type=Information     	ID=1180    	  Attachments=[]
+2015-12-26T15:28:29.6689589Z	Type=Information     	ID=1181    	[01d13fef0e42c38026269202.eml:Outbound/default:WIN-SCOF9BOCHV8bnVi00000003@WIN-SCOF9BOCHV8] DEM processing using policy for SwitchID: [hasaan.admin@hasaan.com]. Input: 
+2015-12-26T15:28:29.6689589Z	Type=Information     	ID=1181    	  X-$Switch=[switchId="hasaan.admin@hasaan.com"; labelId="secureMail"; software="outlook plugin/2.31.0.222"] 
+2015-12-26T15:28:29.6689589Z	Type=Information     	ID=1181    	  InSecurityLabelID=[secureMail] 
+2015-12-26T15:28:29.6689589Z	Type=Information     	ID=1181    	  Recipients=[hasaanausat@hotmail.com] 
+2015-12-26T15:28:29.6689589Z	Type=Information     	ID=1181    	  Subject=[Hello from tester  (sent 12/26/2015 3:06:52 PM)] 
+2015-12-26T15:28:29.6689589Z	Type=Information     	ID=1181    	  HasRestrictions=[False] 
+2015-12-26T15:28:29.6689589Z	Type=Information     	ID=1181    	  AttachmentsSize=[0] 
+2015-12-26T15:28:29.6689589Z	Type=Information     	ID=1181    	Output: 
+2015-12-26T15:28:29.6689589Z	Type=Information     	ID=1181    	  MessageText=[] 
+2015-12-26T15:28:29.6689589Z	Type=Information     	ID=1181    	  DEMId=[emailBody] 
+2015-12-26T15:28:29.6689589Z	Type=Information     	ID=1181    	  OutSecurityLabelId=[secureMail] 
+2015-12-26T15:28:29.6689589Z	Type=Information     	ID=1181    	  Tags=[]
+2015-12-26T15:28:29.8069590Z	Type=Warning         	ID=1200    	[01d13fef0e42c38026269202.eml:Outbound/default:WIN-SCOF9BOCHV8bnVi00000003@WIN-SCOF9BOCHV8] An error occurred while processing message. Exception: [GatewayException(Retry,Store) : Internal mail delivery error => No such host is known].
+2015-12-26T15:30:39.4629591Z	Type=Information     	ID=1180    	[01d13fef3ecac78beedb5803.eml:Outbound/default:WIN-SCOF9BOCHV8WuaY00000004@WIN-SCOF9BOCHV8] Start message processing. Message details: 
+2015-12-26T15:30:39.4629591Z	Type=Information     	ID=1180    	  Sender=[sender@swaks.ex2013.egress-test.com] 
+2015-12-26T15:30:39.4629591Z	Type=Information     	ID=1180    	  X-Sender=[sender@swaks.ex2013.egress-test.com] 
+2015-12-26T15:30:39.4629591Z	Type=Information     	ID=1180    	  From=[sender@swaks.ex2013.egress-test.com] 
+2015-12-26T15:30:39.4629591Z	Type=Information     	ID=1180    	  Recipients=[bob@user.com] 
+2015-12-26T15:30:39.4629591Z	Type=Information     	ID=1180    	  Subject=[test Sat, 26 Dec 2015 15:08:14 +0000] 
+2015-12-26T15:30:39.4629591Z	Type=Information     	ID=1180    	  X-$Switch=[] 
+2015-12-26T15:30:39.4629591Z	Type=Information     	ID=1180    	  Date=[2015-12-26T15:08:14.0000000+00:00] 
+2015-12-26T15:30:39.4629591Z	Type=Information     	ID=1180    	  Size=[500] 
+2015-12-26T15:30:39.4629591Z	Type=Information     	ID=1180    	  Attachments=[]
+2015-12-26T15:30:52.8699592Z	Type=Warning         	ID=1208    	Switch Server operation 'Policy synchronization' failed. SwitchID: [egress.gateway@hasaan.com?sender@swaks.ex2013.egress-test.com]. Exception: [InvalidCredentialException : The account sender@swaks.ex2013.egress-test.com is unknown or the password is invalid.]
+2015-12-26T15:30:53.0099593Z	Type=Information     	ID=1181    	[01d13fef3ecac78beedb5803.eml:Outbound/default:WIN-SCOF9BOCHV8WuaY00000004@WIN-SCOF9BOCHV8] DEM processing using policy for SwitchID: [egress.gateway@hasaan.com]. Input: 
+2015-12-26T15:30:53.0099593Z	Type=Information     	ID=1181    	  X-$Switch=[] 
+2015-12-26T15:30:53.0099593Z	Type=Information     	ID=1181    	  InSecurityLabelID=[public] 
+2015-12-26T15:30:53.0099593Z	Type=Information     	ID=1181    	  Recipients=[bob@user.com] 
+2015-12-26T15:30:53.0099593Z	Type=Information     	ID=1181    	  Subject=[test Sat, 26 Dec 2015 15:08:14 +0000] 
+2015-12-26T15:30:53.0099593Z	Type=Information     	ID=1181    	  HasRestrictions=[False] 
+2015-12-26T15:30:53.0099593Z	Type=Information     	ID=1181    	  AttachmentsSize=[0] 
+2015-12-26T15:30:53.0099593Z	Type=Information     	ID=1181    	Output: 
+2015-12-26T15:30:53.0099593Z	Type=Information     	ID=1181    	  MessageText=[] 
+2015-12-26T15:30:53.0099593Z	Type=Information     	ID=1181    	  DEMId=[emailPlain] 
+2015-12-26T15:30:53.0099593Z	Type=Information     	ID=1181    	  OutSecurityLabelId=[public] 
+2015-12-26T15:30:53.0099593Z	Type=Information     	ID=1181    	  Tags=[]
+2015-12-26T15:30:53.0099594Z	Type=Warning         	ID=1200    	[01d13fef3ecac78beedb5803.eml:Outbound/default:WIN-SCOF9BOCHV8WuaY00000004@WIN-SCOF9BOCHV8] An error occurred while processing message. Exception: [GatewayException(Retry,Store) : Internal mail delivery error => No such host is known].
+2015-12-26T15:34:08.9949595Z	Type=Information     	ID=1180    	[01d13fefe89c1bdcd8a13104.eml:Outbound/default:WIN-SCOF9BOCHV88WVA00000005@WIN-SCOF9BOCHV8] Start message processing. Message details: 
+2015-12-26T15:34:08.9949595Z	Type=Information     	ID=1180    	  Sender=[hasaan.admin@hasaan.com] 
+2015-12-26T15:34:08.9949595Z	Type=Information     	ID=1180    	  X-Sender=[hasaan.admin@hasaan.com] 
+2015-12-26T15:34:08.9949595Z	Type=Information     	ID=1180    	  From=[hasaan.admin@hasaan.com] 
+2015-12-26T15:34:08.9949595Z	Type=Information     	ID=1180    	  Recipients=[hasaanausat@hotmail.com] 
+2015-12-26T15:34:08.9949595Z	Type=Information     	ID=1180    	  Subject=[Hello from tester  (sent 12/26/2015 3:12:59 PM)] 
+2015-12-26T15:34:08.9949595Z	Type=Information     	ID=1180    	  X-$Switch=[switchId="hasaan.admin@hasaan.com"; labelId="secureMail"; software="outlook plugin/2.31.0.222"] 
+2015-12-26T15:34:08.9949595Z	Type=Information     	ID=1180    	  Date=[2015-12-26T15:13:00.0000000+00:00] 
+2015-12-26T15:34:08.9949595Z	Type=Information     	ID=1180    	  Size=[1131] 
