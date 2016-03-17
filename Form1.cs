@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -59,8 +59,10 @@ namespace WindowsFormsApplication1
                        string tempType = tempLogs.Substring(34, 11);
                        string tempId = tempLogs.Substring(54, 4);
                        string tempDetails = tempLogs.Substring(63, lastChar);
-
-                       dataGridView1.Rows.Add(tempDate, tempTime, tempType, tempId, tempDetails); 
+                       
+                       if (tempID == "1180"){
+                           dataGridView1.Rows.Add(tempDate, tempTime, tempType, tempId, tempDetails); 
+                       }
                    } 
             }
         }
