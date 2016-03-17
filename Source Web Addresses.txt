@@ -1,1 +1,2 @@
 http://stackoverflow.com/questions/2242564/file-count-from-a-folder
+https://msdn.microsoft.com/en-us/library/wz42302f%28v=vs.110%29.aspx
