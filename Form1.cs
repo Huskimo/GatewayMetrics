@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+//using System.Collections.Generic;
 
 namespace WindowsFormsApplication1
 {
@@ -34,9 +35,15 @@ namespace WindowsFormsApplication1
                              select doc).Count();
 
             string[] dirs = Directory.GetFiles(@"C:\\Users\\hasaan.ausat\\Desktop\\Logs");
-            
-	    //Saving the details' from each block of 1180 
-	    list<string> tempBlockDetails = new list<string>();
+
+            //Saving the details' from each block of 1180 
+            //List<string> tempBlockDetails = new List<string>();
+            String tempBlockDetails = "";
+            String tempDate = "";
+            String tempTime = "";
+            String tempId = "";
+            String tempType = "";
+            String tempDetails = "";
 
             for (int j = 0; j < fileCount; j++)
             {
@@ -45,8 +52,8 @@ namespace WindowsFormsApplication1
 
                 //getting line count of the text file
                 int logLineCount = File.ReadLines(dirs[j]).Count();
-                
-                
+
+
                 for (int i = 0; i < logLineCount; i++)
                 {
                     //saving text from file to variable
@@ -57,19 +64,26 @@ namespace WindowsFormsApplication1
                     int lastChar = logLength - 63;
 
                     //assigning substrings to temp variables
-                    string tempDate = tempLogs.Substring(0, 10);
-                    string tempTime = tempLogs.Substring(11, 8);
-                    string tempType = tempLogs.Substring(34, 11);
-                    string tempId = tempLogs.Substring(54, 4);
-                    string tempDetails = tempLogs.Substring(63, lastChar);
+                    tempDate = tempLogs.Substring(0, 10);
+                    tempTime = tempLogs.Substring(11, 8);
+                    tempType = tempLogs.Substring(34, 11);
+                    tempId = tempLogs.Substring(54, 4);
+                    tempDetails = tempLogs.Substring(63, lastChar);
 
-                    if (tempId == "1180"){
-                        dataGridView1.Rows.Add(tempDate, tempTime, tempType, tempId, tempDetails); 
-			tempBlockDetails.Add(tempDetails);
+                    if (tempId == "1180")
+                    {
+
+                        tempBlockDetails = (tempBlockDetails + tempDetails);
+                        
+                        // MessageBox.Show(tempBlockDetails);
+                        //tempBlockDetails.Add(tempDetails);
+                        //MessageBox.Show(tempDetails);
                     } else {
                         break;
                     }
-               } 
+                   
+                }
+                dataGridView1.Rows.Add(tempDate, tempTime, tempType, tempId, tempBlockDetails);
             }
         }
     }
