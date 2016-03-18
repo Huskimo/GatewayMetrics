@@ -42,7 +42,6 @@ namespace WindowsFormsApplication1
             String tempId = "";
             String tempType = "";
             String tempDetails = "";
-            //String tempEmailId = "";
             
             String tempBlockDetails = "";
 
@@ -77,24 +76,29 @@ namespace WindowsFormsApplication1
                     tempId = tempLogs.Substring(54, 4);
                     tempDetails = tempLogs.Substring(63, lastChar);
 
+                    //creating log object and pushing it onto the logList
                     log tempLogObject = new log { date = tempDate, time = tempTime, type = tempType, id = tempId, details = tempDetails };
                     logList.Insert(0, tempLogObject);
                     
+                    //ensuring only specific ID's are searched for and displayed
                     if (tempId == "1180" || tempId == "1181" || tempId == "1112")
                     {
+                        //check if ID is the same as the last
                         if (logList.Count == 1 || logList[0].id == logList[1].id)
                         {
+                            //if so push on the list as objects are part of group
                             concatDetails.Insert(0, tempLogObject);
-                            //tempBlockDetails = (tempBlockDetails + tempDetails);
-                            //dataGridView1.Rows.Add(tempDate, tempTime, tempType, tempId, tempDetails);
+                         
                         } else {
+                            //if not new group created
                             concatDetails.Insert(0, tempLogObject);
-                            //run concat function.
+                            //previous group has finished - concats all the details
                             for (int k = concatDetails.Count; k > 0; k--) {
                                 tempBlockDetails = tempBlockDetails + concatDetails[k-1].details;                                
                             }
+                            //display in the grid
                             dataGridView1.Rows.Add(concatDetails[0].date, concatDetails[0].time, concatDetails[0].type, concatDetails[0].id, tempBlockDetails);
-                            //MessageBox.Show(tempBlockDetails);
+                            //clear temp variables for next group
                             tempBlockDetails = "";
                             concatDetails.Clear();
                         }
