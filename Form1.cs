@@ -43,6 +43,7 @@ namespace WindowsFormsApplication1
                 //getting line count of the text file
                 int logLineCount = File.ReadLines(dirs[j]).Count();
                 
+                outerloop:
                 for (int i = 0; i < logLineCount; i++)
                 {
                     //saving text from file to variable
@@ -62,7 +63,7 @@ namespace WindowsFormsApplication1
                     if (tempID == "1180"){
                         dataGridView1.Rows.Add(tempDate, tempTime, tempType, tempId, tempDetails); 
                     } else {
-                        break;
+                        break outerloop;
                     }
                } 
             }
