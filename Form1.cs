@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -43,7 +43,7 @@ namespace WindowsFormsApplication1
                 //getting line count of the text file
                 int logLineCount = File.ReadLines(dirs[j]).Count();
                 
-                outerloop:
+                
                 for (int i = 0; i < logLineCount; i++)
                 {
                     //saving text from file to variable
@@ -60,10 +60,10 @@ namespace WindowsFormsApplication1
                     string tempId = tempLogs.Substring(54, 4);
                     string tempDetails = tempLogs.Substring(63, lastChar);
 
-                    if (tempID == "1180"){
+                    if (tempId == "1180"){
                         dataGridView1.Rows.Add(tempDate, tempTime, tempType, tempId, tempDetails); 
                     } else {
-                        break outerloop;
+                        break;
                     }
                } 
             }
