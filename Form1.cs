@@ -35,6 +35,9 @@ namespace WindowsFormsApplication1
 
             string[] dirs = Directory.GetFiles(@"C:\\Users\\hasaan.ausat\\Desktop\\Logs");
             
+	    //Saving the details' from each block of 1180 
+	    list<string> tempBlockDetails = new list<string>();
+
             for (int j = 0; j < fileCount; j++)
             {
                 //reading in from text file
@@ -62,6 +65,7 @@ namespace WindowsFormsApplication1
 
                     if (tempId == "1180"){
                         dataGridView1.Rows.Add(tempDate, tempTime, tempType, tempId, tempDetails); 
+			tempBlockDetails.Add(tempDetails);
                     } else {
                         break;
                     }
