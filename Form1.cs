@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -77,20 +77,17 @@ namespace WindowsFormsApplication1
                     tempDetails = tempLogs.Substring(63, lastChar);
 
 
-                   if (logList.Count == 0 || tempId == logList[0].id)
+                   if (tempId == "1180" || tempId == "1181" || tempId == "1112")
                    {
-
-                        if (tempId == "1180" || tempId == "1181" || tempId == "1112")
+                        log tempLogObject = new log { date = tempDate, time = tempTime, id = tempId, details = tempDetails };
+                        logList.Insert(0, tempLogObject);
+                        if (logList.Count == 0 || logList[0].id == logList[1].id)
                         {
                             //Creating global string w/ temp details concatted together
                             tempBlockDetails = (tempBlockDetails + tempDetails);
-                            log tempLogObject = new log { date = tempDate, time = tempTime, id = tempId, details = tempDetails };
-                            logList.Insert(0, tempLogObject);
+                                                       
                             dataGridView1.Rows.Add(tempDate, tempTime, tempType, tempId, tempDetails);
                         }
-                        /*else {
-                            break;
-                        }*/
                     }
                 }
             }
