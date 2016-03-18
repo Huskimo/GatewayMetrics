@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -48,7 +48,7 @@ namespace WindowsFormsApplication1
 
             List<log> logList = new List<log>();
             
-            List<string> concatDetails = new List<string>();
+            List<log> concatDetails = new List<log>();
              
 
             //For every file do..
@@ -77,22 +77,26 @@ namespace WindowsFormsApplication1
                     tempId = tempLogs.Substring(54, 4);
                     tempDetails = tempLogs.Substring(63, lastChar);
 
-                    log tempLogObject = new log { date = tempDate, time = tempTime, id = tempId, details = tempDetails };
+                    log tempLogObject = new log { date = tempDate, time = tempTime, type = tempType, id = tempId, details = tempDetails };
                     logList.Insert(0, tempLogObject);
                     
                     if (tempId == "1180" || tempId == "1181" || tempId == "1112")
                     {
                         if (logList.Count == 1 || logList[0].id == logList[1].id)
                         {
-                            concatDetails.insert(0,tempLogObject);                           
-                            
+                            concatDetails.Insert(0, tempLogObject);
                             //tempBlockDetails = (tempBlockDetails + tempDetails);
                             //dataGridView1.Rows.Add(tempDate, tempTime, tempType, tempId, tempDetails);
                         } else {
+                            concatDetails.Insert(0, tempLogObject);
                             //run concat function.
-                            for (int k = 0; k < concatDetails.Count ;k++){
-                                tempBlockDetails = tempBlockDetails + concatDetails[k].details;                                
+                            for (int k = concatDetails.Count; k > 0; k--) {
+                                tempBlockDetails = tempBlockDetails + concatDetails[k-1].details;                                
                             }
+                            dataGridView1.Rows.Add(concatDetails[0].date, concatDetails[0].time, concatDetails[0].type, concatDetails[0].id, tempBlockDetails);
+                            //MessageBox.Show(tempBlockDetails);
+                            tempBlockDetails = "";
+                            concatDetails.Clear();
                         }
                     }
                 }
