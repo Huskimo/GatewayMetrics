@@ -57,22 +57,22 @@ namespace WindowsFormsApplication1
                 //On every line
                 for (int i = 0; i < logLineCount; i++)
                 {
+                    //getting line from file to variable
+                    string tempLogs = file.ReadLine();
+
+                    //getting length of each line
+                    int logLength = tempLogs.Length;
+                    int lastChar = logLength - 63;
+
+                    //assigning substrings to temp variables
+                    tempDate = tempLogs.Substring(0, 10);
+                    tempTime = tempLogs.Substring(11, 8);
+                    tempType = tempLogs.Substring(34, 11);
+                    tempId = tempLogs.Substring(54, 4);
+                    tempDetails = tempLogs.Substring(63, lastChar);
+                    
                     if (tempId == "1180")
                     {
-                        //getting line from file to variable
-                        string tempLogs = file.ReadLine();
-
-                        //getting length of each line
-                        int logLength = tempLogs.Length;
-                        int lastChar = logLength - 63;
-
-                        //assigning substrings to temp variables
-                        tempDate = tempLogs.Substring(0, 10);
-                        tempTime = tempLogs.Substring(11, 8);
-                        tempType = tempLogs.Substring(34, 11);
-                        tempId = tempLogs.Substring(54, 4);
-                        tempDetails = tempLogs.Substring(63, lastChar);
-                        
                         //Creating global string w/ temp details concatted together
                         tempBlockDetails = (tempBlockDetails + tempDetails);
                         
