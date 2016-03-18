@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
-//using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace WindowsFormsApplication1
 {
@@ -42,8 +42,13 @@ namespace WindowsFormsApplication1
             String tempId = "";
             String tempType = "";
             String tempDetails = "";
+            //String tempEmailId = "";
             
             String tempBlockDetails = "";
+
+            List<log> logList = new List<log>();
+            List<string> concatDetails = new List<string>();
+           
 
             //For every file do..
             for (int j = 0; j < fileCount; j++)
@@ -70,15 +75,22 @@ namespace WindowsFormsApplication1
                     tempType = tempLogs.Substring(34, 11);
                     tempId = tempLogs.Substring(54, 4);
                     tempDetails = tempLogs.Substring(63, lastChar);
-                    
-                    if (tempId == "1180")
-                    {
-                        //Creating global string w/ temp details concatted together
-                        tempBlockDetails = (tempBlockDetails + tempDetails);
-                        
-                        dataGridView1.Rows.Add(tempDate, tempTime, tempType, tempId, tempDetails);
-                    } else {
-                        break;
+
+
+                   if (logList.Count == 0 || tempId == logList[0].id)
+                   {
+
+                        if (tempId == "1180" || tempId == "1181" || tempId == "1112")
+                        {
+                            //Creating global string w/ temp details concatted together
+                            tempBlockDetails = (tempBlockDetails + tempDetails);
+                            log tempLogObject = new log { date = tempDate, time = tempTime, id = tempId, details = tempDetails };
+                            logList.Insert(0, tempLogObject);
+                            dataGridView1.Rows.Add(tempDate, tempTime, tempType, tempId, tempDetails);
+                        }
+                        /*else {
+                            break;
+                        }*/
                     }
                 }
             }
