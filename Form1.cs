@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -81,7 +81,7 @@ namespace WindowsFormsApplication1
                    {
                         log tempLogObject = new log { date = tempDate, time = tempTime, id = tempId, details = tempDetails };
                         logList.Insert(0, tempLogObject);
-                        if (logList.Count == 0 || logList[0].id == logList[1].id)
+                        if (logList.Count == 1 || logList[0].id == logList[1].id)
                         {
                             //Creating global string w/ temp details concatted together
                             tempBlockDetails = (tempBlockDetails + tempDetails);
