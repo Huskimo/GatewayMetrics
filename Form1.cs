@@ -37,33 +37,34 @@ namespace WindowsFormsApplication1
             
             for (int j = 0; j < fileCount; j++)
             {
-                  //reading in from text file
-                   System.IO.StreamReader file = new System.IO.StreamReader(dirs[j]);
+                //reading in from text file
+                System.IO.StreamReader file = new System.IO.StreamReader(dirs[j]);
 
-                   //getting line count of the text file
-                   int logLineCount = File.ReadLines(dirs[j]).Count();
+                //getting line count of the text file
+                int logLineCount = File.ReadLines(dirs[j]).Count();
+                
+                for (int i = 0; i < logLineCount; i++)
+                {
+                    //saving text from file to variable
+                    string tempLogs = file.ReadLine();
 
-                   for (int i = 0; i < logLineCount; i++)
-                   {
+                    //getting length of each line
+                    int logLength = tempLogs.Length;
+                    int lastChar = logLength - 63;
 
-                       //saving text from file to variable
-                       string tempLogs = file.ReadLine();
+                    //assigning substrings to temp variables
+                    string tempDate = tempLogs.Substring(0, 10);
+                    string tempTime = tempLogs.Substring(11, 8);
+                    string tempType = tempLogs.Substring(34, 11);
+                    string tempId = tempLogs.Substring(54, 4);
+                    string tempDetails = tempLogs.Substring(63, lastChar);
 
-                       //getting length of each line
-                       int logLength = tempLogs.Length;
-                       int lastChar = logLength - 63;
-
-                       //assigning substrings to temp variables
-                       string tempDate = tempLogs.Substring(0, 10);
-                       string tempTime = tempLogs.Substring(11, 8);
-                       string tempType = tempLogs.Substring(34, 11);
-                       string tempId = tempLogs.Substring(54, 4);
-                       string tempDetails = tempLogs.Substring(63, lastChar);
-                       
-                       if (tempID == "1180"){
-                           dataGridView1.Rows.Add(tempDate, tempTime, tempType, tempId, tempDetails); 
-                       }
-                   } 
+                    if (tempID == "1180"){
+                        dataGridView1.Rows.Add(tempDate, tempTime, tempType, tempId, tempDetails); 
+                    } else {
+                        break;
+                    }
+               } 
             }
         }
     }
