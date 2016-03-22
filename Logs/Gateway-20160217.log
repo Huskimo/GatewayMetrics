@@ -1,0 +1,7 @@
+2016-02-17T11:06:25.7534039Z	Type=Start           	ID=29902   	[esdxgateway] started. Details: [ 
+2016-02-17T11:06:25.7534039Z	Type=Start           	ID=29902   	  GatewayWebService => disabled 
+2016-02-17T11:06:25.7534039Z	Type=Start           	ID=29902   	  GatewayListener (4.50.14617.0) => started 
+2016-02-17T11:06:25.7534039Z	Type=Start           	ID=29902   	  GatewayScheduler (4.50.14617.0) => started 
+2016-02-17T11:06:25.7534039Z	Type=Start           	ID=29902   	]
+2016-02-17T11:07:32.5354040Z	Type=Information     	ID=1253    	Statistics: [badmailSize=0; computerName=WIN-SCOF9BOCHV8; cpu=14; freeC="30973/60.6%"; freeRamMB=3557; lastSentAt=; lastSyncAt=; queueSize=0; retrySize=0; sent=0; startedAt="Wed, 17 Feb 2016 11:07:31 GMT"; version="4.50.14617.0"; wsetKB=45852]
+2016-02-17T11:07:32.5354041Z	Type=Information     	ID=30100   	Task [LogStatistics] completed successfully.

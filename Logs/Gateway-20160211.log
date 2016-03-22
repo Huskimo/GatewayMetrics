@@ -1,0 +1,181 @@
+2016-02-11T14:26:10.8108864Z	Type=Start           	ID=29902   	[esdxgateway] started. Details: [ 
+2016-02-11T14:26:10.8108864Z	Type=Start           	ID=29902   	  GatewayWebService => disabled 
+2016-02-11T14:26:10.8108864Z	Type=Start           	ID=29902   	  GatewayListener (4.50.14617.0) => started 
+2016-02-11T14:26:10.8108864Z	Type=Start           	ID=29902   	  GatewayScheduler (4.50.14617.0) => started 
+2016-02-11T14:26:10.8108864Z	Type=Start           	ID=29902   	]
+2016-02-11T14:27:23.6168865Z	Type=Information     	ID=1253    	Statistics: [badmailSize=0; computerName=WIN-SCOF9BOCHV8; cpu=60; freeC="30963/60.6%"; freeRamMB=3438; lastSentAt=; lastSyncAt=; queueSize=0; retrySize=0; sent=0; startedAt="Thu, 11 Feb 2016 14:27:22 GMT"; version="4.50.14617.0"; wsetKB=45616]
+2016-02-11T14:27:23.6208866Z	Type=Information     	ID=30100   	Task [LogStatistics] completed successfully.
+2016-02-11T14:39:47.6148867Z	Type=Information     	ID=1180    	[01d164da0d73b7980e76f900.eml:Outbound/default:WIN-SCOF9BOCHV87nWY00000001@WIN-SCOF9BOCHV8] Start message processing. Message details: 
+2016-02-11T14:39:47.6148867Z	Type=Information     	ID=1180    	  Sender=[sender@swaks.ex2013.egress-test.com] 
+2016-02-11T14:39:47.6148867Z	Type=Information     	ID=1180    	  X-Sender=[sender@swaks.ex2013.egress-test.com] 
+2016-02-11T14:39:47.6148867Z	Type=Information     	ID=1180    	  From=[sender@swaks.ex2013.egress-test.com] 
+2016-02-11T14:39:47.6148867Z	Type=Information     	ID=1180    	  Recipients=[main@ubuntu.com] 
+2016-02-11T14:39:47.6148867Z	Type=Information     	ID=1180    	  Subject=[test Thu, 11 Feb 2016 14:39:45 +0000] 
+2016-02-11T14:39:47.6148867Z	Type=Information     	ID=1180    	  X-$Switch=[] 
+2016-02-11T14:39:47.6148867Z	Type=Information     	ID=1180    	  Date=[2016-02-11T14:39:45.0000000+00:00] 
+2016-02-11T14:39:47.6148867Z	Type=Information     	ID=1180    	  Size=[506] 
+2016-02-11T14:39:47.6148867Z	Type=Information     	ID=1180    	  Attachments=[]
+2016-02-11T14:40:14.9108868Z	Type=Warning         	ID=1208    	Switch Server operation 'Policy synchronization' failed. SwitchID: [egress.gateway@hasaan.com?sender@swaks.ex2013.egress-test.com]. Exception: [InvalidCredentialException : The account sender@swaks.ex2013.egress-test.com is unknown or the password is invalid.]
+2016-02-11T14:40:16.8328869Z	Type=Information     	ID=1181    	[01d164da0d73b7980e76f900.eml:Outbound/default:WIN-SCOF9BOCHV87nWY00000001@WIN-SCOF9BOCHV8] DEM processing using policy for SwitchID: [egress.gateway@hasaan.com]. Input: 
+2016-02-11T14:40:16.8328869Z	Type=Information     	ID=1181    	  X-$Switch=[] 
+2016-02-11T14:40:16.8328869Z	Type=Information     	ID=1181    	  InSecurityLabelID=[public] 
+2016-02-11T14:40:16.8328869Z	Type=Information     	ID=1181    	  Recipients=[main@ubuntu.com] 
+2016-02-11T14:40:16.8328869Z	Type=Information     	ID=1181    	  Subject=[test Thu, 11 Feb 2016 14:39:45 +0000] 
+2016-02-11T14:40:16.8328869Z	Type=Information     	ID=1181    	  HasRestrictions=[False] 
+2016-02-11T14:40:16.8328869Z	Type=Information     	ID=1181    	  AttachmentsSize=[0] 
+2016-02-11T14:40:16.8328869Z	Type=Information     	ID=1181    	Output: 
+2016-02-11T14:40:16.8328869Z	Type=Information     	ID=1181    	  MessageText=[] 
+2016-02-11T14:40:16.8328869Z	Type=Information     	ID=1181    	  DEMId=[emailPlain] 
+2016-02-11T14:40:16.8328869Z	Type=Information     	ID=1181    	  OutSecurityLabelId=[public] 
+2016-02-11T14:40:16.8328869Z	Type=Information     	ID=1181    	  Tags=[]
+2016-02-11T14:40:17.1618870Z	Type=Information     	ID=1113    	[01d164da0d73b7980e76f900.eml:Outbound/default:WIN-SCOF9BOCHV87nWY00000001@WIN-SCOF9BOCHV8] Outbound message sent to recipient without encryption.
+2016-02-11T14:46:01.5218871Z	Type=Information     	ID=1180    	[01d164daed29320b3a9ba601.eml:Outbound/default:WIN-SCOF9BOCHV8FRaq00000002@WIN-SCOF9BOCHV8] Start message processing. Message details: 
+2016-02-11T14:46:01.5218871Z	Type=Information     	ID=1180    	  Sender=[sender@swaks.ex2013.egress-test.com] 
+2016-02-11T14:46:01.5218871Z	Type=Information     	ID=1180    	  X-Sender=[sender@swaks.ex2013.egress-test.com] 
+2016-02-11T14:46:01.5218871Z	Type=Information     	ID=1180    	  From=[sender@swaks.ex2013.egress-test.com] 
+2016-02-11T14:46:01.5218871Z	Type=Information     	ID=1180    	  Recipients=[main@ubuntu.com] 
+2016-02-11T14:46:01.5218871Z	Type=Information     	ID=1180    	  Subject=[test Thu, 11 Feb 2016 14:46:01 +0000] 
+2016-02-11T14:46:01.5218871Z	Type=Information     	ID=1180    	  X-$Switch=[] 
+2016-02-11T14:46:01.5218871Z	Type=Information     	ID=1180    	  Date=[2016-02-11T14:46:01.0000000+00:00] 
+2016-02-11T14:46:01.5218871Z	Type=Information     	ID=1180    	  Size=[506] 
+2016-02-11T14:46:01.5218871Z	Type=Information     	ID=1180    	  Attachments=[]
+2016-02-11T14:46:25.0368872Z	Type=Warning         	ID=1208    	Switch Server operation 'Policy synchronization' failed. SwitchID: [egress.gateway@hasaan.com?sender@swaks.ex2013.egress-test.com]. Exception: [InvalidCredentialException : The account sender@swaks.ex2013.egress-test.com is unknown or the password is invalid.]
+2016-02-11T14:46:25.2398873Z	Type=Information     	ID=1181    	[01d164daed29320b3a9ba601.eml:Outbound/default:WIN-SCOF9BOCHV8FRaq00000002@WIN-SCOF9BOCHV8] DEM processing using policy for SwitchID: [egress.gateway@hasaan.com]. Input: 
+2016-02-11T14:46:25.2398873Z	Type=Information     	ID=1181    	  X-$Switch=[] 
+2016-02-11T14:46:25.2398873Z	Type=Information     	ID=1181    	  InSecurityLabelID=[public] 
+2016-02-11T14:46:25.2398873Z	Type=Information     	ID=1181    	  Recipients=[main@ubuntu.com] 
+2016-02-11T14:46:25.2398873Z	Type=Information     	ID=1181    	  Subject=[test Thu, 11 Feb 2016 14:46:01 +0000] 
+2016-02-11T14:46:25.2398873Z	Type=Information     	ID=1181    	  HasRestrictions=[False] 
+2016-02-11T14:46:25.2398873Z	Type=Information     	ID=1181    	  AttachmentsSize=[0] 
+2016-02-11T14:46:25.2398873Z	Type=Information     	ID=1181    	Output: 
+2016-02-11T14:46:25.2398873Z	Type=Information     	ID=1181    	  MessageText=[] 
+2016-02-11T14:46:25.2398873Z	Type=Information     	ID=1181    	  DEMId=[emailPlain] 
+2016-02-11T14:46:25.2398873Z	Type=Information     	ID=1181    	  OutSecurityLabelId=[public] 
+2016-02-11T14:46:25.2398873Z	Type=Information     	ID=1181    	  Tags=[]
+2016-02-11T14:46:25.2398874Z	Type=Information     	ID=1113    	[01d164daed29320b3a9ba601.eml:Outbound/default:WIN-SCOF9BOCHV8FRaq00000002@WIN-SCOF9BOCHV8] Outbound message sent to recipient without encryption.
+2016-02-11T14:48:49.0998875Z	Type=Information     	ID=1180    	[01d164db5105440900297002.eml:Outbound/default:WIN-SCOF9BOCHV8dGqE00000003@WIN-SCOF9BOCHV8] Start message processing. Message details: 
+2016-02-11T14:48:49.0998875Z	Type=Information     	ID=1180    	  Sender=[sender@swaks.ex2013.egress-test.com] 
+2016-02-11T14:48:49.0998875Z	Type=Information     	ID=1180    	  X-Sender=[sender@swaks.ex2013.egress-test.com] 
+2016-02-11T14:48:49.0998875Z	Type=Information     	ID=1180    	  From=[sender@swaks.ex2013.egress-test.com] 
+2016-02-11T14:48:49.0998875Z	Type=Information     	ID=1180    	  Recipients=[main@ubuntu.com] 
+2016-02-11T14:48:49.0998875Z	Type=Information     	ID=1180    	  Subject=[test Thu, 11 Feb 2016 14:48:49 +0000] 
+2016-02-11T14:48:49.0998875Z	Type=Information     	ID=1180    	  X-$Switch=[secureEmail] 
+2016-02-11T14:48:49.0998875Z	Type=Information     	ID=1180    	  Date=[2016-02-11T14:48:49.0000000+00:00] 
+2016-02-11T14:48:49.0998875Z	Type=Information     	ID=1180    	  Size=[529] 
+2016-02-11T14:48:49.0998875Z	Type=Information     	ID=1180    	  Attachments=[]
+2016-02-11T14:48:54.0688876Z	Type=Warning         	ID=1208    	Switch Server operation 'Policy synchronization' failed. SwitchID: [egress.gateway@hasaan.com?sender@swaks.ex2013.egress-test.com]. Exception: [InvalidCredentialException : The account sender@swaks.ex2013.egress-test.com is unknown or the password is invalid.]
+2016-02-11T14:48:54.2738877Z	Type=Information     	ID=1181    	[01d164db5105440900297002.eml:Outbound/default:WIN-SCOF9BOCHV8dGqE00000003@WIN-SCOF9BOCHV8] DEM processing using policy for SwitchID: [egress.gateway@hasaan.com]. Input: 
+2016-02-11T14:48:54.2738877Z	Type=Information     	ID=1181    	  X-$Switch=[secureEmail] 
+2016-02-11T14:48:54.2738877Z	Type=Information     	ID=1181    	  InSecurityLabelID=[secureEmail] 
+2016-02-11T14:48:54.2738877Z	Type=Information     	ID=1181    	  Recipients=[main@ubuntu.com] 
+2016-02-11T14:48:54.2738877Z	Type=Information     	ID=1181    	  Subject=[test Thu, 11 Feb 2016 14:48:49 +0000] 
+2016-02-11T14:48:54.2738877Z	Type=Information     	ID=1181    	  HasRestrictions=[False] 
+2016-02-11T14:48:54.2738877Z	Type=Information     	ID=1181    	  AttachmentsSize=[0] 
+2016-02-11T14:48:54.2738877Z	Type=Information     	ID=1181    	Output: 
+2016-02-11T14:48:54.2738877Z	Type=Information     	ID=1181    	  MessageText=[] 
+2016-02-11T14:48:54.2738877Z	Type=Information     	ID=1181    	  DEMId=[emailBody] 
+2016-02-11T14:48:54.2738877Z	Type=Information     	ID=1181    	  OutSecurityLabelId=[secureEmail] 
+2016-02-11T14:48:54.2738877Z	Type=Information     	ID=1181    	  Tags=[]
+2016-02-11T14:48:55.9278878Z	Type=Information     	ID=1112    	[01d164db5105440900297002.eml:Outbound/default:WIN-SCOF9BOCHV8dGqE00000003@WIN-SCOF9BOCHV8] Outbound message encrypted and sent to recipient. 
+2016-02-11T14:48:55.9278878Z	Type=Information     	ID=1112    	  DEM Type      = [EmailBody] 
+2016-02-11T14:48:55.9278878Z	Type=Information     	ID=1112    	  DEM ID        = [emailBody] 
+2016-02-11T14:48:55.9278878Z	Type=Information     	ID=1112    	  Package ID    = [5a02b6c2dc5349deb3758a1b873b3dc2#c290afdd455743b0b5145e2aca78742d@sdx.egress.com] 
+2016-02-11T14:48:55.9278878Z	Type=Information     	ID=1112    	  Package label = [EG-160211-144854]
+2016-02-11T14:52:29.5848879Z	Type=Information     	ID=1180    	[01d164dbd477bb1731584b03.eml:Outbound/default:WIN-SCOF9BOCHV8bC8w00000004@WIN-SCOF9BOCHV8] Start message processing. Message details: 
+2016-02-11T14:52:29.5848879Z	Type=Information     	ID=1180    	  Sender=[sender@swaks.ex2013.egress-test.com] 
+2016-02-11T14:52:29.5848879Z	Type=Information     	ID=1180    	  X-Sender=[sender@swaks.ex2013.egress-test.com] 
+2016-02-11T14:52:29.5848879Z	Type=Information     	ID=1180    	  From=[sender@swaks.ex2013.egress-test.com] 
+2016-02-11T14:52:29.5848879Z	Type=Information     	ID=1180    	  Recipients=[main@ubuntu.com] 
+2016-02-11T14:52:29.5848879Z	Type=Information     	ID=1180    	  Subject=[test Thu, 11 Feb 2016 14:52:30 +0000] 
+2016-02-11T14:52:29.5848879Z	Type=Information     	ID=1180    	  X-$Switch=[secureEmail] 
+2016-02-11T14:52:29.5848879Z	Type=Information     	ID=1180    	  Date=[2016-02-11T14:52:30.0000000+00:00] 
+2016-02-11T14:52:29.5848879Z	Type=Information     	ID=1180    	  Size=[529] 
+2016-02-11T14:52:29.5848879Z	Type=Information     	ID=1180    	  Attachments=[]
+2016-02-11T14:52:55.8658880Z	Type=Warning         	ID=1208    	Switch Server operation 'Policy synchronization' failed. SwitchID: [egress.gateway@hasaan.com?sender@swaks.ex2013.egress-test.com]. Exception: [InvalidCredentialException : The account sender@swaks.ex2013.egress-test.com is unknown or the password is invalid.]
+2016-02-11T14:52:56.2568881Z	Type=Information     	ID=1181    	[01d164dbd477bb1731584b03.eml:Outbound/default:WIN-SCOF9BOCHV8bC8w00000004@WIN-SCOF9BOCHV8] DEM processing using policy for SwitchID: [egress.gateway@hasaan.com]. Input: 
+2016-02-11T14:52:56.2568881Z	Type=Information     	ID=1181    	  X-$Switch=[secureEmail] 
+2016-02-11T14:52:56.2568881Z	Type=Information     	ID=1181    	  InSecurityLabelID=[secureEmail] 
+2016-02-11T14:52:56.2568881Z	Type=Information     	ID=1181    	  Recipients=[main@ubuntu.com] 
+2016-02-11T14:52:56.2568881Z	Type=Information     	ID=1181    	  Subject=[test Thu, 11 Feb 2016 14:52:30 +0000] 
+2016-02-11T14:52:56.2568881Z	Type=Information     	ID=1181    	  HasRestrictions=[False] 
+2016-02-11T14:52:56.2568881Z	Type=Information     	ID=1181    	  AttachmentsSize=[0] 
+2016-02-11T14:52:56.2568881Z	Type=Information     	ID=1181    	Output: 
+2016-02-11T14:52:56.2568881Z	Type=Information     	ID=1181    	  MessageText=[] 
+2016-02-11T14:52:56.2568881Z	Type=Information     	ID=1181    	  DEMId=[emailBody] 
+2016-02-11T14:52:56.2568881Z	Type=Information     	ID=1181    	  OutSecurityLabelId=[secureEmail] 
+2016-02-11T14:52:56.2568881Z	Type=Information     	ID=1181    	  Tags=[]
+2016-02-11T14:52:56.4128882Z	Type=Information     	ID=1112    	[01d164dbd477bb1731584b03.eml:Outbound/default:WIN-SCOF9BOCHV8bC8w00000004@WIN-SCOF9BOCHV8] Outbound message encrypted and sent to recipient. 
+2016-02-11T14:52:56.4128882Z	Type=Information     	ID=1112    	  DEM Type      = [EmailBody] 
+2016-02-11T14:52:56.4128882Z	Type=Information     	ID=1112    	  DEM ID        = [emailBody] 
+2016-02-11T14:52:56.4128882Z	Type=Information     	ID=1112    	  Package ID    = [1f5aff464b5b43bdb79313cbdbe3faf5#c290afdd455743b0b5145e2aca78742d@sdx.egress.com] 
+2016-02-11T14:52:56.4128882Z	Type=Information     	ID=1112    	  Package label = [EG-160211-145256]
+2016-02-11T14:55:43.1478883Z	Type=Information     	ID=1180    	[01d164dc47d24fae3e6cd304.eml:Outbound/default:WIN-SCOF9BOCHV8MFKu00000005@WIN-SCOF9BOCHV8] Start message processing. Message details: 
+2016-02-11T14:55:43.1478883Z	Type=Information     	ID=1180    	  Sender=[sender@swaks.ex2013.egress-test.com] 
+2016-02-11T14:55:43.1478883Z	Type=Information     	ID=1180    	  X-Sender=[sender@swaks.ex2013.egress-test.com] 
+2016-02-11T14:55:43.1478883Z	Type=Information     	ID=1180    	  From=[sender@swaks.ex2013.egress-test.com] 
+2016-02-11T14:55:43.1478883Z	Type=Information     	ID=1180    	  Recipients=[hasaanausat@hotmail.com] 
+2016-02-11T14:55:43.1478883Z	Type=Information     	ID=1180    	  Subject=[test Thu, 11 Feb 2016 14:55:43 +0000] 
+2016-02-11T14:55:43.1478883Z	Type=Information     	ID=1180    	  X-$Switch=[secureEmail] 
+2016-02-11T14:55:43.1478883Z	Type=Information     	ID=1180    	  Date=[2016-02-11T14:55:43.0000000+00:00] 
+2016-02-11T14:55:43.1478883Z	Type=Information     	ID=1180    	  Size=[545] 
+2016-02-11T14:55:43.1478883Z	Type=Information     	ID=1180    	  Attachments=[]
+2016-02-11T14:55:52.3348884Z	Type=Warning         	ID=1208    	Switch Server operation 'Policy synchronization' failed. SwitchID: [egress.gateway@hasaan.com?sender@swaks.ex2013.egress-test.com]. Exception: [InvalidCredentialException : The account sender@swaks.ex2013.egress-test.com is unknown or the password is invalid.]
+2016-02-11T14:55:52.5378885Z	Type=Information     	ID=1181    	[01d164dc47d24fae3e6cd304.eml:Outbound/default:WIN-SCOF9BOCHV8MFKu00000005@WIN-SCOF9BOCHV8] DEM processing using policy for SwitchID: [egress.gateway@hasaan.com]. Input: 
+2016-02-11T14:55:52.5378885Z	Type=Information     	ID=1181    	  X-$Switch=[secureEmail] 
+2016-02-11T14:55:52.5378885Z	Type=Information     	ID=1181    	  InSecurityLabelID=[secureEmail] 
+2016-02-11T14:55:52.5378885Z	Type=Information     	ID=1181    	  Recipients=[hasaanausat@hotmail.com] 
+2016-02-11T14:55:52.5378885Z	Type=Information     	ID=1181    	  Subject=[test Thu, 11 Feb 2016 14:55:43 +0000] 
+2016-02-11T14:55:52.5378885Z	Type=Information     	ID=1181    	  HasRestrictions=[False] 
+2016-02-11T14:55:52.5378885Z	Type=Information     	ID=1181    	  AttachmentsSize=[0] 
+2016-02-11T14:55:52.5378885Z	Type=Information     	ID=1181    	Output: 
+2016-02-11T14:55:52.5378885Z	Type=Information     	ID=1181    	  MessageText=[] 
+2016-02-11T14:55:52.5378885Z	Type=Information     	ID=1181    	  DEMId=[emailBody] 
+2016-02-11T14:55:52.5378885Z	Type=Information     	ID=1181    	  OutSecurityLabelId=[secureEmail] 
+2016-02-11T14:55:52.5378885Z	Type=Information     	ID=1181    	  Tags=[]
+2016-02-11T14:55:52.7258886Z	Type=Information     	ID=1112    	[01d164dc47d24fae3e6cd304.eml:Outbound/default:WIN-SCOF9BOCHV8MFKu00000005@WIN-SCOF9BOCHV8] Outbound message encrypted and sent to recipient. 
+2016-02-11T14:55:52.7258886Z	Type=Information     	ID=1112    	  DEM Type      = [EmailBody] 
+2016-02-11T14:55:52.7258886Z	Type=Information     	ID=1112    	  DEM ID        = [emailBody] 
+2016-02-11T14:55:52.7258886Z	Type=Information     	ID=1112    	  Package ID    = [a972fe186f28453ab6744cdb3a550628#c290afdd455743b0b5145e2aca78742d@sdx.egress.com] 
+2016-02-11T14:55:52.7258886Z	Type=Information     	ID=1112    	  Package label = [EG-160211-145552]
+2016-02-11T14:57:24.1478887Z	Type=Information     	ID=1253    	Statistics: [badmailSize=0; computerName=WIN-SCOF9BOCHV8; cpu=0; freeC="30968/60.6%"; freeRamMB=3291; lastSentAt="Thu, 11 Feb 2016 14:55:52 GMT"; lastSyncAt="Thu, 11 Feb 2016 14:55:52 GMT"; queueSize=0; retrySize=0; sent=5; startedAt="Thu, 11 Feb 2016 14:27:22 GMT"; version="4.50.14617.0"; wsetKB=79036]
+2016-02-11T14:57:24.1478888Z	Type=Information     	ID=30100   	Task [LogStatistics] completed successfully.
+2016-02-11T15:01:27.4448889Z	Type=Stop            	ID=29906   	[esdxgateway]. All modules stopped.
+2016-02-11T15:01:32.7252926Z	Type=Start           	ID=29902   	[esdxgateway] started. Details: [ 
+2016-02-11T15:01:32.7252926Z	Type=Start           	ID=29902   	  GatewayWebService => disabled 
+2016-02-11T15:01:32.7252926Z	Type=Start           	ID=29902   	  GatewayListener (4.50.14617.0) => started 
+2016-02-11T15:01:32.7252926Z	Type=Start           	ID=29902   	  GatewayScheduler (4.50.14617.0) => started 
+2016-02-11T15:01:32.7252926Z	Type=Start           	ID=29902   	]
+2016-02-11T15:02:33.5542927Z	Type=Information     	ID=1253    	Statistics: [badmailSize=0; computerName=WIN-SCOF9BOCHV8; cpu=3; freeC="30968/60.6%"; freeRamMB=3333; lastSentAt=; lastSyncAt=; queueSize=0; retrySize=0; sent=0; startedAt="Thu, 11 Feb 2016 15:02:32 GMT"; version="4.50.14617.0"; wsetKB=46568]
+2016-02-11T15:02:33.5542928Z	Type=Information     	ID=30100   	Task [LogStatistics] completed successfully.
+2016-02-11T15:04:43.9912929Z	Type=Information     	ID=1180    	[01d164dd8a0f4d2910809a05.eml:Outbound/default:WIN-SCOF9BOCHV8SA1X00000006@WIN-SCOF9BOCHV8] Start message processing. Message details: 
+2016-02-11T15:04:43.9912929Z	Type=Information     	ID=1180    	  Sender=[sender@swaks.ex2013.egress-test.com] 
+2016-02-11T15:04:43.9912929Z	Type=Information     	ID=1180    	  X-Sender=[sender@swaks.ex2013.egress-test.com] 
+2016-02-11T15:04:43.9912929Z	Type=Information     	ID=1180    	  From=[sender@swaks.ex2013.egress-test.com] 
+2016-02-11T15:04:43.9912929Z	Type=Information     	ID=1180    	  Recipients=[main@ubuntu.com] 
+2016-02-11T15:04:43.9912929Z	Type=Information     	ID=1180    	  Subject=[test Thu, 11 Feb 2016 15:04:44 +0000] 
+2016-02-11T15:04:43.9912929Z	Type=Information     	ID=1180    	  X-$Switch=[secureEmail] 
+2016-02-11T15:04:43.9912929Z	Type=Information     	ID=1180    	  Date=[2016-02-11T15:04:44.0000000+00:00] 
+2016-02-11T15:04:43.9912929Z	Type=Information     	ID=1180    	  Size=[529] 
+2016-02-11T15:04:43.9912929Z	Type=Information     	ID=1180    	  Attachments=[]
+2016-02-11T15:05:01.4922930Z	Type=Information     	ID=1181    	[01d164dd8a0f4d2910809a05.eml:Outbound/default:WIN-SCOF9BOCHV8SA1X00000006@WIN-SCOF9BOCHV8] DEM processing using policy for SwitchID: [sender@swaks.ex2013.egress-test.com]. Input: 
+2016-02-11T15:05:01.4922930Z	Type=Information     	ID=1181    	  X-$Switch=[secureEmail] 
+2016-02-11T15:05:01.4922930Z	Type=Information     	ID=1181    	  InSecurityLabelID=[secureEmail] 
+2016-02-11T15:05:01.4922930Z	Type=Information     	ID=1181    	  Recipients=[main@ubuntu.com] 
+2016-02-11T15:05:01.4922930Z	Type=Information     	ID=1181    	  Subject=[test Thu, 11 Feb 2016 15:04:44 +0000] 
+2016-02-11T15:05:01.4922930Z	Type=Information     	ID=1181    	  HasRestrictions=[False] 
+2016-02-11T15:05:01.4922930Z	Type=Information     	ID=1181    	  AttachmentsSize=[0] 
+2016-02-11T15:05:01.4922930Z	Type=Information     	ID=1181    	Output: 
+2016-02-11T15:05:01.4922930Z	Type=Information     	ID=1181    	  MessageText=[] 
+2016-02-11T15:05:01.4922930Z	Type=Information     	ID=1181    	  DEMId=[emailBody] 
+2016-02-11T15:05:01.4922930Z	Type=Information     	ID=1181    	  OutSecurityLabelId=[secureEmail] 
+2016-02-11T15:05:01.4922930Z	Type=Information     	ID=1181    	  Tags=[]
+2016-02-11T15:05:12.9762931Z	Type=Information     	ID=1112    	[01d164dd8a0f4d2910809a05.eml:Outbound/default:WIN-SCOF9BOCHV8SA1X00000006@WIN-SCOF9BOCHV8] Outbound message encrypted and sent to recipient. 
+2016-02-11T15:05:12.9762931Z	Type=Information     	ID=1112    	  DEM Type      = [EmailBody] 
+2016-02-11T15:05:12.9762931Z	Type=Information     	ID=1112    	  DEM ID        = [emailBody] 
+2016-02-11T15:05:12.9762931Z	Type=Information     	ID=1112    	  Package ID    = [97b215f3ff874a2bbc67b099fcd8cdf4#c290afdd455743b0b5145e2aca78742d@sdx.egress.com] 
+2016-02-11T15:05:12.9762931Z	Type=Information     	ID=1112    	  Package label = [SS-160211-150501]
+2016-02-11T15:32:34.0732932Z	Type=Information     	ID=1253    	Statistics: [badmailSize=0; computerName=WIN-SCOF9BOCHV8; cpu=0; freeC="30968/60.6%"; freeRamMB=3283; lastSentAt="Thu, 11 Feb 2016 15:05:12 GMT"; lastSyncAt="Thu, 11 Feb 2016 15:05:00 GMT"; queueSize=0; retrySize=0; sent=1; startedAt="Thu, 11 Feb 2016 15:02:32 GMT"; version="4.50.14617.0"; wsetKB=78528]
+2016-02-11T15:32:34.0732933Z	Type=Information     	ID=30100   	Task [LogStatistics] completed successfully.
+2016-02-11T16:02:34.5922934Z	Type=Information     	ID=1253    	Statistics: [badmailSize=0; computerName=WIN-SCOF9BOCHV8; cpu=0; freeC="30968/60.6%"; freeRamMB=3281; lastSentAt="Thu, 11 Feb 2016 15:05:12 GMT"; lastSyncAt="Thu, 11 Feb 2016 15:05:00 GMT"; queueSize=0; retrySize=0; sent=1; startedAt="Thu, 11 Feb 2016 15:02:32 GMT"; version="4.50.14617.0"; wsetKB=78528]
+2016-02-11T16:02:34.5922935Z	Type=Information     	ID=30100   	Task [LogStatistics] completed successfully.
+2016-02-11T16:09:30.5932936Z	Type=Stop            	ID=29906   	[esdxgateway]. All modules stopped.
