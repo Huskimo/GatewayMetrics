@@ -91,7 +91,7 @@ namespace WindowsFormsApplication1
                         if (logList.Count == 1 || logList[0].id == logList[1].id)
                         {
                             //if so push on the list as objects are part of group
-                            concatDetails.Insert(0, tempLogObject);
+                            //concatDetails.Insert(0, tempLogObject);
                          
                         } else {
                             //if not new group created
