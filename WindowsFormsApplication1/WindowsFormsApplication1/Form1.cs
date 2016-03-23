@@ -49,6 +49,8 @@ namespace WindowsFormsApplication1
             
             String tempBlockDetails = "";
 
+            List<String> fullDetails = new List<String>();
+
             List<log> logList = new List<log>();
             
             List<log> concatDetails = new List<log>();
@@ -100,17 +102,17 @@ namespace WindowsFormsApplication1
                             for (int k = concatDetails.Count; k > 1; k--) {
                                 tempBlockDetails = tempBlockDetails + concatDetails[k-1].details;                                
                             }
-                           
+                            fullDetails.Insert(0, tempBlockDetails);
                         }
                        
                     }
-                    for (int l = 0; l <...; l++) {
+                    for (int l = 0; l < fullDetails.Count; l++) {
                         //display in the grid
-                        dataGridView1.Rows.Add(concatDetails[0].date, concatDetails[0].time, concatDetails[0].type, concatDetails[0].id, tempBlockDetails);
+                        dataGridView1.Rows.Add(concatDetails[0].date, concatDetails[0].time, concatDetails[0].type, concatDetails[0].id, fullDetails[l+1]);
                         //clear temp variables for next group
                         tempBlockDetails = "";
                         concatDetails.Clear();
-                    }
+                   }
                 }
             }
         }
