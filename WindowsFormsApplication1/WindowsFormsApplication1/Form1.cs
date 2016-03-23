@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
-using System.Collections.Generic;
 
 namespace WindowsFormsApplication1
 {
@@ -35,7 +34,7 @@ namespace WindowsFormsApplication1
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            //file location on my Egress Laptop C:\\Users\\hasaan.ausat\\Desktop\\Logs
             var fileCount = (from doc in Directory.EnumerateFiles(@"D:\\Hasaan\\Documents\\GitHub\\GatewayMetrics\\Logs", "*.log", SearchOption.AllDirectories)
                              select doc).Count();
 
