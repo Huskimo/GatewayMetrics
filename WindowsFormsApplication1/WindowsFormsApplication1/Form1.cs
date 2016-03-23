@@ -99,16 +99,16 @@ namespace WindowsFormsApplication1
                             //if not new group created
                             concatDetails.Insert(0, tempLogObject);
                             //previous group has finished - concats all the details
-                            for (int k = concatDetails.Count; k > 1; k--) {
+                            for (int k = concatDetails.Count; k > 0; k--) {
                                 tempBlockDetails = tempBlockDetails + concatDetails[k-1].details;                                
                             }
                             fullDetails.Insert(0, tempBlockDetails);
                         }
                        
                     }
-                    for (int l = 0; l < fullDetails.Count; l++) {
+                    for (int l = fullDetails.Count; l > 0; l--) {
                         //display in the grid
-                        dataGridView1.Rows.Add(concatDetails[0].date, concatDetails[0].time, concatDetails[0].type, concatDetails[0].id, fullDetails[l+1]);
+                        dataGridView1.Rows.Add(concatDetails[l-1].date, concatDetails[l-1].time, concatDetails[l-1].type, concatDetails[l-1].id, fullDetails[l]);
                         //clear temp variables for next group
                         tempBlockDetails = "";
                         concatDetails.Clear();
