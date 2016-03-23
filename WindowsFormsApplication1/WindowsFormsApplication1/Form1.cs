@@ -36,10 +36,10 @@ namespace WindowsFormsApplication1
         private void button1_Click(object sender, EventArgs e)
         {
 
-            var fileCount = (from doc in Directory.EnumerateFiles(@"C:\\Users\\hasaan.ausat\\Desktop\\Logs", "*.log", SearchOption.AllDirectories)
+            var fileCount = (from doc in Directory.EnumerateFiles(@"D:\\Hasaan\\Documents\\GitHub\\GatewayMetrics\\Logs", "*.log", SearchOption.AllDirectories)
                              select doc).Count();
 
-            string[] dirs = Directory.GetFiles(@"C:\\Users\\hasaan.ausat\\Desktop\\Logs");
+            string[] dirs = Directory.GetFiles(@"D:\\Hasaan\\Documents\\GitHub\\GatewayMetrics\\Logs");
 
        	    //assigning temp variables for each line
             String tempDate = "";
