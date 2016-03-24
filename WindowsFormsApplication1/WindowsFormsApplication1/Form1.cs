@@ -35,10 +35,10 @@ namespace WindowsFormsApplication1
         private void button1_Click(object sender, EventArgs e)
         {
             //file location on my Egress Laptop C:\\Users\\hasaan.ausat\\Desktop\\Logs
-            var fileCount = (from doc in Directory.EnumerateFiles(@"D:\\Hasaan\\Documents\\GitHub\\GatewayMetrics\\Logs", "*.log", SearchOption.AllDirectories)
+            var fileCount = (from doc in Directory.EnumerateFiles(@"D:\\Hasaan\\Desktop\\Logs", "*.log", SearchOption.AllDirectories)
                              select doc).Count();
 
-            string[] dirs = Directory.GetFiles(@"D:\\Hasaan\\Documents\\GitHub\\GatewayMetrics\\Logs");
+            string[] dirs = Directory.GetFiles(@"D:\\Hasaan\\Desktop\\Logs");
 
        	    //assigning temp variables for each line
             String tempDate = "";
@@ -106,13 +106,15 @@ namespace WindowsFormsApplication1
                         }
                        
                     }
-                    for (int l = fullDetails.Count; l > 0; l--) {
-                        //display in the grid
-                        dataGridView1.Rows.Add(concatDetails[l-1].date, concatDetails[l-1].time, concatDetails[l-1].type, concatDetails[l-1].id, fullDetails[l]);
-                        //clear temp variables for next group
-                        tempBlockDetails = "";
-                        concatDetails.Clear();
-                   }
+                    
+                }
+                for (int l = fullDetails.Count; l > 0; l--)
+                {
+                    //display in the grid
+                    dataGridView1.Rows.Add(concatDetails[l].date, concatDetails[l].time, concatDetails[l].type, concatDetails[l].id, fullDetails[l]);
+                    //clear temp variables for next group
+                    tempBlockDetails = "";
+                    concatDetails.Clear();
                 }
             }
         }
