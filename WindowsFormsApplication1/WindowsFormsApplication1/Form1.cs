@@ -34,6 +34,12 @@ namespace WindowsFormsApplication1
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //clears table at beginning to allow for any changes in the file while running (i.e acts as a refresh button)
+            //dataGridView1.Rows.Clear();
+
+            //changes text on button
+            //importButton.Text = "Refresh";
+
             //file location on my Egress Laptop C:\\Users\\hasaan.ausat\\Desktop\\Logs
             var fileCount = (from doc in Directory.EnumerateFiles(@"D:\\Hasaan\\Desktop\\Logs", "*.log", SearchOption.AllDirectories)
                              select doc).Count();
@@ -54,13 +60,12 @@ namespace WindowsFormsApplication1
             List<log> logList = new List<log>();
             
             List<log> concatDetails = new List<log>();
-             
 
             //For every file do..
             for (int j = 0; j < fileCount; j++)
             {
                 //reading in from text file
-                System.IO.StreamReader file = new System.IO.StreamReader(dirs[j]);
+                StreamReader file = new StreamReader(dirs[j]);
 
                 //getting line count of the text file
                 int logLineCount = File.ReadLines(dirs[j]).Count();
@@ -99,23 +104,26 @@ namespace WindowsFormsApplication1
                             //if not new group created
                             concatDetails.Insert(0, tempLogObject);
                             //previous group has finished - concats all the details
-                            for (int k = concatDetails.Count; k > 0; k--) {
+                            for (int k = concatDetails.Count; k > 1; k--) {
                                 tempBlockDetails = tempBlockDetails + concatDetails[k-1].details;                                
                             }
                             fullDetails.Insert(0, tempBlockDetails);
                         }
                        
                     }
-                    
+
+                    for (int l = fullDetails.Count; l > 0; l--)
+                    {
+                        //display in the grid
+                        dataGridView1.Rows.Add(concatDetails[l].date, concatDetails[l].time, concatDetails[l].type, concatDetails[l].id, fullDetails[l]);
+                        //clear temp variables for next group
+                        tempBlockDetails = "";
+                        concatDetails.Clear();
+
+                    }
                 }
-                for (int l = fullDetails.Count; l > 0; l--)
-                {
-                    //display in the grid
-                    dataGridView1.Rows.Add(concatDetails[l].date, concatDetails[l].time, concatDetails[l].type, concatDetails[l].id, fullDetails[l]);
-                    //clear temp variables for next group
-                    tempBlockDetails = "";
-                    concatDetails.Clear();
-                }
+                //close the file after use
+                file.Close();
             }
         }
     }
