@@ -35,10 +35,10 @@ namespace WindowsFormsApplication1
         private void button1_Click(object sender, EventArgs e)
         {
             //clears table at beginning to allow for any changes in the file while running (i.e acts as a refresh button)
-            //dataGridView1.Rows.Clear();
+            dataGridView1.Rows.Clear();
 
             //changes text on button
-            //importButton.Text = "Refresh";
+            importButton.Text = "Refresh";
 
             //file location on my Egress Laptop C:\\Users\\hasaan.ausat\\Desktop\\Logs
             var fileCount = (from doc in Directory.EnumerateFiles(@"D:\\Hasaan\\Desktop\\Logs", "*.log", SearchOption.AllDirectories)
@@ -109,9 +109,7 @@ namespace WindowsFormsApplication1
                             }
                             fullDetails.Insert(0, tempBlockDetails);
                         }
-                       
                     }
-
                     for (int l = fullDetails.Count; l > 0; l--)
                     {
                         //display in the grid
@@ -119,7 +117,6 @@ namespace WindowsFormsApplication1
                         //clear temp variables for next group
                         tempBlockDetails = "";
                         concatDetails.Clear();
-
                     }
                 }
                 //close the file after use
