@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Text.RegularExpressions;
 
 namespace WindowsFormsApplication1
 {
@@ -25,6 +26,7 @@ namespace WindowsFormsApplication1
             public string timeOut { get; set; }
             public string size { get; set; }
             public string attach { get; set; }
+            public string label { get; set; }
             public string direction { get; set; }
             public string status { get; set; }
             public string type { get; set; }
@@ -34,6 +36,14 @@ namespace WindowsFormsApplication1
 
         private void button1_Click(object sender, EventArgs e)
         {
+
+            //initating regex
+            Regex rSize = new Regex(@"Size=\[[0-9]*\]");
+            Regex rAttach = new Regex(@"Attachments=\[[0-9]*\]");
+            Regex rDir = new Regex(@"(Inbound|Outbound)");
+            Regex rLabel = new Regex(@"X-\$Switch=\[[a-zA-Z]*\]");
+            Regex rStatus = new Regex(@"Size =\[[0-9]+\]");
+
             //clears table at beginning to allow for any changes in the file while running (i.e acts as a refresh button)
             dataGridView1.Rows.Clear();
 
@@ -49,6 +59,12 @@ namespace WindowsFormsApplication1
        	    //assigning temp variables for each line
             String tempDate = "";
             String tempTime = "";
+            String tempTimeOut = "";
+            String tempSize = "";
+            String tempAttach = "";
+            String tempLabel = "";
+            String tempDir = "";
+            String tempStatus = "";
             String tempId = "";
             String tempType = "";
             String tempDetails = "";
@@ -57,9 +73,13 @@ namespace WindowsFormsApplication1
 
             List<String> fullDetails = new List<String>();
 
+            //List<String> allDetails = new List<String>();
+
             List<log> logList = new List<log>();
             
             List<log> concatDetails = new List<log>();
+
+            List<log> logList2 = new List<log>();
 
             //For every file do..
             for (int j = 0; j < fileCount; j++)
@@ -92,14 +112,13 @@ namespace WindowsFormsApplication1
                     logList.Insert(0, tempLogObject);
                     
                     //ensuring only specific ID's are searched for and displayed
-                    if (tempId == "1180" || tempId == "1181" || tempId == "1112")
+                    if (tempId == "1180" || tempId == "1112")
                     {
                         //check if ID is the same as the last
                         if (logList.Count == 1 || logList[0].id == logList[1].id)
                         {
                             //if so push on the list as objects are part of group
                             concatDetails.Insert(0, tempLogObject);
-                         
                         } else {
                             //if not new group created
                             concatDetails.Insert(0, tempLogObject);
@@ -108,16 +127,34 @@ namespace WindowsFormsApplication1
                                 tempBlockDetails = tempBlockDetails + concatDetails[k-1].details;                                
                             }
                             fullDetails.Insert(0, tempBlockDetails);
+                            //allDetails.Insert(0, tempBlockDetails);
+                            tempSize = rSize.Match(fullDetails[0]).ToString();
+                            tempAttach = rAttach.Match(fullDetails[0]).ToString();
+                            tempLabel = rLabel.Match(fullDetails[0]).ToString();
+                            tempDir = rDir.Match(fullDetails[0]).ToString();
+                            tempStatus = rStatus.Match(fullDetails[0]).ToString();
+
+                            log tempLogObject2 = new log { timeOut = tempTimeOut, size = tempSize, attach = tempAttach, label = tempLabel, direction = tempDir, status = tempStatus };
+                            logList2.Insert(0, tempLogObject2);
+                            //MessageBox.Show(fullDetails.Count.ToString());
+                            //while (fullDetails.Count > 1) {
+                                //display in the grid
+                                dataGridView1.Rows.Add(concatDetails[0].date, concatDetails[0].time, null, null, logList2[0].size, logList2[0].attach, logList2[0].label, null, concatDetails[0].type, concatDetails[0].id, fullDetails[0]);
+                                //clear temp variables for next group
+                            //  }
+                            tempBlockDetails = "";
+                            concatDetails.Clear();
                         }
                     }
-                    for (int l = fullDetails.Count; l > 0; l--)
+
+                   /* for (int l = fullDetails.Count; l > 0; l--)
                     {
                         //display in the grid
                         dataGridView1.Rows.Add(concatDetails[l].date, concatDetails[l].time, concatDetails[l].type, concatDetails[l].id, fullDetails[l]);
                         //clear temp variables for next group
                         tempBlockDetails = "";
                         concatDetails.Clear();
-                    }
+                    } */
                 }
                 //close the file after use
                 file.Close();
