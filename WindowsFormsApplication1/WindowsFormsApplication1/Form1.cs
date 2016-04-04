@@ -38,11 +38,11 @@ namespace WindowsFormsApplication1
         {
 
             //initating regex
-            Regex rSize = new Regex(@"Size=\[[0-9]*\]");
-            Regex rAttach = new Regex(@"Attachments=\[[0-9]*\]");
+            Regex rSize = new Regex(@"(?<=Size=\[)[0-9]*(?=\])");
+            Regex rAttach = new Regex(@"(?<=Attachments=\[)[a-zA-Z]*(?=\])");
             Regex rDir = new Regex(@"(Inbound|Outbound)");
-            Regex rLabel = new Regex(@"X-\$Switch=\[[a-zA-Z]*\]");
-            Regex rStatus = new Regex(@"Size =\[[0-9]+\]");
+            Regex rLabel = new Regex(@"(?<=X-\$Switch=\[)[a-zA-Z]*(?=\])");
+            //Regex rStatus = new Regex(@"Size =\[[0-9]+\]");
 
             //clears table at beginning to allow for any changes in the file while running (i.e acts as a refresh button)
             dataGridView1.Rows.Clear();
@@ -112,7 +112,7 @@ namespace WindowsFormsApplication1
                     logList.Insert(0, tempLogObject);
                     
                     //ensuring only specific ID's are searched for and displayed
-                    if (tempId == "1180" || tempId == "1112")
+                    if (tempId == "1180" /*|| tempId == "1112"*/)
                     {
                         //check if ID is the same as the last
                         if (logList.Count == 1 || logList[0].id == logList[1].id)
@@ -127,12 +127,17 @@ namespace WindowsFormsApplication1
                                 tempBlockDetails = tempBlockDetails + concatDetails[k-1].details;                                
                             }
                             fullDetails.Insert(0, tempBlockDetails);
-                            //allDetails.Insert(0, tempBlockDetails);
+
+                            //apply regex tests and assign output to temp variables
                             tempSize = rSize.Match(fullDetails[0]).ToString();
-                            tempAttach = rAttach.Match(fullDetails[0]).ToString();
+                            if (rAttach.Match(fullDetails[0]).ToString() == "") {
+                                tempAttach = "No";
+                            } else {
+                                tempAttach = "Yes";
+                            }
                             tempLabel = rLabel.Match(fullDetails[0]).ToString();
                             tempDir = rDir.Match(fullDetails[0]).ToString();
-                            tempStatus = rStatus.Match(fullDetails[0]).ToString();
+                            //tempStatus = rStatus.Match(fullDetails[0]).ToString();
 
                             log tempLogObject2 = new log { timeOut = tempTimeOut, size = tempSize, attach = tempAttach, label = tempLabel, direction = tempDir, status = tempStatus };
                             logList2.Insert(0, tempLogObject2);

@@ -2,3 +2,5 @@ http://stackoverflow.com/questions/2242564/file-count-from-a-folder
 https://msdn.microsoft.com/en-us/library/wz42302f%28v=vs.110%29.aspx
 http://stackoverflow.com/questions/1440265/how-to-add-a-string-to-a-string-array-theres-no-add-function
 https://msdn.microsoft.com/en-us/library/twcw2f1c%28v=vs.110%29.aspx
+http://stackoverflow.com/questions/10768924/match-sequence-using-regex-after-a-specified-character
+http://stackoverflow.com/questions/15294809/regex-lookarounds-combining-lookahead-and-lookbehind

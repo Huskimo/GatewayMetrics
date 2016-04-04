@@ -623,7 +623,7 @@
 2015-12-26T15:59:56.2639612Z	Type=Information     	ID=1180    	  X-$Switch=[switchId="hasaan.admin@hasaan.com"; labelId="secureMail"; software="outlook plugin/2.31.0.222"] 
 2015-12-26T15:59:56.2639612Z	Type=Information     	ID=1180    	  Date=[2015-12-26T15:52:54.0000000+00:00] 
 2015-12-26T15:59:56.2639612Z	Type=Information     	ID=1180    	  Size=[1131] 
-2015-12-26T15:59:56.2639612Z	Type=Information     	ID=1180    	  Attachments=[]
+2015-12-26T15:59:56.2639612Z	Type=Information     	ID=1180    	  Attachments=[bob]
 2015-12-26T16:00:15.1609613Z	Type=Information     	ID=1181    	[01d13ff57bd6290c1aa77405.eml:Outbound/default:WIN-SCOF9BOCHV8UkcC00000006@WIN-SCOF9BOCHV8] DEM processing using policy for SwitchID: [hasaan.admin@hasaan.com]. Input: 
 2015-12-26T16:00:15.1609613Z	Type=Information     	ID=1181    	  X-$Switch=[switchId="hasaan.admin@hasaan.com"; labelId="secureMail"; software="outlook plugin/2.31.0.222"] 
 2015-12-26T16:00:15.1609613Z	Type=Information     	ID=1181    	  InSecurityLabelID=[secureMail] 
