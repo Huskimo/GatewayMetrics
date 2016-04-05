@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.importButton = new System.Windows.Forms.Button();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,6 +41,7 @@
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.importButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,18 +69,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(921, 452);
             this.dataGridView1.TabIndex = 0;
             // 
-            // importButton
-            // 
-            this.importButton.AutoSize = true;
-            this.importButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.importButton.Location = new System.Drawing.Point(927, 12);
-            this.importButton.Name = "importButton";
-            this.importButton.Size = new System.Drawing.Size(94, 23);
-            this.importButton.TabIndex = 1;
-            this.importButton.Text = "Import Text Files";
-            this.importButton.UseVisualStyleBackColor = true;
-            this.importButton.Click += new System.EventHandler(this.button1_Click);
-            // 
             // Column1
             // 
             this.Column1.HeaderText = "Date";
@@ -92,14 +81,14 @@
             this.Column2.HeaderText = "Time In";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
-            this.Column2.Width = 67;
+            this.Column2.Width = 62;
             // 
             // Column6
             // 
             this.Column6.HeaderText = "Time Out";
             this.Column6.Name = "Column6";
             this.Column6.ReadOnly = true;
-            this.Column6.Width = 75;
+            this.Column6.Width = 69;
             // 
             // Column7
             // 
@@ -158,6 +147,18 @@
             this.Column5.ReadOnly = true;
             this.Column5.Width = 500;
             // 
+            // importButton
+            // 
+            this.importButton.AutoSize = true;
+            this.importButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.importButton.Location = new System.Drawing.Point(927, 12);
+            this.importButton.Name = "importButton";
+            this.importButton.Size = new System.Drawing.Size(94, 23);
+            this.importButton.TabIndex = 1;
+            this.importButton.Text = "Import Text Files";
+            this.importButton.UseVisualStyleBackColor = true;
+            this.importButton.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -165,8 +166,9 @@
             this.ClientSize = new System.Drawing.Size(1224, 538);
             this.Controls.Add(this.importButton);
             this.Controls.Add(this.dataGridView1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Gateway Metrics";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
