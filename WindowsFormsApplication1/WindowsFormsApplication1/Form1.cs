@@ -165,10 +165,27 @@ namespace WindowsFormsApplication1
 
                                     log tempLogObject2 = new log { timeOut = tempTimeOut, size = tempSize, attach = tempAttach, label = tempLabel, direction = tempDir, status = tempStatus };
                                     logList2.Insert(0, tempLogObject2);
+                                    
+                                    //spliting date and time and performing a subtraction in order to find difference
+                                    char splitChar = ':';
+                                    char splitChar2 = '-';
+                                    String text = concatDetails[0].time;
+                                    String text2 = concatDetails[0].date;
+                                    String[] times = text.Split(splitChar);
+                                    String[] dates = text2.Split(splitChar2);
+                                    System.DateTime date1 = new System.DateTime(Convert.ToInt32(dates[0]), Convert.ToInt32(dates[1]), Convert.ToInt32(dates[2]), Convert.ToInt32(times[0]), Convert.ToInt32(times[1]), Convert.ToInt32(times[2]));
+                                    System.DateTime time2 = new System.DateTime(Convert.ToInt32(dates[0]), Convert.ToInt32(dates[1]), Convert.ToInt32(dates[2]), 14, 56, 50);
+                                    TimeSpan diff = time2.Subtract(date1);
+                                    String text3 = diff.ToString();
+                                    String[] times2 = text3.Split(splitChar);
+
+                                    //converting difference output into seconds
+                                    TimeSpan interval = new TimeSpan(0, Convert.ToInt32(times2[0]), Convert.ToInt32(times2[1]), Convert.ToInt32(times2[2]),0);
+                                    String y = interval.TotalSeconds.ToString();
 
                                     //while (fullDetails.Count > 1) {
                                     //display in the grid
-                                    dataGridView1.Rows.Add(concatDetails[0].date, concatDetails[0].time, null, null, logList2[0].size, logList2[0].attach, logList2[0].label, null, concatDetails[0].type, concatDetails[0].id, fullDetails[0]);
+                                    dataGridView1.Rows.Add(concatDetails[0].date, concatDetails[0].time, "23:00:00", y, logList2[0].size, logList2[0].attach, logList2[0].label, null, concatDetails[0].type, concatDetails[0].id, fullDetails[0]);
                                     //clear temp variables for next group
                                     //  }
                                     tempBlockDetails = "";
