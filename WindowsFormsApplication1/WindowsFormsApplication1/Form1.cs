@@ -66,8 +66,8 @@ namespace WindowsFormsApplication1
                 //display message if folder is empty or continue loading files in to program
                 if (fileCount == 0)
                 {
-                    MessageBox.Show("There are no log files to import");
-
+                    MessageBox.Show("There are no log files to import", null, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    importButton.Text = "Import Text Files";
                 }
                 else {
 
