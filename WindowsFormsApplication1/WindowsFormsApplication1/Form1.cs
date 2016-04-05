@@ -34,6 +34,7 @@ namespace WindowsFormsApplication1
             public string emailId { get; set; }
             public string type { get; set; }
             public string id { get; set; }
+            public string id2 { get; set; }
             public string details { get; set; }
         }
 
@@ -89,6 +90,7 @@ namespace WindowsFormsApplication1
                     String tempStatus = "";
                     String tempId = "";
                     String tempEmailId = "";
+                    String tempEmailId2 = "";
                     String tempType = "";
                     String tempDetails = "";
 
@@ -129,9 +131,10 @@ namespace WindowsFormsApplication1
                             tempType = tempLogs.Substring(34, 11);
                             tempId = tempLogs.Substring(54, 4);
                             tempDetails = tempLogs.Substring(63, lastChar);
+                            tempEmailId = rEmailId.Match(tempDetails).ToString();
 
                             //creating log object and pushing it onto the logList
-                            log tempLogObject = new log { date = tempDate, time = tempTime, type = tempType, id = tempId, details = tempDetails};
+                            log tempLogObject = new log { date = tempDate, time = tempTime, type = tempType, id = tempId, details = tempDetails, emailId = tempEmailId};
                             logList.Insert(0, tempLogObject);
 
                             //ensuring only specific ID's are searched for and displayed
@@ -166,12 +169,15 @@ namespace WindowsFormsApplication1
                                     tempLabel = rLabel.Match(fullDetails[0]).ToString();
                                     tempDir = rDir.Match(fullDetails[0]).ToString();
                                     //tempStatus = rStatus.Match(fullDetails[0]).ToString();
-
-                                    log tempLogObject2 = new log {timeOut = tempTimeOut, size = tempSize, attach = tempAttach, label = tempLabel, direction = tempDir, status = tempStatus };
+                                    tempEmailId2 = rEmailId.Match(fullDetails[0]).ToString();
+                                    log tempLogObject2 = new log { id2 = tempId, emailId = tempEmailId2, timeOut = tempTimeOut, size = tempSize, attach = tempAttach, label = tempLabel, direction = tempDir, status = tempStatus };
                                     logList2.Insert(0, tempLogObject2);
 
-                                    tempEmailId = rEmailId.Match(fullDetails[0]).ToString();
-                                   
+                                  /*  var matched = from id in logLists
+                                                  from id2 in logsLists
+                                                  where logLists[0].emailId == logsLists[0].emailId
+                                                  select new { logList = id, logsList = id2}; */
+
                                     //spliting date and time and performing a subtraction in order to find difference
                                     char splitChar = ':';
                                     char splitChar2 = '-';
