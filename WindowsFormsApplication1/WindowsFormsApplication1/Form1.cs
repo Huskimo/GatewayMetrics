@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.IO;
 using System.Text.RegularExpressions;
 
+
 namespace WindowsFormsApplication1
 {
     public partial class Form1 : Form
@@ -39,7 +40,7 @@ namespace WindowsFormsApplication1
 
             //initating regex
             Regex rSize = new Regex(@"(?<=Size=\[)[0-9]*(?=\])");
-            Regex rAttach = new Regex(@"(?<=Attachments=\[)[a-zA-Z]*(?=\])");
+            Regex rAttach = new Regex(@"(?<=Attachments=\[)[a-zA-Z0-9]*(?=\])");
             Regex rDir = new Regex(@"(Inbound|Outbound)");
             Regex rLabel = new Regex(@"(?<=X-\$Switch=\[)[a-zA-Z]*(?=\])");
             //Regex rStatus = new Regex(@"Size =\[[0-9]+\]");

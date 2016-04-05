@@ -65,14 +65,14 @@
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(1224, 452);
+            this.dataGridView1.Size = new System.Drawing.Size(921, 452);
             this.dataGridView1.TabIndex = 0;
             // 
             // importButton
             // 
             this.importButton.AutoSize = true;
             this.importButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.importButton.Location = new System.Drawing.Point(30, 473);
+            this.importButton.Location = new System.Drawing.Point(927, 12);
             this.importButton.Name = "importButton";
             this.importButton.Size = new System.Drawing.Size(94, 23);
             this.importButton.TabIndex = 1;
