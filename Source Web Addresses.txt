@@ -6,3 +6,4 @@ http://stackoverflow.com/questions/1440265/how-to-add-a-string-to-a-string-array
 https://msdn.microsoft.com/en-us/library/twcw2f1c%28v=vs.110%29.aspx
 http://stackoverflow.com/questions/10768924/match-sequence-using-regex-after-a-specified-character
 http://stackoverflow.com/questions/15294809/regex-lookarounds-combining-lookahead-and-lookbehind
+https://msdn.microsoft.com/en-us/library/microsoft.visualbasic.interaction.inputbox%28v=vs.110%29.aspx
