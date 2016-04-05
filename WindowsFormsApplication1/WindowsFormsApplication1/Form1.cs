@@ -31,6 +31,7 @@ namespace WindowsFormsApplication1
             public string label { get; set; }
             public string direction { get; set; }
             public string status { get; set; }
+            public string emailId { get; set; }
             public string type { get; set; }
             public string id { get; set; }
             public string details { get; set; }
@@ -44,6 +45,7 @@ namespace WindowsFormsApplication1
             Regex rAttach = new Regex(@"(?<=Attachments=\[)[a-zA-Z0-9]*(?=\])");
             Regex rDir = new Regex(@"(Inbound|Outbound)");
             Regex rLabel = new Regex(@"(?<=X-\$Switch=\[)[a-zA-Z]*(?=\])");
+            Regex rEmailId = new Regex(@"(?<=\[)[a-zA-Z0-9]+(?=\.eml)");
             //Regex rStatus = new Regex(@"Size =\[[0-9]+\]");
 
             //clears table at beginning to allow for any changes in the file while running (i.e acts as a refresh button)
@@ -86,6 +88,7 @@ namespace WindowsFormsApplication1
                     String tempDir = "";
                     String tempStatus = "";
                     String tempId = "";
+                    String tempEmailId = "";
                     String tempType = "";
                     String tempDetails = "";
 
@@ -128,11 +131,11 @@ namespace WindowsFormsApplication1
                             tempDetails = tempLogs.Substring(63, lastChar);
 
                             //creating log object and pushing it onto the logList
-                            log tempLogObject = new log { date = tempDate, time = tempTime, type = tempType, id = tempId, details = tempDetails };
+                            log tempLogObject = new log { date = tempDate, time = tempTime, type = tempType, id = tempId, details = tempDetails};
                             logList.Insert(0, tempLogObject);
 
                             //ensuring only specific ID's are searched for and displayed
-                            if (tempId == "1180" /*|| tempId == "1112"*/)
+                            if (tempId == "1180" || tempId == "1112" || tempId =="1113")
                             {
                                 //check if ID is the same as the last
                                 if (logList.Count == 1 || logList[0].id == logList[1].id)
@@ -144,13 +147,14 @@ namespace WindowsFormsApplication1
                                     //if not new group created
                                     concatDetails.Insert(0, tempLogObject);
                                     //previous group has finished - concats all the details
-                                    for (int k = concatDetails.Count; k > 1; k--)
+                                    for (int k = concatDetails.Count; k > 0; k--)
                                     {
                                         tempBlockDetails = tempBlockDetails + concatDetails[k - 1].details;
                                     }
                                     fullDetails.Insert(0, tempBlockDetails);
 
                                     //apply regex tests and assign output to temp variables
+                                  
                                     tempSize = rSize.Match(fullDetails[0]).ToString();
                                     if (rAttach.Match(fullDetails[0]).ToString() == "")
                                     {
@@ -163,9 +167,11 @@ namespace WindowsFormsApplication1
                                     tempDir = rDir.Match(fullDetails[0]).ToString();
                                     //tempStatus = rStatus.Match(fullDetails[0]).ToString();
 
-                                    log tempLogObject2 = new log { timeOut = tempTimeOut, size = tempSize, attach = tempAttach, label = tempLabel, direction = tempDir, status = tempStatus };
+                                    log tempLogObject2 = new log {timeOut = tempTimeOut, size = tempSize, attach = tempAttach, label = tempLabel, direction = tempDir, status = tempStatus };
                                     logList2.Insert(0, tempLogObject2);
-                                    
+
+                                    tempEmailId = rEmailId.Match(fullDetails[0]).ToString();
+                                   
                                     //spliting date and time and performing a subtraction in order to find difference
                                     char splitChar = ':';
                                     char splitChar2 = '-';
@@ -185,7 +191,7 @@ namespace WindowsFormsApplication1
 
                                     //while (fullDetails.Count > 1) {
                                     //display in the grid
-                                    dataGridView1.Rows.Add(concatDetails[0].date, concatDetails[0].time, "23:00:00", y, logList2[0].size, logList2[0].attach, logList2[0].label, null, concatDetails[0].type, concatDetails[0].id, fullDetails[0]);
+                                    dataGridView1.Rows.Add(concatDetails[0].date, concatDetails[0].time, null, y, logList2[0].size, logList2[0].attach, logList2[0].label, logList2[0].direction, concatDetails[0].type, concatDetails[0].id, fullDetails[0]);
                                     //clear temp variables for next group
                                     //  }
                                     tempBlockDetails = "";
