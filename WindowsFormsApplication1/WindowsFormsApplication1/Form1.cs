@@ -135,7 +135,7 @@ namespace WindowsFormsApplication1
                             logList.Insert(0, tempLogObject);
 
                             //ensuring only specific ID's are searched for and displayed
-                            if (tempId == "1180" || tempId == "1112" || tempId =="1113")
+                            if (tempId == "1180" /*|| tempId == "1112" || tempId =="1113"*/)
                             {
                                 //check if ID is the same as the last
                                 if (logList.Count == 1 || logList[0].id == logList[1].id)
