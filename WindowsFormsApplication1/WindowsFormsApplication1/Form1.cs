@@ -60,6 +60,7 @@ namespace WindowsFormsApplication1
             {
                 MessageBox.Show("The path '"+x+"' does not exist. Please try again.", null, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 importButton.Text = "Import Text Files";
+                exportCSVButton.Enabled = false;
             }
             else {
 
@@ -71,11 +72,14 @@ namespace WindowsFormsApplication1
                 {
                     MessageBox.Show("There are no log files to import", null, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     importButton.Text = "Import Text Files";
+                    exportCSVButton.Enabled = false;
                 }
                 else {
 
                     //changes text on button
                     importButton.Text = "Refresh";
+
+                    exportCSVButton.Enabled = true;
 
                     string[] dirs = Directory.GetFiles(@x);
 
@@ -97,8 +101,6 @@ namespace WindowsFormsApplication1
                     String tempBlockDetails = "";
 
                     List<String> fullDetails = new List<String>();
-
-                    //List<String> allDetails = new List<String>();
 
                     List<log> logList = new List<log>();
 
@@ -197,7 +199,7 @@ namespace WindowsFormsApplication1
 
                                     //while (fullDetails.Count > 1) {
                                     //display in the grid
-                                    dataGridView1.Rows.Add(concatDetails[0].date, concatDetails[0].time, null, y, logList2[0].size, logList2[0].attach, logList2[0].label, logList2[0].direction, concatDetails[0].type, concatDetails[0].id, fullDetails[0]);
+                                    dataGridView1.Rows.Add(concatDetails[0].date, concatDetails[0].time, "14:56:50", y, logList2[0].size, logList2[0].attach, logList2[0].label, logList2[0].direction, concatDetails[0].type, concatDetails[0].id, fullDetails[0]);
                                     //clear temp variables for next group
                                     //  }
                                     tempBlockDetails = "";
@@ -219,6 +221,52 @@ namespace WindowsFormsApplication1
                     }
                 }
             }
+        }
+        //export to csv function - accessed on 6/4/16
+        //http://stackoverflow.com/questions/9943787/exporting-datagridview-to-csv-file
+        private void SaveToCSV(DataGridView DGV)
+        {
+            string filename = "";
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "CSV (*.csv)|*.csv";
+            sfd.FileName = "Output.csv";
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                MessageBox.Show("Data will be exported and you will be notified when it is ready.");
+                if (File.Exists(filename))
+                {
+                    try
+                    {
+                        File.Delete(filename);
+                    }
+                    catch (IOException ex)
+                    {
+                        MessageBox.Show("It wasn't possible to write the data to the disk." + ex.Message);
+                    }
+                }
+                int columnCount = DGV.ColumnCount;
+                string columnNames = "";
+                string[] output = new string[DGV.RowCount + 1];
+                for (int i = 0; i < columnCount; i++)
+                {
+                    columnNames += DGV.Columns[i].HeaderText.ToString() + ",";
+                }
+                output[0] += columnNames;
+                for (int i = 1; (i - 1) < DGV.RowCount; i++)
+                {
+                    for (int j = 0; j < columnCount; j++)
+                    {
+                        output[i] += DGV.Rows[i - 1].Cells[j].Value.ToString() + ",";
+                    }
+                }
+                File.WriteAllLines(sfd.FileName, output, System.Text.Encoding.UTF8);
+                MessageBox.Show("Your file was generated and its ready for use.");
+            }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            SaveToCSV(dataGridView1);
         }
     }
 }

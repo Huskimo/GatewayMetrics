@@ -42,6 +42,7 @@
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.exportCSVButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -159,11 +160,24 @@
             this.Column5.ReadOnly = true;
             this.Column5.Width = 500;
             // 
+            // exportCSVButton
+            // 
+            this.exportCSVButton.AutoSize = true;
+            this.exportCSVButton.Enabled = false;
+            this.exportCSVButton.Location = new System.Drawing.Point(927, 66);
+            this.exportCSVButton.Name = "exportCSVButton";
+            this.exportCSVButton.Size = new System.Drawing.Size(83, 23);
+            this.exportCSVButton.TabIndex = 2;
+            this.exportCSVButton.Text = "Export to CSV";
+            this.exportCSVButton.UseVisualStyleBackColor = true;
+            this.exportCSVButton.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1224, 538);
+            this.Controls.Add(this.exportCSVButton);
             this.Controls.Add(this.importButton);
             this.Controls.Add(this.dataGridView1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -190,6 +204,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.Button exportCSVButton;
     }
 }
 
