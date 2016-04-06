@@ -11,3 +11,4 @@ https://msdn.microsoft.com/en-us/library/system.timespan.totalseconds(v=vs.110).
 https://msdn.microsoft.com/en-us/library/ms228388.aspx
 https://msdn.microsoft.com/en-us/library/8ysw4sby(v=vs.110).aspx
 https://msdn.microsoft.com/en-us/library/system.io.directory.exists(v=vs.110).aspx
+http://stackoverflow.com/questions/9943787/exporting-datagridview-to-csv-file

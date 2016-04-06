@@ -224,7 +224,7 @@ namespace WindowsFormsApplication1
         }
         //export to csv function - accessed on 6/4/16
         //http://stackoverflow.com/questions/9943787/exporting-datagridview-to-csv-file
-        private void SaveToCSV(DataGridView DGV)
+        private void SaveToCSV(DataGridView dGV)
         {
             string filename = "";
             SaveFileDialog sfd = new SaveFileDialog();
@@ -244,19 +244,19 @@ namespace WindowsFormsApplication1
                         MessageBox.Show("It wasn't possible to write the data to the disk." + ex.Message);
                     }
                 }
-                int columnCount = DGV.ColumnCount;
+                int columnCount = dGV.ColumnCount;
                 string columnNames = "";
-                string[] output = new string[DGV.RowCount + 1];
+                string[] output = new string[dGV.RowCount + 1];
                 for (int i = 0; i < columnCount; i++)
                 {
-                    columnNames += DGV.Columns[i].HeaderText.ToString() + ",";
+                    columnNames += dGV.Columns[i].HeaderText.ToString() + ",";
                 }
                 output[0] += columnNames;
-                for (int i = 1; (i - 1) < DGV.RowCount; i++)
+                for (int i = 1; (i - 1) < dGV.RowCount; i++)
                 {
                     for (int j = 0; j < columnCount; j++)
                     {
-                        output[i] += DGV.Rows[i - 1].Cells[j].Value.ToString() + ",";
+                        output[i] += dGV.Rows[i - 1].Cells[j].Value.ToString() + ",";
                     }
                 }
                 File.WriteAllLines(sfd.FileName, output, System.Text.Encoding.UTF8);
