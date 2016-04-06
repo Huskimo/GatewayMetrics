@@ -10,7 +10,8 @@ using System.Windows.Forms;
 using System.IO;
 using System.Text.RegularExpressions;
 using Microsoft.VisualBasic;
-
+using System.Net.Mail;
+using System.Net;
 
 namespace WindowsFormsApplication1
 {
@@ -267,6 +268,21 @@ namespace WindowsFormsApplication1
         private void button1_Click_1(object sender, EventArgs e)
         {
             SaveToCSV(dataGridView1);
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            MailMessage mail = new MailMessage("hasaan.ausat@egress.com", "s.h.a.ausat-11@student.lboro.ac.uk, hasaanausat@hotmail.com");
+            SmtpClient client = new SmtpClient();
+            client.Port = 25;
+            client.DeliveryMethod = SmtpDeliveryMethod.Network;
+            client.UseDefaultCredentials = false;
+            client.Host = "smtp.office365.com";
+            client.EnableSsl = true;
+            client.Credentials = new NetworkCredential("hasaan.ausat@egress.com", "MovingUp6Hills");
+            mail.Subject = "this is a test email.";
+            mail.Body = "this is my test email body";
+            client.Send(mail);
         }
     }
 }
