@@ -225,7 +225,7 @@ namespace WindowsFormsApplication1
             return dtMetrics;
         }
 
-        public void button1_Click(object sender, EventArgs e)
+        public void importButton_Click(object sender, EventArgs e)
         {
             GetDataTable();
         }
@@ -240,7 +240,7 @@ namespace WindowsFormsApplication1
             sfd.FileName = "Output.csv";
             if (sfd.ShowDialog() == DialogResult.OK)
             {
-                MessageBox.Show("Data will be exported and you will be notified when it is ready.");
+                MessageBox.Show("Data will be exported and you will be notified when it is ready.", null, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 if (File.Exists(filename))
                 {
                     try
@@ -249,7 +249,7 @@ namespace WindowsFormsApplication1
                     }
                     catch (IOException ex)
                     {
-                        MessageBox.Show("It wasn't possible to write the data to the disk." + ex.Message);
+                        MessageBox.Show("It wasn't possible to write the data to the disk." + ex.Message, null, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 int columnCount = dGV.ColumnCount;
@@ -268,26 +268,26 @@ namespace WindowsFormsApplication1
                     }
                 }
                 File.WriteAllLines(sfd.FileName, output, Encoding.UTF8);
-                MessageBox.Show("Your file was generated and its ready for use.");
+                MessageBox.Show("Your file was generated and its ready for use.", null, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 sendEmail.Enabled = true;
             }
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void exportCSVButton_Click(object sender, EventArgs e)
         {
             SaveToCSV(dataGridView1);
         }
 
         //sending an email
-        private void button1_Click_2(object sender, EventArgs e)
+        private void sendEmail_Click(object sender, EventArgs e)
         {
             String password = "";
             String emailAddFrom = "";
             String emailAddTo = "";
-
-            if (textBox1.Text =="")
+            Match match = Regex.Match(textBox1.Text, "[a-zA-Z]+@egress.com");
+            if (!match.Success)
             {
-                MessageBox.Show("Please enter your email address");
+                MessageBox.Show("Please enter an Egress email address");
             } else
             {
                 emailAddFrom = textBox1.Text;
@@ -299,9 +299,10 @@ namespace WindowsFormsApplication1
                 {
                     password = textBox2.Text;
                     emailAddTo = Interaction.InputBox("Please enter the email address(es) that you are sending to (comma-separated)", "Email Address", "a@egress.com, c@egress.com", -1, -1);
-                    if (emailAddTo == "")
+                    match = Regex.Match(emailAddTo, "[a-zA-Z]+@egress.com");
+                    if (!match.Success)
                     {
-                        MessageBox.Show("Please enter the email address(es) you would like to send to", null, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Please enter valid Egress email address(es) you would like to send to", null, MessageBoxButtons.OK, MessageBoxIcon.Error);
                         
                     } else
                     {
@@ -326,6 +327,7 @@ namespace WindowsFormsApplication1
                 }  
             }
         }
+
         //filtering the table based on column seleced and value entered
         public void button1_Click_3(object sender, EventArgs e)
         {
