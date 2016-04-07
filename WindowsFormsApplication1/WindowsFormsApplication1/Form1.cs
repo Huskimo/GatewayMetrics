@@ -338,7 +338,7 @@ namespace WindowsFormsApplication1
                 }  
             }
         }
-
+        //filtering the table based on column seleced and value entered
         public void button1_Click_3(object sender, EventArgs e)
         {
             String filterBy = "";
@@ -361,7 +361,6 @@ namespace WindowsFormsApplication1
                     {
                         DataView dv;
                         dv = new DataView(dtMetrics, filterBy + " = '" + filterValue + "'", null, DataViewRowState.CurrentRows);
-                        //dv.RowFilter = filterBy + " <> null";
                         dataGridView1.DataSource = dv;
                         importButton.Text = "Unfilter";
                     }
