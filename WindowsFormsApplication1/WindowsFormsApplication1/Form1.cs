@@ -49,7 +49,6 @@ namespace WindowsFormsApplication1
             Regex rDir = new Regex(@"(Inbound|Outbound)");
             Regex rLabel = new Regex(@"(?<=X-\$Switch=\[)[a-zA-Z]*(?=\])");
             Regex rEmailId = new Regex(@"(?<=\[)[a-zA-Z0-9]+(?=\.eml)");
-            //Regex rStatus = new Regex(@"Size =\[[0-9]+\]");
 
             DataTable dtMetrics = new DataTable();
 
@@ -64,9 +63,7 @@ namespace WindowsFormsApplication1
             dtMetrics.Columns.Add("Has Attachments");
             dtMetrics.Columns.Add("Security Label ID");
             dtMetrics.Columns.Add("Direction");
-            dtMetrics.Columns.Add("Type");
             dtMetrics.Columns.Add("ID");
-            dtMetrics.Columns.Add("Details");
 
 
 
@@ -223,7 +220,7 @@ namespace WindowsFormsApplication1
 
                                     //while (fullDetails.Count > 1) {
                                     //display in the grid
-                                    dtMetrics.Rows.Add(concatDetails[0].date, concatDetails[0].time, "14:56:50", y, logList2[0].size, logList2[0].attach, logList2[0].label, logList2[0].direction, concatDetails[0].type, concatDetails[0].id, fullDetails[0]);
+                                    dtMetrics.Rows.Add(concatDetails[0].date, concatDetails[0].time, "14:56:50", y, logList2[0].size, logList2[0].attach, logList2[0].label, logList2[0].direction, concatDetails[0].id);
 
                                     //clear temp variables for next group
                                     //  }
@@ -363,8 +360,10 @@ namespace WindowsFormsApplication1
                     using (DataTable dtMetrics = GetDataTable())
                     {
                         DataView dv;
-                        dv = new DataView(dtMetrics, filterBy + " = '" + filterValue + "' ", filterBy + " Desc", DataViewRowState.CurrentRows);
+                        dv = new DataView(dtMetrics, filterBy + " = '" + filterValue + "'", null, DataViewRowState.CurrentRows);
+                        //dv.RowFilter = filterBy + " <> null";
                         dataGridView1.DataSource = dv;
+                        importButton.Text = "Unfilter";
                     }
                 }
             }
