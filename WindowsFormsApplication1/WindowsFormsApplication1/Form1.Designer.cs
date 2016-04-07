@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.importButton = new System.Windows.Forms.Button();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,8 +41,13 @@
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.importButton = new System.Windows.Forms.Button();
             this.exportCSVButton = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.sendEmail = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,18 +75,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(921, 452);
             this.dataGridView1.TabIndex = 0;
             // 
-            // importButton
-            // 
-            this.importButton.AutoSize = true;
-            this.importButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.importButton.Location = new System.Drawing.Point(927, 12);
-            this.importButton.Name = "importButton";
-            this.importButton.Size = new System.Drawing.Size(94, 23);
-            this.importButton.TabIndex = 1;
-            this.importButton.Text = "Import Text Files";
-            this.importButton.UseVisualStyleBackColor = true;
-            this.importButton.Click += new System.EventHandler(this.button1_Click);
-            // 
             // Column1
             // 
             this.Column1.HeaderText = "Date";
@@ -95,14 +87,14 @@
             this.Column2.HeaderText = "Time In";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
-            this.Column2.Width = 67;
+            this.Column2.Width = 62;
             // 
             // Column6
             // 
             this.Column6.HeaderText = "Time Out";
             this.Column6.Name = "Column6";
             this.Column6.ReadOnly = true;
-            this.Column6.Width = 75;
+            this.Column6.Width = 69;
             // 
             // Column7
             // 
@@ -161,11 +153,23 @@
             this.Column5.ReadOnly = true;
             this.Column5.Width = 500;
             // 
+            // importButton
+            // 
+            this.importButton.AutoSize = true;
+            this.importButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.importButton.Location = new System.Drawing.Point(927, 12);
+            this.importButton.Name = "importButton";
+            this.importButton.Size = new System.Drawing.Size(94, 23);
+            this.importButton.TabIndex = 1;
+            this.importButton.Text = "Import Text Files";
+            this.importButton.UseVisualStyleBackColor = true;
+            this.importButton.Click += new System.EventHandler(this.button1_Click);
+            // 
             // exportCSVButton
             // 
             this.exportCSVButton.AutoSize = true;
             this.exportCSVButton.Enabled = false;
-            this.exportCSVButton.Location = new System.Drawing.Point(927, 66);
+            this.exportCSVButton.Location = new System.Drawing.Point(927, 90);
             this.exportCSVButton.Name = "exportCSVButton";
             this.exportCSVButton.Size = new System.Drawing.Size(83, 23);
             this.exportCSVButton.TabIndex = 2;
@@ -173,22 +177,60 @@
             this.exportCSVButton.UseVisualStyleBackColor = true;
             this.exportCSVButton.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // button1
+            // sendEmail
             // 
-            this.button1.Location = new System.Drawing.Point(927, 115);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_2);
+            this.sendEmail.AutoSize = true;
+            this.sendEmail.Enabled = false;
+            this.sendEmail.Location = new System.Drawing.Point(935, 353);
+            this.sendEmail.Name = "sendEmail";
+            this.sendEmail.Size = new System.Drawing.Size(75, 23);
+            this.sendEmail.TabIndex = 3;
+            this.sendEmail.Text = "Send Email";
+            this.sendEmail.UseVisualStyleBackColor = true;
+            this.sendEmail.Click += new System.EventHandler(this.button1_Click_2);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(935, 216);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 4;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(935, 275);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 20);
+            this.textBox2.TabIndex = 5;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(932, 200);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(156, 13);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Please enter your email address";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(932, 259);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(242, 13);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Please enter your password for your email address";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1224, 538);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.sendEmail);
             this.Controls.Add(this.exportCSVButton);
             this.Controls.Add(this.importButton);
             this.Controls.Add(this.dataGridView1);
@@ -217,7 +259,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.Button exportCSVButton;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button sendEmail;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
 

@@ -12,6 +12,7 @@ using System.Text.RegularExpressions;
 using Microsoft.VisualBasic;
 using System.Net.Mail;
 using System.Net;
+using System.Net.Mime;
 
 namespace WindowsFormsApplication1
 {
@@ -20,6 +21,7 @@ namespace WindowsFormsApplication1
         public Form1()
         {
             InitializeComponent();
+
         }
 
         class log
@@ -223,9 +225,10 @@ namespace WindowsFormsApplication1
                 }
             }
         }
+
         //export to csv function - accessed on 6/4/16
         //http://stackoverflow.com/questions/9943787/exporting-datagridview-to-csv-file
-        private void SaveToCSV(DataGridView dGV)
+        public void SaveToCSV(DataGridView dGV)
         {
             string filename = "";
             SaveFileDialog sfd = new SaveFileDialog();
@@ -260,8 +263,9 @@ namespace WindowsFormsApplication1
                         output[i] += dGV.Rows[i - 1].Cells[j].Value.ToString() + ",";
                     }
                 }
-                File.WriteAllLines(sfd.FileName, output, System.Text.Encoding.UTF8);
+                File.WriteAllLines(sfd.FileName, output, Encoding.UTF8);
                 MessageBox.Show("Your file was generated and its ready for use.");
+                sendEmail.Enabled = true;
             }
         }
 
@@ -270,19 +274,50 @@ namespace WindowsFormsApplication1
             SaveToCSV(dataGridView1);
         }
 
+        //sending an email
         private void button1_Click_2(object sender, EventArgs e)
         {
-            MailMessage mail = new MailMessage("hasaan.ausat@egress.com", "s.h.a.ausat-11@student.lboro.ac.uk, hasaanausat@hotmail.com");
-            SmtpClient client = new SmtpClient();
-            client.Port = 25;
-            client.DeliveryMethod = SmtpDeliveryMethod.Network;
-            client.UseDefaultCredentials = false;
-            client.Host = "smtp.office365.com";
-            client.EnableSsl = true;
-            client.Credentials = new NetworkCredential("hasaan.ausat@egress.com", "MovingUp6Hills");
-            mail.Subject = "this is a test email.";
-            mail.Body = "this is my test email body";
-            client.Send(mail);
+            String password = "";
+            String emailAddFrom = "";
+            String emailAddTo = "";
+
+            if (textBox1.Text =="")
+            {
+                MessageBox.Show("Please enter your email address");
+            } else
+            {
+                emailAddFrom = textBox1.Text;
+                if (textBox2.Text == "")
+                {
+                    MessageBox.Show("Please enter your password!");
+                }
+                else
+                {
+                    password = textBox2.Text;
+                    emailAddTo = Interaction.InputBox("Please enter the email address(es) that you are sending to (comma-separated)", "Email Address", "a@egress.com, c@egress.com", -1, -1);
+                    if (emailAddTo == "")
+                    {
+                        MessageBox.Show("Please enter the email address(es) you would like to send to", null, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        
+                    } else
+                    {
+                        MailMessage mail = new MailMessage(emailAddFrom, emailAddTo + "," + emailAddFrom);
+                        SmtpClient client = new SmtpClient();
+                        client.Port = 25;
+                        client.DeliveryMethod = SmtpDeliveryMethod.Network;
+                        client.UseDefaultCredentials = false;
+                        client.Host = "smtp.office365.com";
+                        client.EnableSsl = true;
+                        client.Credentials = new NetworkCredential(emailAddFrom, password);
+                        mail.Subject = "this is a test email.";
+                        mail.Body = "this is my test email body";
+                        OpenFileDialog ofd = new OpenFileDialog();
+                        ofd.ShowDialog();
+                        mail.Attachments.Add(new Attachment(ofd.FileName));
+                        client.SendMailAsync(mail);
+                    }
+                }  
+            }
         }
     }
 }
