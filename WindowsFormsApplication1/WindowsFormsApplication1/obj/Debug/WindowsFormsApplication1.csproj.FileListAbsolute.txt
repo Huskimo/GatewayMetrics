@@ -16,3 +16,7 @@ D:\Hasaan\Documents\GitHub\GatewayMetrics\WindowsFormsApplication1\WindowsFormsA
 D:\Hasaan\Documents\GitHub\GatewayMetrics\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Form1.resources
 D:\Hasaan\Documents\GitHub\GatewayMetrics\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
 D:\Hasaan\Documents\GitHub\GatewayMetrics\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+D:\Hasaan\Documents\GitHub\GatewayMetrics\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\AdvancedDataGridView.dll
+D:\Hasaan\Documents\GitHub\GatewayMetrics\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\AdvancedDataGridView.xml
+D:\Hasaan\Documents\GitHub\GatewayMetrics\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\fr\AdvancedDataGridView.resources.dll
+D:\Hasaan\Documents\GitHub\GatewayMetrics\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\ru\AdvancedDataGridView.resources.dll

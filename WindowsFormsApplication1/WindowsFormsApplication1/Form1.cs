@@ -41,9 +41,8 @@ namespace WindowsFormsApplication1
             public string details { get; set; }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        public DataTable GetDataTable()
         {
-
             //initating regex
             Regex rSize = new Regex(@"(?<=Size=\[)[0-9]*(?=\])");
             Regex rAttach = new Regex(@"(?<=Attachments=\[)[a-zA-Z0-9]*(?=\])");
@@ -52,18 +51,36 @@ namespace WindowsFormsApplication1
             Regex rEmailId = new Regex(@"(?<=\[)[a-zA-Z0-9]+(?=\.eml)");
             //Regex rStatus = new Regex(@"Size =\[[0-9]+\]");
 
+            DataTable dtMetrics = new DataTable();
+
             //clears table at beginning to allow for any changes in the file while running (i.e acts as a refresh button)
-            dataGridView1.Rows.Clear();
+            dtMetrics.Rows.Clear();
+
+            dtMetrics.Columns.Add("Date");
+            dtMetrics.Columns.Add("Time In");
+            dtMetrics.Columns.Add("Time Out");
+            dtMetrics.Columns.Add("Time Taken (s)");
+            dtMetrics.Columns.Add("Email Size (bytes)");
+            dtMetrics.Columns.Add("Has Attachments");
+            dtMetrics.Columns.Add("Security Label ID");
+            dtMetrics.Columns.Add("Direction");
+            dtMetrics.Columns.Add("Type");
+            dtMetrics.Columns.Add("ID");
+            dtMetrics.Columns.Add("Details");
+
+
 
             //get file path from user
             String x = Interaction.InputBox("Please enter the file location of the logs", "File Location", "D:\\Hasaan\\Desktop\\Logs", -1, -1);
-           
+
             //ensure file path exists, if not display error message
             if (!Directory.Exists(x))
             {
-                MessageBox.Show("The path '"+x+"' does not exist. Please try again.", null, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("The path '" + x + "' does not exist. Please try again.", null, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 importButton.Text = "Import Text Files";
                 exportCSVButton.Enabled = false;
+                filter.Enabled = false;
+                comboBox1.Enabled = false;
             }
             else {
 
@@ -76,6 +93,8 @@ namespace WindowsFormsApplication1
                     MessageBox.Show("There are no log files to import", null, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     importButton.Text = "Import Text Files";
                     exportCSVButton.Enabled = false;
+                    filter.Enabled = false;
+                    comboBox1.Enabled = false;
                 }
                 else {
 
@@ -83,6 +102,8 @@ namespace WindowsFormsApplication1
                     importButton.Text = "Refresh";
 
                     exportCSVButton.Enabled = true;
+                    filter.Enabled = true;
+                    comboBox1.Enabled = true;
 
                     string[] dirs = Directory.GetFiles(@x);
 
@@ -139,7 +160,7 @@ namespace WindowsFormsApplication1
                             tempEmailId = rEmailId.Match(tempDetails).ToString();
 
                             //creating log object and pushing it onto the logList
-                            log tempLogObject = new log { date = tempDate, time = tempTime, type = tempType, id = tempId, details = tempDetails, emailId = tempEmailId};
+                            log tempLogObject = new log { date = tempDate, time = tempTime, type = tempType, id = tempId, details = tempDetails, emailId = tempEmailId };
                             logList.Insert(0, tempLogObject);
 
                             //ensuring only specific ID's are searched for and displayed
@@ -162,7 +183,7 @@ namespace WindowsFormsApplication1
                                     fullDetails.Insert(0, tempBlockDetails);
 
                                     //apply regex tests and assign output to temp variables
-                                  
+
                                     tempSize = rSize.Match(fullDetails[0]).ToString();
                                     if (rAttach.Match(fullDetails[0]).ToString() == "")
                                     {
@@ -178,10 +199,10 @@ namespace WindowsFormsApplication1
                                     log tempLogObject2 = new log { id2 = tempId, emailId = tempEmailId2, timeOut = tempTimeOut, size = tempSize, attach = tempAttach, label = tempLabel, direction = tempDir, status = tempStatus };
                                     logList2.Insert(0, tempLogObject2);
 
-                                  /*  var matched = from id in logLists
-                                                  from id2 in logsLists
-                                                  where logLists[0].emailId == logsLists[0].emailId
-                                                  select new { logList = id, logsList = id2}; */
+                                    /*  var matched = from id in logLists
+                                                    from id2 in logsLists
+                                                    where logLists[0].emailId == logsLists[0].emailId
+                                                    select new { logList = id, logsList = id2}; */
 
                                     //spliting date and time and performing a subtraction in order to find difference
                                     char splitChar = ':';
@@ -197,33 +218,34 @@ namespace WindowsFormsApplication1
                                     String[] times2 = text3.Split(splitChar);
 
                                     //converting difference output into seconds
-                                    TimeSpan interval = new TimeSpan(0, Convert.ToInt32(times2[0]), Convert.ToInt32(times2[1]), Convert.ToInt32(times2[2]),0);
+                                    TimeSpan interval = new TimeSpan(0, Convert.ToInt32(times2[0]), Convert.ToInt32(times2[1]), Convert.ToInt32(times2[2]), 0);
                                     String y = interval.TotalSeconds.ToString();
 
                                     //while (fullDetails.Count > 1) {
                                     //display in the grid
-                                    dataGridView1.Rows.Add(concatDetails[0].date, concatDetails[0].time, "14:56:50", y, logList2[0].size, logList2[0].attach, logList2[0].label, logList2[0].direction, concatDetails[0].type, concatDetails[0].id, fullDetails[0]);
+                                    dtMetrics.Rows.Add(concatDetails[0].date, concatDetails[0].time, "14:56:50", y, logList2[0].size, logList2[0].attach, logList2[0].label, logList2[0].direction, concatDetails[0].type, concatDetails[0].id, fullDetails[0]);
+
                                     //clear temp variables for next group
                                     //  }
                                     tempBlockDetails = "";
                                     concatDetails.Clear();
+
                                 }
                             }
-
-                            /* for (int l = fullDetails.Count; l > 0; l--)
-                             {
-                                 //display in the grid
-                                 dataGridView1.Rows.Add(concatDetails[l].date, concatDetails[l].time, concatDetails[l].type, concatDetails[l].id, fullDetails[l]);
-                                 //clear temp variables for next group
-                                 tempBlockDetails = "";
-                                 concatDetails.Clear();
-                             } */
                         }
                         //close the file after use
                         file.Close();
+
                     }
                 }
             }
+            dataGridView1.DataSource = dtMetrics;
+            return dtMetrics;
+        }
+
+        public void button1_Click(object sender, EventArgs e)
+        {
+            GetDataTable();
         }
 
         //export to csv function - accessed on 6/4/16
@@ -317,6 +339,34 @@ namespace WindowsFormsApplication1
                         client.SendMailAsync(mail);
                     }
                 }  
+            }
+        }
+
+        public void button1_Click_3(object sender, EventArgs e)
+        {
+            String filterBy = "";
+            String filterValue = "";
+            if (comboBox1.Text == "")
+            {
+                MessageBox.Show("Please select the column you would like to filter the table by", null, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                filterBy = comboBox1.Text;
+                if (textBox3.Text == "")
+                {
+                    MessageBox.Show("Please enter the value you would like to filter by", null, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    filterValue = textBox3.Text;
+                    using (DataTable dtMetrics = GetDataTable())
+                    {
+                        DataView dv;
+                        dv = new DataView(dtMetrics, filterBy + " = '" + filterValue + "' ", filterBy + " Desc", DataViewRowState.CurrentRows);
+                        dataGridView1.DataSource = dv;
+                    }
+                }
             }
         }
     }
