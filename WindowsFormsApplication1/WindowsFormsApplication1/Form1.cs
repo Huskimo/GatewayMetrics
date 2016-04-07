@@ -151,8 +151,7 @@ namespace WindowsFormsApplication1
                             tempEmailId = rEmailId.Match(tempDetails).ToString();
 
                             //creating log object and pushing it onto the logList
-                            log tempLogObject = new log { date = tempDate, time = tempTime, type = tempType, 
-								id = tempId, details = tempDetails, emailId = tempEmailId };
+                            log tempLogObject = new log { date = tempDate, time = tempTime, type = tempType, id = tempId, details = tempDetails, emailId = tempEmailId };
                             logList.Insert(0, tempLogObject);
 
                             //ensuring only specific ID's are searched for and displayed
@@ -166,6 +165,7 @@ namespace WindowsFormsApplication1
                                 }
                                 else {
                                     //previous group has finished - concats all the details
+                                    concatDetails.Insert(0, tempLogObject);
                                     for (int k = concatDetails.Count; k > 0; k--)
                                     {
                                         tempBlockDetails = tempBlockDetails + concatDetails[k - 1].details;
