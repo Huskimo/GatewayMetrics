@@ -29,7 +29,6 @@ namespace WindowsFormsApplication1
             public string attach { get; set; }
             public string label { get; set; }
             public string direction { get; set; }
-            public string status { get; set; }
             public string emailId { get; set; }
             public string type { get; set; }
             public string id { get; set; }
@@ -46,11 +45,13 @@ namespace WindowsFormsApplication1
             Regex rLabel = new Regex(@"(?<=X-\$Switch=\[)[a-zA-Z]*(?=\])");
             Regex rEmailId = new Regex(@"(?<=\[)[a-zA-Z0-9]+(?=\.eml)");
 
+            //create new data table
             DataTable dtMetrics = new DataTable();
 
             //clears table at beginning to allow for any changes in the file while running (i.e acts as a refresh button)
             dtMetrics.Rows.Clear();
 
+            //create columns in data table
             dtMetrics.Columns.Add("Date");
             dtMetrics.Columns.Add("Time In");
             dtMetrics.Columns.Add("Time Out");
@@ -60,8 +61,6 @@ namespace WindowsFormsApplication1
             dtMetrics.Columns.Add("Security Label ID");
             dtMetrics.Columns.Add("Direction");
             dtMetrics.Columns.Add("ID");
-
-
 
             //get file path from user
             String x = Interaction.InputBox("Please enter the file location of the logs", "File Location", "D:\\Hasaan\\Desktop\\Logs", -1, -1);
@@ -108,7 +107,6 @@ namespace WindowsFormsApplication1
                     String tempAttach = "";
                     String tempLabel = "";
                     String tempDir = "";
-                    String tempStatus = "";
                     String tempId = "";
                     String tempEmailId = "";
                     String tempEmailId2 = "";
@@ -176,7 +174,6 @@ namespace WindowsFormsApplication1
                                     fullDetails.Insert(0, tempBlockDetails);
 
                                     //apply regex tests and assign output to temp variables
-
                                     tempSize = rSize.Match(fullDetails[0]).ToString();
                                     if (rAttach.Match(fullDetails[0]).ToString() == "")
                                     {
@@ -187,15 +184,10 @@ namespace WindowsFormsApplication1
                                     }
                                     tempLabel = rLabel.Match(fullDetails[0]).ToString();
                                     tempDir = rDir.Match(fullDetails[0]).ToString();
-                                    //tempStatus = rStatus.Match(fullDetails[0]).ToString();
                                     tempEmailId2 = rEmailId.Match(fullDetails[0]).ToString();
-                                    log tempLogObject2 = new log { id2 = tempId, emailId = tempEmailId2, timeOut = tempTimeOut, size = tempSize, attach = tempAttach, label = tempLabel, direction = tempDir, status = tempStatus };
-                                    logList2.Insert(0, tempLogObject2);
 
-                                    /*  var matched = from id in logLists
-                                                    from id2 in logsLists
-                                                    where logLists[0].emailId == logsLists[0].emailId
-                                                    select new { logList = id, logsList = id2}; */
+                                    log tempLogObject2 = new log { id2 = tempId, emailId = tempEmailId2, timeOut = tempTimeOut, size = tempSize, attach = tempAttach, label = tempLabel, direction = tempDir};
+                                    logList2.Insert(0, tempLogObject2);
 
                                     //spliting date and time and performing a subtraction in order to find difference
                                     char splitChar = ':';
@@ -214,12 +206,10 @@ namespace WindowsFormsApplication1
                                     TimeSpan interval = new TimeSpan(0, Convert.ToInt32(times2[0]), Convert.ToInt32(times2[1]), Convert.ToInt32(times2[2]), 0);
                                     String y = interval.TotalSeconds.ToString();
 
-                                    //while (fullDetails.Count > 1) {
                                     //display in the grid
                                     dtMetrics.Rows.Add(concatDetails[0].date, concatDetails[0].time, "14:56:50", y, logList2[0].size, logList2[0].attach, logList2[0].label, logList2[0].direction, concatDetails[0].id);
 
                                     //clear temp variables for next group
-                                    //  }
                                     tempBlockDetails = "";
                                     concatDetails.Clear();
 
@@ -228,7 +218,6 @@ namespace WindowsFormsApplication1
                         }
                         //close the file after use
                         file.Close();
-
                     }
                 }
             }
@@ -324,12 +313,15 @@ namespace WindowsFormsApplication1
                         client.Host = "smtp.office365.com";
                         client.EnableSsl = true;
                         client.Credentials = new NetworkCredential(emailAddFrom, password);
-                        mail.Subject = "this is a test email.";
-                        mail.Body = "this is my test email body";
+                        mail.Subject = "Gateway Metrics";
+                        mail.Body = textBox4.Text;
                         OpenFileDialog ofd = new OpenFileDialog();
                         ofd.ShowDialog();
                         mail.Attachments.Add(new Attachment(ofd.FileName));
                         client.SendMailAsync(mail);
+                        textBox1.Text = "";
+                        textBox2.Text = "";
+                        textBox4.Text = "";
                     }
                 }  
             }
@@ -359,6 +351,7 @@ namespace WindowsFormsApplication1
                         dv = new DataView(dtMetrics, filterBy + " = '" + filterValue + "'", null, DataViewRowState.CurrentRows);
                         dataGridView1.DataSource = dv;
                         importButton.Text = "Unfilter";
+                        textBox3.Text = "";
                     }
                 }
             }
