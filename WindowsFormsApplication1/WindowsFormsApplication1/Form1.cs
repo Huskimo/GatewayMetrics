@@ -357,5 +357,29 @@ namespace WindowsFormsApplication1
                 }
             }
         }
+
+        private void deleteFiles_Click(object sender, EventArgs e)
+        {
+            String x = Interaction.InputBox("Please enter the file location of the logs", "File Location", "D:\\Hasaan\\Desktop\\Logs", -1, -1);
+            if (!Directory.Exists(x))
+            {
+                MessageBox.Show("The path '" + x + "' does not exist. Please try again.", null, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            } else
+            {
+                //MessageBox.Show(Directory.GetFiles(@x).Count().ToString());
+                if (Directory.GetFiles(@x, "*.log").Count() == 0)
+                {
+                    MessageBox.Show("There are no .log files in the given directory.", null, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                } else
+                {
+                   string yesNo = MessageBox.Show("Are you sure you want to delete the .log files?", null, MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation).ToString();
+                    if (yesNo == "Yes")
+                    {
+                        Array.ForEach(Directory.GetFiles(@x, "*.log"), File.Delete);
+                        MessageBox.Show("The log files in "+ x +" have now been deleted.", null, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            }
+        }
     }
 }

@@ -48,6 +48,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.deleteFiles = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -239,11 +240,23 @@
             this.label9.TabIndex = 18;
             this.label9.Text = "please first export to csv";
             // 
+            // deleteFiles
+            // 
+            this.deleteFiles.AutoSize = true;
+            this.deleteFiles.Location = new System.Drawing.Point(927, 480);
+            this.deleteFiles.Name = "deleteFiles";
+            this.deleteFiles.Size = new System.Drawing.Size(93, 23);
+            this.deleteFiles.TabIndex = 19;
+            this.deleteFiles.Text = "Delete Log Files";
+            this.deleteFiles.UseVisualStyleBackColor = true;
+            this.deleteFiles.Click += new System.EventHandler(this.deleteFiles_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1052, 564);
+            this.Controls.Add(this.deleteFiles);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -293,6 +306,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button deleteFiles;
     }
 }
 
