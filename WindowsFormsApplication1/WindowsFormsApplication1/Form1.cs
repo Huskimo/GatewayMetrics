@@ -30,6 +30,7 @@ namespace WindowsFormsApplication1
             public string label { get; set; }
             public string direction { get; set; }
             public string emailId { get; set; }
+            public string emailId2 { get; set; }
             public string type { get; set; }
             public string id { get; set; }
             public string id2 { get; set; }
@@ -148,6 +149,10 @@ namespace WindowsFormsApplication1
                             tempType = tempLogs.Substring(34, 11);
                             tempId = tempLogs.Substring(54, 4);
                             tempDetails = tempLogs.Substring(63, lastChar);
+                            if (tempId == "1180")
+                            {
+
+                            }
                             tempEmailId = rEmailId.Match(tempDetails).ToString();
 
                             //creating log object and pushing it onto the logList
@@ -184,30 +189,47 @@ namespace WindowsFormsApplication1
                                     tempLabel = rLabel.Match(fullDetails[0]).ToString();
                                     tempDir = rDir.Match(fullDetails[0]).ToString();
                                     tempEmailId2 = rEmailId.Match(fullDetails[0]).ToString();
-
-                                    log tempLogObject2 = new log { id2 = tempId, emailId = tempEmailId2, timeOut = tempTimeOut, size = tempSize, attach = tempAttach, label = tempLabel, direction = tempDir};
+                                    //if (concatDetails[0].id == "1180" && concatDetails[0].id == "1112")
+                                    //{
+                                    //    tempTimeOut = concatDetails[0].time;
+                                    //} else
+                                    //{
+                                    //    tempTimeOut = "00:00:00";
+                                    //}
+                                    //MessageBox.Show(tempTimeOut);
+                                    log tempLogObject2 = new log { id2 = tempId, emailId2 = tempEmailId2, timeOut = tempTimeOut, size = tempSize, attach = tempAttach, label = tempLabel, direction = tempDir};
                                     logList2.Insert(0, tempLogObject2);
+
+                                    //if (concatDetails[0].id == "1180" && logList2[0].id2 == "1112" && concatDetails[0].emailId == logList2[0].emailId2)
+                                    //{
+                                    //    if (logList[0].id == "1112" || logList2[0].id2 == "1112")
+                                    //    {
+                                    //        logList2[0].timeOut = concatDetails[0].time;
+                                    //    }
+                                    //}
 
                                     //spliting date and time and performing a subtraction in order to find difference
                                     char splitChar = ':';
                                     char splitChar2 = '-';
                                     String text = concatDetails[0].time;
                                     String text2 = concatDetails[0].date;
+                                    //String text3 = logList2[0].timeOut;
+                                    String text3 = "14:00:00";
                                     String[] times = text.Split(splitChar);
                                     String[] dates = text2.Split(splitChar2);
+                                    String[] timeouts = text3.Split(splitChar);
                                     System.DateTime date1 = new System.DateTime(Convert.ToInt32(dates[0]), Convert.ToInt32(dates[1]), Convert.ToInt32(dates[2]), Convert.ToInt32(times[0]), Convert.ToInt32(times[1]), Convert.ToInt32(times[2]));
-                                    System.DateTime time2 = new System.DateTime(Convert.ToInt32(dates[0]), Convert.ToInt32(dates[1]), Convert.ToInt32(dates[2]), 14, 56, 50);
+                                    System.DateTime time2 = new System.DateTime(Convert.ToInt32(dates[0]), Convert.ToInt32(dates[1]), Convert.ToInt32(dates[2]), Convert.ToInt32(timeouts[0]), Convert.ToInt32(timeouts[1]), Convert.ToInt32(timeouts[2]));
                                     TimeSpan diff = time2.Subtract(date1);
-                                    String text3 = diff.ToString();
-                                    String[] times2 = text3.Split(splitChar);
+                                    String text4 = diff.ToString();
+                                    String[] times2 = text4.Split(splitChar);
 
                                     //converting difference output into seconds
                                     TimeSpan interval = new TimeSpan(0, Convert.ToInt32(times2[0]), Convert.ToInt32(times2[1]), Convert.ToInt32(times2[2]), 0);
                                     String y = interval.TotalSeconds.ToString();
 
-                                    //display in the grid
-                                    dtMetrics.Rows.Add(concatDetails[0].date, concatDetails[0].time, "14:56:50", y, logList2[0].size, logList2[0].attach, logList2[0].label, logList2[0].direction, concatDetails[0].id);
-
+                                    //display in the grid                                 
+                                    dtMetrics.Rows.Add(concatDetails[0].date, concatDetails[0].time, logList2[0].timeOut, y, logList2[0].size, logList2[0].attach, logList2[0].label, logList2[0].direction, concatDetails[0].id);
                                     //clear temp variables for next group
                                     tempBlockDetails = "";
                                     concatDetails.Clear();
@@ -369,10 +391,10 @@ namespace WindowsFormsApplication1
                 //MessageBox.Show(Directory.GetFiles(@x).Count().ToString());
                 if (Directory.GetFiles(@x, "*.log").Count() == 0)
                 {
-                    MessageBox.Show("There are no .log files in the given directory.", null, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("There are no log files in the given directory.", null, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 } else
                 {
-                   string yesNo = MessageBox.Show("Are you sure you want to delete the .log files?", null, MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation).ToString();
+                   string yesNo = MessageBox.Show("Are you sure you want to delete the log files?", null, MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation).ToString();
                     if (yesNo == "Yes")
                     {
                         Array.ForEach(Directory.GetFiles(@x, "*.log"), File.Delete);

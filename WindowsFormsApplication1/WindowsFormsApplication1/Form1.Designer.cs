@@ -80,7 +80,7 @@
             // 
             this.exportCSVButton.AutoSize = true;
             this.exportCSVButton.Enabled = false;
-            this.exportCSVButton.Location = new System.Drawing.Point(765, 101);
+            this.exportCSVButton.Location = new System.Drawing.Point(765, 95);
             this.exportCSVButton.Name = "exportCSVButton";
             this.exportCSVButton.Size = new System.Drawing.Size(83, 23);
             this.exportCSVButton.TabIndex = 2;
@@ -192,7 +192,7 @@
             this.textBox4.Location = new System.Drawing.Point(765, 303);
             this.textBox4.Multiline = true;
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(227, 131);
+            this.textBox4.Size = new System.Drawing.Size(255, 131);
             this.textBox4.TabIndex = 13;
             // 
             // label5
@@ -207,7 +207,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(765, 72);
+            this.label6.Location = new System.Drawing.Point(765, 66);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(123, 13);
             this.label6.TabIndex = 15;
@@ -216,7 +216,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(765, 85);
+            this.label7.Location = new System.Drawing.Point(765, 79);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(88, 13);
             this.label7.TabIndex = 16;
