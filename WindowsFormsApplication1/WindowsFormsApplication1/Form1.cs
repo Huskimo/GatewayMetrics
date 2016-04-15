@@ -189,24 +189,8 @@ namespace WindowsFormsApplication1
                                     tempLabel = rLabel.Match(fullDetails[0]).ToString();
                                     tempDir = rDir.Match(fullDetails[0]).ToString();
                                     tempEmailId2 = rEmailId.Match(fullDetails[0]).ToString();
-                                    //if (concatDetails[0].id == "1180" && concatDetails[0].id == "1112")
-                                    //{
-                                    //    tempTimeOut = concatDetails[0].time;
-                                    //} else
-                                    //{
-                                    //    tempTimeOut = "00:00:00";
-                                    //}
-                                    //MessageBox.Show(tempTimeOut);
                                     log tempLogObject2 = new log { id2 = tempId, emailId2 = tempEmailId2, timeOut = tempTimeOut, size = tempSize, attach = tempAttach, label = tempLabel, direction = tempDir};
                                     logList2.Insert(0, tempLogObject2);
-
-                                    //if (concatDetails[0].id == "1180" && logList2[0].id2 == "1112" && concatDetails[0].emailId == logList2[0].emailId2)
-                                    //{
-                                    //    if (logList[0].id == "1112" || logList2[0].id2 == "1112")
-                                    //    {
-                                    //        logList2[0].timeOut = concatDetails[0].time;
-                                    //    }
-                                    //}
 
                                     //spliting date and time and performing a subtraction in order to find difference
                                     char splitChar = ':';
@@ -388,7 +372,6 @@ namespace WindowsFormsApplication1
                 MessageBox.Show("The path '" + x + "' does not exist. Please try again.", null, MessageBoxButtons.OK, MessageBoxIcon.Error);
             } else
             {
-                //MessageBox.Show(Directory.GetFiles(@x).Count().ToString());
                 if (Directory.GetFiles(@x, "*.log").Count() == 0)
                 {
                     MessageBox.Show("There are no log files in the given directory.", null, MessageBoxButtons.OK, MessageBoxIcon.Information);
