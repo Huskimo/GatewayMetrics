@@ -319,7 +319,7 @@ namespace WindowsFormsApplication1
                 else
                 {
                     password = textBox2.Text;
-                    emailAddTo = Interaction.InputBox("Please enter the email address(es) that you are sending to (comma-separated)", "Email Address", "a@egress.com, c@egress.com", -1, -1);
+                    emailAddTo = Interaction.InputBox("Please enter the email address(es) that you are sending to (comma-separated)", "Email Address", "a@egress.com, b@egress.com", -1, -1);
                     match = Regex.Match(emailAddTo, "[a-zA-Z]+@egress.com");
                     if (!match.Success)
                     {
@@ -327,9 +327,10 @@ namespace WindowsFormsApplication1
                         
                     } else
                     {
+                        //smtp.office365.com
                         MailMessage mail = new MailMessage(emailAddFrom, emailAddTo + "," + emailAddFrom);
                         SmtpClient client = new SmtpClient();
-                        client.Port = 25;
+                        client.Port = 995;
                         client.DeliveryMethod = SmtpDeliveryMethod.Network;
                         client.UseDefaultCredentials = false;
                         client.Host = "smtp.office365.com";
@@ -344,6 +345,7 @@ namespace WindowsFormsApplication1
                         textBox1.Text = "";
                         textBox2.Text = "";
                         textBox4.Text = "";
+                        password = "";
                     }
                 }  
             }
