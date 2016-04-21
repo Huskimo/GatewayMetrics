@@ -222,6 +222,7 @@ namespace WindowsFormsApplication1
                                     //        logList2[0].timeOut = concatDetails[0].time;
                                     //    }
                                     //}
+                                    //select time from loglist where ((loglist.id = 1180 and loglist2.id == 1112) and  (loglist.emailtempid = loglist2.emailtempid2)) or ((loglist.id == 1180 and loglist2.id == 1113) and  ((loglist.emailtempid = loglist2.emailtempid2))
 
                                     //spliting date and time and performing a subtraction in order to find difference
                                     text = concatDetails[0].time;
@@ -237,24 +238,27 @@ namespace WindowsFormsApplication1
                                     text4 = diff.ToString();
                                     times2 = text4.Split(splitChar);
 
+                                    //converting difference output into seconds
+                                    TimeSpan interval = new TimeSpan(0, Convert.ToInt32(times2[0]), Convert.ToInt32(times2[1]), Convert.ToInt32(times2[2]), 0);
+                                    String y = interval.TotalSeconds.ToString();
 
+                                    //display in the grid     
+                                    if (concatDetails.Count() == 0)
+                                    {
+
+                                    }
+                                    else if (concatDetails[0].id == "1180")
+                                    {
+                                        dtMetrics.Rows.Add(concatDetails[0].date, concatDetails[0].time, text3, y, logList2[0].size, logList2[0].attach, logList2[0].label, logList2[0].direction, concatDetails[0].id);
+                                    }
+
+                                    //clear temp variables for next group
+                                    tempBlockDetails = "";
+                                    concatDetails.Clear();
 
                                 }
                             }
-                            //converting difference output into seconds
-                            TimeSpan interval = new TimeSpan(0, Convert.ToInt32(times2[0]), Convert.ToInt32(times2[1]), Convert.ToInt32(times2[2]), 0);
-                            String y = interval.TotalSeconds.ToString();
-
-                            //display in the grid     
-                            if (concatDetails.Count() == 0) { 
-
-                            } else if (concatDetails[0].id == "1180"){
-                                dtMetrics.Rows.Add(concatDetails[0].date, concatDetails[0].time, logList2[0].timeOut, y, logList2[0].size, logList2[0].attach, logList2[0].label, logList2[0].direction, concatDetails[0].id);
-                            }
-
-                            //clear temp variables for next group
-                            tempBlockDetails = "";
-                            concatDetails.Clear();
+                            
                         }
                         //close the file after use
                         file.Close();
