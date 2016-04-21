@@ -160,13 +160,13 @@ namespace WindowsFormsApplication1
                             logList.Insert(0, tempLogObject);
 
                             //ensuring only specific ID's are searched for and displayed
-                            if (tempId == "1180" /*|| tempId == "1112" || tempId =="1113"*/)
+                            if (tempId == "1180")
                             {
                                 //check if ID is the same as the last
                                 if (logList.Count == 1 || logList[0].id == logList[1].id)
                                 {
-                                	//if so push on the list as objects are part of group
-                                	concatDetails.Insert(0, tempLogObject); 
+                                    //if so push on the list as objects are part of group
+                                    concatDetails.Insert(0, tempLogObject);
                                 }
                                 else {
                                     //previous group has finished - concats all the details
@@ -197,7 +197,7 @@ namespace WindowsFormsApplication1
                                     //    tempTimeOut = "00:00:00";
                                     //}
                                     //MessageBox.Show(tempTimeOut);
-                                    log tempLogObject2 = new log { id2 = tempId, emailId2 = tempEmailId2, timeOut = tempTimeOut, size = tempSize, attach = tempAttach, label = tempLabel, direction = tempDir};
+                                    log tempLogObject2 = new log { id2 = tempId, emailId2 = tempEmailId2, timeOut = tempTimeOut, size = tempSize, attach = tempAttach, label = tempLabel, direction = tempDir };
                                     logList2.Insert(0, tempLogObject2);
 
                                     //if (concatDetails[0].id == "1180" && logList2[0].id2 == "1112" && concatDetails[0].emailId == logList2[0].emailId2)
@@ -228,8 +228,12 @@ namespace WindowsFormsApplication1
                                     TimeSpan interval = new TimeSpan(0, Convert.ToInt32(times2[0]), Convert.ToInt32(times2[1]), Convert.ToInt32(times2[2]), 0);
                                     String y = interval.TotalSeconds.ToString();
 
-                                    //display in the grid                                 
-                                    dtMetrics.Rows.Add(concatDetails[0].date, concatDetails[0].time, logList2[0].timeOut, y, logList2[0].size, logList2[0].attach, logList2[0].label, logList2[0].direction, concatDetails[0].id);
+                                    //display in the grid     
+                                    if (concatDetails[0].id == "1180")
+                                    {
+                                        dtMetrics.Rows.Add(concatDetails[0].date, concatDetails[0].time, logList2[0].timeOut, y, logList2[0].size, logList2[0].attach, logList2[0].label, logList2[0].direction, concatDetails[0].id);
+                                    }
+
                                     //clear temp variables for next group
                                     tempBlockDetails = "";
                                     concatDetails.Clear();
@@ -305,10 +309,10 @@ namespace WindowsFormsApplication1
             String password = "";
             String emailAddFrom = "";
             String emailAddTo = "";
-            Match match = Regex.Match(textBox1.Text, "[a-zA-Z]+@egress.com");
+            Match match = Regex.Match(textBox1.Text, "[a-zA-Z]+@hotmail.com");
             if (!match.Success)
             {
-                MessageBox.Show("Please enter an Egress email address");
+                MessageBox.Show("Please enter a hotmail email address");
             } else
             {
                 emailAddFrom = textBox1.Text;
@@ -330,10 +334,10 @@ namespace WindowsFormsApplication1
                         //smtp.office365.com
                         MailMessage mail = new MailMessage(emailAddFrom, emailAddTo + "," + emailAddFrom);
                         SmtpClient client = new SmtpClient();
-                        client.Port = 995;
+                        client.Port = 587;
                         client.DeliveryMethod = SmtpDeliveryMethod.Network;
                         client.UseDefaultCredentials = false;
-                        client.Host = "smtp.office365.com";
+                        client.Host = "smtp-mail.outlook.com";
                         client.EnableSsl = true;
                         client.Credentials = new NetworkCredential(emailAddFrom, password);
                         mail.Subject = "Gateway Metrics";
