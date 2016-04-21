@@ -124,6 +124,21 @@ namespace WindowsFormsApplication1
 
                     List<log> logList2 = new List<log>();
 
+                    char splitChar = ':';
+                    char splitChar2 = '-';
+                    String text = "";
+                    String text2 = "";
+                    //String text3 = logList2[0].timeOut;
+                    String text3 = "14:00:00";
+                    String[] times = new String[3];
+                    String[] dates = new String[3];
+                    String[] timeouts = new String[3];
+                    System.DateTime date1 = new System.DateTime();
+                    System.DateTime time2 = new System.DateTime();
+                    TimeSpan diff = TimeSpan.Zero;
+                    String text4 = "";
+                    String[] times2 = new String[10];
+
                     //For every file do..
                     for (int j = 0; j < fileCount; j++)
                     {
@@ -209,37 +224,37 @@ namespace WindowsFormsApplication1
                                     //}
 
                                     //spliting date and time and performing a subtraction in order to find difference
-                                    char splitChar = ':';
-                                    char splitChar2 = '-';
-                                    String text = concatDetails[0].time;
-                                    String text2 = concatDetails[0].date;
+                                    text = concatDetails[0].time;
+                                    text2 = concatDetails[0].date;
                                     //String text3 = logList2[0].timeOut;
-                                    String text3 = "14:00:00";
-                                    String[] times = text.Split(splitChar);
-                                    String[] dates = text2.Split(splitChar2);
-                                    String[] timeouts = text3.Split(splitChar);
-                                    System.DateTime date1 = new System.DateTime(Convert.ToInt32(dates[0]), Convert.ToInt32(dates[1]), Convert.ToInt32(dates[2]), Convert.ToInt32(times[0]), Convert.ToInt32(times[1]), Convert.ToInt32(times[2]));
-                                    System.DateTime time2 = new System.DateTime(Convert.ToInt32(dates[0]), Convert.ToInt32(dates[1]), Convert.ToInt32(dates[2]), Convert.ToInt32(timeouts[0]), Convert.ToInt32(timeouts[1]), Convert.ToInt32(timeouts[2]));
-                                    TimeSpan diff = time2.Subtract(date1);
-                                    String text4 = diff.ToString();
-                                    String[] times2 = text4.Split(splitChar);
+                                    text3 = "14:00:00";
+                                    times = text.Split(splitChar);
+                                    dates = text2.Split(splitChar2);
+                                    timeouts = text3.Split(splitChar);
+                                    date1 = new System.DateTime(Convert.ToInt32(dates[0]), Convert.ToInt32(dates[1]), Convert.ToInt32(dates[2]), Convert.ToInt32(times[0]), Convert.ToInt32(times[1]), Convert.ToInt32(times[2]));
+                                    time2 = new System.DateTime(Convert.ToInt32(dates[0]), Convert.ToInt32(dates[1]), Convert.ToInt32(dates[2]), Convert.ToInt32(timeouts[0]), Convert.ToInt32(timeouts[1]), Convert.ToInt32(timeouts[2]));
+                                    diff = time2.Subtract(date1);
+                                    text4 = diff.ToString();
+                                    times2 = text4.Split(splitChar);
 
-                                    //converting difference output into seconds
-                                    TimeSpan interval = new TimeSpan(0, Convert.ToInt32(times2[0]), Convert.ToInt32(times2[1]), Convert.ToInt32(times2[2]), 0);
-                                    String y = interval.TotalSeconds.ToString();
 
-                                    //display in the grid     
-                                    if (concatDetails[0].id == "1180")
-                                    {
-                                        dtMetrics.Rows.Add(concatDetails[0].date, concatDetails[0].time, logList2[0].timeOut, y, logList2[0].size, logList2[0].attach, logList2[0].label, logList2[0].direction, concatDetails[0].id);
-                                    }
-
-                                    //clear temp variables for next group
-                                    tempBlockDetails = "";
-                                    concatDetails.Clear();
 
                                 }
                             }
+                            //converting difference output into seconds
+                            TimeSpan interval = new TimeSpan(0, Convert.ToInt32(times2[0]), Convert.ToInt32(times2[1]), Convert.ToInt32(times2[2]), 0);
+                            String y = interval.TotalSeconds.ToString();
+
+                            //display in the grid     
+                            if (concatDetails.Count() == 0) { 
+
+                            } else if (concatDetails[0].id == "1180"){
+                                dtMetrics.Rows.Add(concatDetails[0].date, concatDetails[0].time, logList2[0].timeOut, y, logList2[0].size, logList2[0].attach, logList2[0].label, logList2[0].direction, concatDetails[0].id);
+                            }
+
+                            //clear temp variables for next group
+                            tempBlockDetails = "";
+                            concatDetails.Clear();
                         }
                         //close the file after use
                         file.Close();
