@@ -64,7 +64,7 @@ namespace WindowsFormsApplication1
             dtMetrics.Columns.Add("ID");
 
             //get file path from user
-            String x = Interaction.InputBox("Please enter the file location of the logs", "File Location", "D:\\Hasaan\\Desktop\\Logs", -1, -1);
+            String x = Interaction.InputBox("Please enter the file location of the logs", "File Location", "C:\\Users\\hasaan.ausat\\Desktop\\Logs", -1, -1);
 
             //ensure file path exists, if not display error message
             if (!Directory.Exists(x))
