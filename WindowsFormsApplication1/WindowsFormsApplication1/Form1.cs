@@ -64,7 +64,7 @@ namespace WindowsFormsApplication1
             dtMetrics.Columns.Add("ID");
 
             //get file path from user
-            String x = Interaction.InputBox("Please enter the file location of the logs", "File Location", "D:\\Hasaan\\Desktop\\Logs", -1, -1);
+            String x = Interaction.InputBox("Please enter the file location of the logs", "File Location", "C:\\Users\\hasaan.ausat\\Desktop\\Logs", -1, -1);
 
             //ensure file path exists, if not display error message
             if (!Directory.Exists(x))
@@ -124,6 +124,21 @@ namespace WindowsFormsApplication1
 
                     List<log> logList2 = new List<log>();
 
+                    char splitChar = ':';
+                    char splitChar2 = '-';
+                    String text = "";
+                    String text2 = "";
+                    //String text3 = logList2[0].timeOut;
+                    String text3 = "14:00:00";
+                    String[] times = new String[3];
+                    String[] dates = new String[3];
+                    String[] timeouts = new String[3];
+                    System.DateTime date1 = new System.DateTime();
+                    System.DateTime time2 = new System.DateTime();
+                    TimeSpan diff = TimeSpan.Zero;
+                    String text4 = "";
+                    String[] times2 = new String[10];
+
                     //For every file do..
                     for (int j = 0; j < fileCount; j++)
                     {
@@ -160,13 +175,13 @@ namespace WindowsFormsApplication1
                             logList.Insert(0, tempLogObject);
 
                             //ensuring only specific ID's are searched for and displayed
-                            if (tempId == "1180" /*|| tempId == "1112" || tempId =="1113"*/)
+                            if (tempId == "1180")
                             {
                                 //check if ID is the same as the last
                                 if (logList.Count == 1 || logList[0].id == logList[1].id)
                                 {
-                                	//if so push on the list as objects are part of group
-                                	concatDetails.Insert(0, tempLogObject); 
+                                    //if so push on the list as objects are part of group
+                                    concatDetails.Insert(0, tempLogObject);
                                 }
                                 else {
                                     //previous group has finished - concats all the details
@@ -189,37 +204,61 @@ namespace WindowsFormsApplication1
                                     tempLabel = rLabel.Match(fullDetails[0]).ToString();
                                     tempDir = rDir.Match(fullDetails[0]).ToString();
                                     tempEmailId2 = rEmailId.Match(fullDetails[0]).ToString();
-                                    log tempLogObject2 = new log { id2 = tempId, emailId2 = tempEmailId2, timeOut = tempTimeOut, size = tempSize, attach = tempAttach, label = tempLabel, direction = tempDir};
+                                    //if (concatDetails[0].id == "1180" && concatDetails[0].id == "1112")
+                                    //{
+                                    //    tempTimeOut = concatDetails[0].time;
+                                    //} else
+                                    //{
+                                    //    tempTimeOut = "00:00:00";
+                                    //}
+                                    //MessageBox.Show(tempTimeOut);
+                                    log tempLogObject2 = new log { id2 = tempId, emailId2 = tempEmailId2, timeOut = tempTimeOut, size = tempSize, attach = tempAttach, label = tempLabel, direction = tempDir };
                                     logList2.Insert(0, tempLogObject2);
 
+                                    //if (concatDetails[0].id == "1180" && logList2[0].id2 == "1112" && concatDetails[0].emailId == logList2[0].emailId2)
+                                    //{
+                                    //    if (logList[0].id == "1112" || logList2[0].id2 == "1112")
+                                    //    {
+                                    //        logList2[0].timeOut = concatDetails[0].time;
+                                    //    }
+                                    //}
+                                    //select time from loglist where ((loglist.id = 1180 and loglist2.id == 1112) and  (loglist.emailtempid = loglist2.emailtempid2)) or ((loglist.id == 1180 and loglist2.id == 1113) and  ((loglist.emailtempid = loglist2.emailtempid2))
+
                                     //spliting date and time and performing a subtraction in order to find difference
-                                    char splitChar = ':';
-                                    char splitChar2 = '-';
-                                    String text = concatDetails[0].time;
-                                    String text2 = concatDetails[0].date;
+                                    text = concatDetails[0].time;
+                                    text2 = concatDetails[0].date;
                                     //String text3 = logList2[0].timeOut;
-                                    String text3 = "14:00:00";
-                                    String[] times = text.Split(splitChar);
-                                    String[] dates = text2.Split(splitChar2);
-                                    String[] timeouts = text3.Split(splitChar);
-                                    System.DateTime date1 = new System.DateTime(Convert.ToInt32(dates[0]), Convert.ToInt32(dates[1]), Convert.ToInt32(dates[2]), Convert.ToInt32(times[0]), Convert.ToInt32(times[1]), Convert.ToInt32(times[2]));
-                                    System.DateTime time2 = new System.DateTime(Convert.ToInt32(dates[0]), Convert.ToInt32(dates[1]), Convert.ToInt32(dates[2]), Convert.ToInt32(timeouts[0]), Convert.ToInt32(timeouts[1]), Convert.ToInt32(timeouts[2]));
-                                    TimeSpan diff = time2.Subtract(date1);
-                                    String text4 = diff.ToString();
-                                    String[] times2 = text4.Split(splitChar);
+                                    text3 = "14:00:00";
+                                    times = text.Split(splitChar);
+                                    dates = text2.Split(splitChar2);
+                                    timeouts = text3.Split(splitChar);
+                                    date1 = new System.DateTime(Convert.ToInt32(dates[0]), Convert.ToInt32(dates[1]), Convert.ToInt32(dates[2]), Convert.ToInt32(times[0]), Convert.ToInt32(times[1]), Convert.ToInt32(times[2]));
+                                    time2 = new System.DateTime(Convert.ToInt32(dates[0]), Convert.ToInt32(dates[1]), Convert.ToInt32(dates[2]), Convert.ToInt32(timeouts[0]), Convert.ToInt32(timeouts[1]), Convert.ToInt32(timeouts[2]));
+                                    diff = time2.Subtract(date1);
+                                    text4 = diff.ToString();
+                                    times2 = text4.Split(splitChar);
 
                                     //converting difference output into seconds
                                     TimeSpan interval = new TimeSpan(0, Convert.ToInt32(times2[0]), Convert.ToInt32(times2[1]), Convert.ToInt32(times2[2]), 0);
                                     String y = interval.TotalSeconds.ToString();
 
-                                    //display in the grid                                 
-                                    dtMetrics.Rows.Add(concatDetails[0].date, concatDetails[0].time, logList2[0].timeOut, y, logList2[0].size, logList2[0].attach, logList2[0].label, logList2[0].direction, concatDetails[0].id);
+                                    //display in the grid     
+                                    if (concatDetails.Count() == 0)
+                                    {
+
+                                    }
+                                    else if (concatDetails[0].id == "1180")
+                                    {
+                                        dtMetrics.Rows.Add(concatDetails[0].date, concatDetails[0].time, text3, y, logList2[0].size, logList2[0].attach, logList2[0].label, logList2[0].direction, concatDetails[0].id);
+                                    }
+
                                     //clear temp variables for next group
                                     tempBlockDetails = "";
                                     concatDetails.Clear();
 
                                 }
                             }
+                            
                         }
                         //close the file after use
                         file.Close();
@@ -289,10 +328,10 @@ namespace WindowsFormsApplication1
             String password = "";
             String emailAddFrom = "";
             String emailAddTo = "";
-            Match match = Regex.Match(textBox1.Text, "[a-zA-Z]+@egress.com");
+            Match match = Regex.Match(textBox1.Text, "[a-zA-Z]+@hotmail.com");
             if (!match.Success)
             {
-                MessageBox.Show("Please enter an Egress email address");
+                MessageBox.Show("Please enter a hotmail email address");
             } else
             {
                 emailAddFrom = textBox1.Text;
@@ -303,7 +342,7 @@ namespace WindowsFormsApplication1
                 else
                 {
                     password = textBox2.Text;
-                    emailAddTo = Interaction.InputBox("Please enter the email address(es) that you are sending to (comma-separated)", "Email Address", "a@egress.com, c@egress.com", -1, -1);
+                    emailAddTo = Interaction.InputBox("Please enter the email address(es) that you are sending to (comma-separated)", "Email Address", "a@egress.com, b@egress.com", -1, -1);
                     match = Regex.Match(emailAddTo, "[a-zA-Z]+@egress.com");
                     if (!match.Success)
                     {
@@ -311,12 +350,13 @@ namespace WindowsFormsApplication1
                         
                     } else
                     {
+                        //smtp.office365.com
                         MailMessage mail = new MailMessage(emailAddFrom, emailAddTo + "," + emailAddFrom);
                         SmtpClient client = new SmtpClient();
-                        client.Port = 25;
+                        client.Port = 587;
                         client.DeliveryMethod = SmtpDeliveryMethod.Network;
                         client.UseDefaultCredentials = false;
-                        client.Host = "smtp.office365.com";
+                        client.Host = "smtp-mail.outlook.com";
                         client.EnableSsl = true;
                         client.Credentials = new NetworkCredential(emailAddFrom, password);
                         mail.Subject = "Gateway Metrics";
@@ -328,6 +368,7 @@ namespace WindowsFormsApplication1
                         textBox1.Text = "";
                         textBox2.Text = "";
                         textBox4.Text = "";
+                        password = "";
                     }
                 }  
             }
@@ -372,6 +413,7 @@ namespace WindowsFormsApplication1
                 MessageBox.Show("The path '" + x + "' does not exist. Please try again.", null, MessageBoxButtons.OK, MessageBoxIcon.Error);
             } else
             {
+                //MessageBox.Show(Directory.GetFiles(@x).Count().ToString());
                 if (Directory.GetFiles(@x, "*.log").Count() == 0)
                 {
                     MessageBox.Show("There are no log files in the given directory.", null, MessageBoxButtons.OK, MessageBoxIcon.Information);
