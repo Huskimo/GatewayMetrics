@@ -70,7 +70,7 @@ namespace WindowsFormsApplication1
             if (!Directory.Exists(x))
             {
                 MessageBox.Show("The path '" + x + "' does not exist. Please try again.", null, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                importButton.Text = "Import Text Files";
+                importButton.Text = "Import Log Files";
                 exportCSVButton.Enabled = false;
                 filter.Enabled = false;
                 comboBox1.Enabled = false;
@@ -84,7 +84,7 @@ namespace WindowsFormsApplication1
                 if (fileCount == 0)
                 {
                     MessageBox.Show("There are no log files to import", null, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    importButton.Text = "Import Text Files";
+                    importButton.Text = "Import Log Files";
                     exportCSVButton.Enabled = false;
                     filter.Enabled = false;
                     comboBox1.Enabled = false;

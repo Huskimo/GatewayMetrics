@@ -70,9 +70,9 @@
             this.importButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.importButton.Location = new System.Drawing.Point(765, 12);
             this.importButton.Name = "importButton";
-            this.importButton.Size = new System.Drawing.Size(94, 23);
+            this.importButton.Size = new System.Drawing.Size(91, 23);
             this.importButton.TabIndex = 1;
-            this.importButton.Text = "Import Text Files";
+            this.importButton.Text = "Import Log Files";
             this.importButton.UseVisualStyleBackColor = true;
             this.importButton.Click += new System.EventHandler(this.importButton_Click);
             // 
