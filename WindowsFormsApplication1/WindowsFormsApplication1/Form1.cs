@@ -64,7 +64,7 @@ namespace WindowsFormsApplication1
             dtMetrics.Columns.Add("ID");
 
             //get file path from user
-            String x = Interaction.InputBox("Please enter the file location of the logs", "File Location", "C:\\Users\\hasaan.ausat\\Desktop\\Logs", -1, -1);
+            String x = Interaction.InputBox("Please enter the file location of the logs", "File Location", "D:\\Hasaan\\Desktop\\Logs", -1, -1);
 
             //ensure file path exists, if not display error message
             if (!Directory.Exists(x))
@@ -77,13 +77,13 @@ namespace WindowsFormsApplication1
             }
             else {
 
-                //file location on my Egress Laptop C:\\Users\\hasaan.ausat\\Desktop\\Logs C:\\Program Files\\Egress\\SDX\\logs
+                //file location on my Egress Laptop C:\\Users\\hasaan.ausat\\Desktop\\Logs on Gateway Machine C:\\Program Files\\Egress\\SDX\\logs
                 var fileCount = (from doc in Directory.EnumerateFiles(@x, "*.log", SearchOption.AllDirectories)
                                  select doc).Count();
                 //display message if folder is empty or continue loading files in to program
                 if (fileCount == 0)
                 {
-                    MessageBox.Show("There are no log files to import", null, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("There are no log files to import", null, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     importButton.Text = "Import Text Files";
                     exportCSVButton.Enabled = false;
                     filter.Enabled = false;
@@ -128,16 +128,15 @@ namespace WindowsFormsApplication1
                     char splitChar2 = '-';
                     String text = "";
                     String text2 = "";
-                    //String text3 = logList2[0].timeOut;
                     String text3 = "14:00:00";
                     String[] times = new String[3];
                     String[] dates = new String[3];
                     String[] timeouts = new String[3];
-                    System.DateTime date1 = new System.DateTime();
-                    System.DateTime time2 = new System.DateTime();
+                    DateTime time1 = new DateTime();
+                    DateTime time2 = new DateTime();
                     TimeSpan diff = TimeSpan.Zero;
-                    String text4 = "";
                     String[] times2 = new String[10];
+                    String secs = "";
 
                     //For every file do..
                     for (int j = 0; j < fileCount; j++)
@@ -201,8 +200,15 @@ namespace WindowsFormsApplication1
                                     else {
                                         tempAttach = "Yes";
                                     }
-                                    tempLabel = rLabel.Match(fullDetails[0]).ToString();
                                     tempDir = rDir.Match(fullDetails[0]).ToString();
+                                    if (rLabel.Match(fullDetails[0]).ToString() == "" && tempDir != "Inbound")
+                                    {
+                                        tempLabel = "public";
+                                    }
+                                    else
+                                    {
+                                        tempLabel = rLabel.Match(fullDetails[0]).ToString();
+                                    }
                                     tempEmailId2 = rEmailId.Match(fullDetails[0]).ToString();
                                     //if (concatDetails[0].id == "1180" && concatDetails[0].id == "1112")
                                     //{
@@ -227,31 +233,17 @@ namespace WindowsFormsApplication1
                                     //spliting date and time and performing a subtraction in order to find difference
                                     text = concatDetails[0].time;
                                     text2 = concatDetails[0].date;
-                                    //String text3 = logList2[0].timeOut;
-                                    text3 = "14:00:00";
                                     times = text.Split(splitChar);
                                     dates = text2.Split(splitChar2);
                                     timeouts = text3.Split(splitChar);
-                                    date1 = new System.DateTime(Convert.ToInt32(dates[0]), Convert.ToInt32(dates[1]), Convert.ToInt32(dates[2]), Convert.ToInt32(times[0]), Convert.ToInt32(times[1]), Convert.ToInt32(times[2]));
-                                    time2 = new System.DateTime(Convert.ToInt32(dates[0]), Convert.ToInt32(dates[1]), Convert.ToInt32(dates[2]), Convert.ToInt32(timeouts[0]), Convert.ToInt32(timeouts[1]), Convert.ToInt32(timeouts[2]));
-                                    diff = time2.Subtract(date1);
-                                    text4 = diff.ToString();
-                                    times2 = text4.Split(splitChar);
-
-                                    //converting difference output into seconds
-                                    TimeSpan interval = new TimeSpan(0, Convert.ToInt32(times2[0]), Convert.ToInt32(times2[1]), Convert.ToInt32(times2[2]), 0);
-                                    String y = interval.TotalSeconds.ToString();
+                                    time1 = new DateTime(Convert.ToInt32(dates[0]), Convert.ToInt32(dates[1]), Convert.ToInt32(dates[2]), Convert.ToInt32(times[0]), Convert.ToInt32(times[1]), Convert.ToInt32(times[2]));
+                                    time2 = new DateTime(Convert.ToInt32(dates[0]), Convert.ToInt32(dates[1]), Convert.ToInt32(dates[2]), Convert.ToInt32(timeouts[0]), Convert.ToInt32(timeouts[1]), Convert.ToInt32(timeouts[2]));
+                                    diff = time2.Subtract(time1);
+                                    secs = diff.TotalSeconds.ToString();
 
                                     //display in the grid     
-                                    if (concatDetails.Count() == 0)
-                                    {
-
-                                    }
-                                    else if (concatDetails[0].id == "1180")
-                                    {
-                                        dtMetrics.Rows.Add(concatDetails[0].date, concatDetails[0].time, text3, y, logList2[0].size, logList2[0].attach, logList2[0].label, logList2[0].direction, concatDetails[0].id);
-                                    }
-
+                                    dtMetrics.Rows.Add(concatDetails[0].date, concatDetails[0].time, text3, secs, logList2[0].size, logList2[0].attach, logList2[0].label, logList2[0].direction, concatDetails[0].id);
+                                    
                                     //clear temp variables for next group
                                     tempBlockDetails = "";
                                     concatDetails.Clear();
@@ -284,7 +276,7 @@ namespace WindowsFormsApplication1
             sfd.FileName = "Output.csv";
             if (sfd.ShowDialog() == DialogResult.OK)
             {
-                MessageBox.Show("Data will be exported and you will be notified when it is ready.", null, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Data will be exported and you will be notified when it is ready.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 if (File.Exists(filename))
                 {
                     try
@@ -312,7 +304,7 @@ namespace WindowsFormsApplication1
                     }
                 }
                 File.WriteAllLines(sfd.FileName, output, Encoding.UTF8);
-                MessageBox.Show("Your file was generated and its ready for use.", null, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Your file was generated and its ready for use.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 sendEmail.Enabled = true;
             }
         }
@@ -331,13 +323,13 @@ namespace WindowsFormsApplication1
             Match match = Regex.Match(textBox1.Text, "[a-zA-Z]+@hotmail.com");
             if (!match.Success)
             {
-                MessageBox.Show("Please enter a hotmail email address");
+                MessageBox.Show("Please enter a hotmail email address", null, MessageBoxButtons.OK, MessageBoxIcon.Error);
             } else
             {
                 emailAddFrom = textBox1.Text;
                 if (textBox2.Text == "")
                 {
-                    MessageBox.Show("Please enter your password!");
+                    MessageBox.Show("Please enter your password!", null, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
@@ -350,7 +342,6 @@ namespace WindowsFormsApplication1
                         
                     } else
                     {
-                        //smtp.office365.com
                         MailMessage mail = new MailMessage(emailAddFrom, emailAddTo + "," + emailAddFrom);
                         SmtpClient client = new SmtpClient();
                         client.Port = 587;
@@ -413,17 +404,16 @@ namespace WindowsFormsApplication1
                 MessageBox.Show("The path '" + x + "' does not exist. Please try again.", null, MessageBoxButtons.OK, MessageBoxIcon.Error);
             } else
             {
-                //MessageBox.Show(Directory.GetFiles(@x).Count().ToString());
                 if (Directory.GetFiles(@x, "*.log").Count() == 0)
                 {
                     MessageBox.Show("There are no log files in the given directory.", null, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 } else
                 {
-                   string yesNo = MessageBox.Show("Are you sure you want to delete the log files?", null, MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation).ToString();
+                   string yesNo = MessageBox.Show("Are you sure you want to delete the log files?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation).ToString();
                     if (yesNo == "Yes")
                     {
                         Array.ForEach(Directory.GetFiles(@x, "*.log"), File.Delete);
-                        MessageBox.Show("The log files in "+ x +" have now been deleted.", null, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("The log files in "+ x +" have now been deleted.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
             }

@@ -7,11 +7,6 @@ C:\Users\hasaan.ausat\Documents\Visual Studio 2015\Projects\WindowsFormsApplicat
 C:\Users\hasaan.ausat\Documents\Visual Studio 2015\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
 C:\Users\hasaan.ausat\Documents\Visual Studio 2015\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
 C:\Users\hasaan.ausat\Documents\Visual Studio 2015\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
-D:\Hasaan\Documents\GitHub\GatewayMetrics\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
-D:\Hasaan\Documents\GitHub\GatewayMetrics\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
-D:\Hasaan\Documents\GitHub\GatewayMetrics\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
-D:\Hasaan\Documents\GitHub\GatewayMetrics\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
-D:\Hasaan\Documents\GitHub\GatewayMetrics\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
 D:\Hasaan\Documents\GitHub\GatewayMetrics\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
 D:\Hasaan\Documents\GitHub\GatewayMetrics\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Form1.resources
 D:\Hasaan\Documents\GitHub\GatewayMetrics\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
@@ -33,3 +28,8 @@ C:\Users\hasaan.ausat\Videos\Documents\GitHub\GatewayMetrics\WindowsFormsApplica
 C:\Users\hasaan.ausat\Videos\Documents\GitHub\GatewayMetrics\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Form1.resources
 C:\Users\hasaan.ausat\Videos\Documents\GitHub\GatewayMetrics\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
 C:\Users\hasaan.ausat\Videos\Documents\GitHub\GatewayMetrics\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+D:\Hasaan\Documents\GitHub\GatewayMetrics\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\Gateway Metrics.exe.config
+D:\Hasaan\Documents\GitHub\GatewayMetrics\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\Gateway Metrics.exe
+D:\Hasaan\Documents\GitHub\GatewayMetrics\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\Gateway Metrics.pdb
+D:\Hasaan\Documents\GitHub\GatewayMetrics\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\Gateway Metrics.exe
+D:\Hasaan\Documents\GitHub\GatewayMetrics\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\Gateway Metrics.pdb
