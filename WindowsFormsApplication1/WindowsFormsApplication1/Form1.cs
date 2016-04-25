@@ -40,6 +40,9 @@ namespace WindowsFormsApplication1
         public DataTable GetDataTable()
         {
             //initating regex
+            //https://msdn.microsoft.com/en-us/library/twcw2f1c%28v=vs.110%29.aspx
+            //http://stackoverflow.com/questions/10768924/match-sequence-using-regex-after-a-specified-character
+            //http://stackoverflow.com/questions/15294809/regex-lookarounds-combining-lookahead-and-lookbehind
             Regex rSize = new Regex(@"(?<=Size=\[)[0-9]*(?=\])");
             Regex rAttach = new Regex(@"(?<=Attachments=\[)[a-zA-Z0-9]*(?=\])");
             Regex rDir = new Regex(@"(Inbound|Outbound)");
@@ -64,9 +67,11 @@ namespace WindowsFormsApplication1
             dtMetrics.Columns.Add("ID");
 
             //get file path from user
+            //https://msdn.microsoft.com/en-us/library/microsoft.visualbasic.interaction.inputbox(v=vs.110).aspx
             String x = Interaction.InputBox("Please enter the file location of the logs", "File Location", "D:\\Hasaan\\Desktop\\Logs", -1, -1);
 
             //ensure file path exists, if not display error message
+            //https://msdn.microsoft.com/en-us/library/system.io.directory.exists%28v=vs.110%29.aspx
             if (!Directory.Exists(x))
             {
                 MessageBox.Show("The path '" + x + "' does not exist. Please try again.", null, MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -77,7 +82,8 @@ namespace WindowsFormsApplication1
             }
             else {
 
-                //file location on my Egress Laptop C:\\Users\\hasaan.ausat\\Desktop\\Logs on Gateway Machine C:\\Program Files\\Egress\\SDX\\logs
+            //file location on my Egress Laptop C:\\Users\\hasaan.ausat\\Desktop\\Logs on Gateway Machine C:\\Program Files\\Egress\\SDX\\logs
+            //http://stackoverflow.com/questions/2242564/file-count-from-a-folder 
                 var fileCount = (from doc in Directory.EnumerateFiles(@x, "*.log", SearchOption.AllDirectories)
                                  select doc).Count();
                 //display message if folder is empty or continue loading files in to program
@@ -98,9 +104,10 @@ namespace WindowsFormsApplication1
                     filter.Enabled = true;
                     comboBox1.Enabled = true;
 
+                    //https://msdn.microsoft.com/en-us/library/wz42302f(v=vs.110).aspx
                     string[] dirs = Directory.GetFiles(@x);
 
-                    //assigning temp variables for each line
+                    //initiating variables
                     String tempDate = "";
                     String tempTime = "";
                     String tempTimeOut = "";
@@ -163,10 +170,6 @@ namespace WindowsFormsApplication1
                             tempType = tempLogs.Substring(34, 11);
                             tempId = tempLogs.Substring(54, 4);
                             tempDetails = tempLogs.Substring(63, lastChar);
-                            if (tempId == "1180")
-                            {
-
-                            }
                             tempEmailId = rEmailId.Match(tempDetails).ToString();
 
                             //creating log object and pushing it onto the logList
@@ -174,7 +177,7 @@ namespace WindowsFormsApplication1
                             logList.Insert(0, tempLogObject);
 
                             //ensuring only specific ID's are searched for and displayed
-                            if (tempId == "1180")
+                            if (tempId == "1180" /*|| tempId == "1112" || tempId == "1113"*/)
                             {
                                 //check if ID is the same as the last
                                 if (logList.Count == 1 || logList[0].id == logList[1].id)
@@ -192,6 +195,7 @@ namespace WindowsFormsApplication1
                                     fullDetails.Insert(0, tempBlockDetails);
 
                                     //apply regex tests and assign output to temp variables
+                                    //https://msdn.microsoft.com/en-us/library/twcw2f1c%28v=vs.110%29.aspx
                                     tempSize = rSize.Match(fullDetails[0]).ToString();
                                     if (rAttach.Match(fullDetails[0]).ToString() == "")
                                     {
@@ -231,6 +235,9 @@ namespace WindowsFormsApplication1
                                     //select time from loglist where ((loglist.id = 1180 and loglist2.id == 1112) and  (loglist.emailtempid = loglist2.emailtempid2)) or ((loglist.id == 1180 and loglist2.id == 1113) and  ((loglist.emailtempid = loglist2.emailtempid2))
 
                                     //spliting date and time and performing a subtraction in order to find difference
+                                    //https://msdn.microsoft.com/en-us/library/system.timespan.totalseconds(v=vs.110).aspx
+                                    //https://msdn.microsoft.com/en-us/library/ms228388.aspx
+                                    //https://msdn.microsoft.com/en-us/library/8ysw4sby%28v=vs.110%29.aspx
                                     text = concatDetails[0].time;
                                     text2 = concatDetails[0].date;
                                     times = text.Split(splitChar);
@@ -321,6 +328,7 @@ namespace WindowsFormsApplication1
             String emailAddFrom = "";
             String emailAddTo = "";
             Match match = Regex.Match(textBox1.Text, "[a-zA-Z]+@hotmail.com");
+            //initial checks to ensure email address and password has been entered
             if (!match.Success)
             {
                 MessageBox.Show("Please enter a hotmail email address", null, MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -342,6 +350,7 @@ namespace WindowsFormsApplication1
                         
                     } else
                     {
+                        //create mail message and add attachments and send using async
                         MailMessage mail = new MailMessage(emailAddFrom, emailAddTo + "," + emailAddFrom);
                         SmtpClient client = new SmtpClient();
                         client.Port = 587;
@@ -354,6 +363,7 @@ namespace WindowsFormsApplication1
                         mail.Body = textBox4.Text;
                         OpenFileDialog ofd = new OpenFileDialog();
                         ofd.ShowDialog();
+                        //http://stackoverflow.com/questions/2825950/sending-email-with-attachments-from-c-attachments-arrive-as-part-1-2-in-thunde
                         mail.Attachments.Add(new Attachment(ofd.FileName));
                         client.SendMailAsync(mail);
                         textBox1.Text = "";
@@ -366,6 +376,7 @@ namespace WindowsFormsApplication1
         }
 
         //filtering the table based on column seleced and value entered
+        //http://csharp.net-informations.com/datagridview/csharp-datagridview-filter.htm
         public void button1_Click_3(object sender, EventArgs e)
         {
             String filterBy = "";
@@ -383,6 +394,7 @@ namespace WindowsFormsApplication1
                 }
                 else
                 {
+                    //http://stackoverflow.com/questions/5867724/method-returning-datatable-with-using
                     filterValue = textBox3.Text;
                     using (DataTable dtMetrics = GetDataTable())
                     {
@@ -395,7 +407,7 @@ namespace WindowsFormsApplication1
                 }
             }
         }
-
+        //deleteing the log files in the specified location
         private void deleteFiles_Click(object sender, EventArgs e)
         {
             String x = Interaction.InputBox("Please enter the file location of the logs", "File Location", "D:\\Hasaan\\Desktop\\Logs", -1, -1);
