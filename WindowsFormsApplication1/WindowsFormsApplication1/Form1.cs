@@ -151,9 +151,9 @@ namespace WindowsFormsApplication1
                         //reading in from text file
                         //Stream s = new FileStream(dirs[j], FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
                         //StreamReader file = new StreamReader(dirs[j]);
-                        FileStream fs = File.Open(dirs[j], FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
-                        BufferedStream bs = new BufferedStream(fs);
-                        StreamReader sr = new StreamReader(bs);
+                        Stream s = new FileStream(dirs[j], FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
+                        //BufferedStream bs = new BufferedStream(fs);
+                        StreamReader sr = new StreamReader(s);
 
                             //getting line count of the text file
                             int logLineCount = File.ReadLines(dirs[j]).Count();
