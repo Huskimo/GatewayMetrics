@@ -151,120 +151,130 @@ namespace WindowsFormsApplication1
                         //reading in from text file
                         //Stream s = new FileStream(dirs[j], FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
                         //StreamReader file = new StreamReader(dirs[j]);
-                        Stream s = new FileStream(dirs[j], FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
-                        //BufferedStream bs = new BufferedStream(fs);
-                        StreamReader sr = new StreamReader(s);
+                        using (var fs = new FileStream(dirs[j], FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+                        using (var sr = new StreamReader(fs, Encoding.Default))
+                        {
+                            // read the stream
+                            //...
+
+
+                            //Stream s = new FileStream(dirs[j], FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
+                            //BufferedStream bs = new BufferedStream(fs);
+                            //StreamReader sr = new StreamReader(s);
 
                             //getting line count of the text file
                             int logLineCount = File.ReadLines(dirs[j]).Count();
 
-                        //On every line
-                        for (int i = 0; i < logLineCount; i++)
-                        {
-                            //getting line from file to variable
-                            string tempLogs = sr.ReadLine();
-
-                            //getting length of each line
-                            int logLength = tempLogs.Length;
-                            int lastChar = logLength - 63;
-
-                            //assigning substrings to temp variables
-                            tempDate = tempLogs.Substring(0, 10);
-                            tempTime = tempLogs.Substring(11, 8);
-                            tempType = tempLogs.Substring(34, 11);
-                            tempId = tempLogs.Substring(54, 4);
-                            tempDetails = tempLogs.Substring(63, lastChar);
-                            tempEmailId = rEmailId.Match(tempDetails).ToString();
-
-                            //creating log object and pushing it onto the logList
-                            log tempLogObject = new log { date = tempDate, time = tempTime, type = tempType, id = tempId, details = tempDetails, emailId = tempEmailId };
-                            logList.Insert(0, tempLogObject);
-
-                            //ensuring only specific ID's are searched for and displayed
-                            if (tempId == "1180" /*|| tempId == "1112" || tempId == "1113"*/)
+                            //On every line
+                            for (int i = 0; i < logLineCount; i++)
                             {
-                                //check if ID is the same as the last
-                                if (logList.Count == 1 || logList[0].id == logList[1].id)
-                                {
-                                    //if so push on the list as objects are part of group
-                                    concatDetails.Insert(0, tempLogObject);
-                                }
-                                else {
-                                    //previous group has finished - concats all the details
-                                    concatDetails.Insert(0, tempLogObject);
-                                    for (int k = concatDetails.Count; k > 0; k--)
-                                    {
-                                        tempBlockDetails = tempBlockDetails + concatDetails[k - 1].details;
-                                    }
-                                    fullDetails.Insert(0, tempBlockDetails);
+                                //getting line from file to variable
+                                string tempLogs = sr.ReadLine();
 
-                                    //apply regex tests and assign output to temp variables
-                                    //https://msdn.microsoft.com/en-us/library/twcw2f1c%28v=vs.110%29.aspx
-                                    tempSize = rSize.Match(fullDetails[0]).ToString();
-                                    if (rAttach.Match(fullDetails[0]).ToString() == "")
+                                //getting length of each line
+                                int logLength = tempLogs.Length;
+                                int lastChar = logLength - 63;
+
+                                //assigning substrings to temp variables
+                                tempDate = tempLogs.Substring(0, 10);
+                                tempTime = tempLogs.Substring(11, 8);
+                                tempType = tempLogs.Substring(34, 11);
+                                tempId = tempLogs.Substring(54, 4);
+                                tempDetails = tempLogs.Substring(63, lastChar);
+                                tempEmailId = rEmailId.Match(tempDetails).ToString();
+
+                                //creating log object and pushing it onto the logList
+                                log tempLogObject = new log { date = tempDate, time = tempTime, type = tempType, id = tempId, details = tempDetails, emailId = tempEmailId };
+                                logList.Insert(0, tempLogObject);
+
+                                //ensuring only specific ID's are searched for and displayed
+                                if (tempId == "1180" /*|| tempId == "1112" || tempId == "1113"*/)
+                                {
+                                    //check if ID is the same as the last
+                                    if (logList.Count == 1 || logList[0].id == logList[1].id)
                                     {
-                                        tempAttach = "No";
-                                    }
-                                    else {
-                                        tempAttach = "Yes";
-                                    }
-                                    tempDir = rDir.Match(fullDetails[0]).ToString();
-                                    if (rLabel.Match(fullDetails[0]).ToString() == "" && tempDir != "Inbound")
-                                    {
-                                        tempLabel = "public";
+                                        //if so push on the list as objects are part of group
+                                        concatDetails.Insert(0, tempLogObject);
                                     }
                                     else
                                     {
-                                        tempLabel = rLabel.Match(fullDetails[0]).ToString();
+                                        //previous group has finished - concats all the details
+                                        concatDetails.Insert(0, tempLogObject);
+                                        for (int k = concatDetails.Count; k > 0; k--)
+                                        {
+                                            tempBlockDetails = tempBlockDetails + concatDetails[k - 1].details;
+                                        }
+                                        fullDetails.Insert(0, tempBlockDetails);
+
+                                        //apply regex tests and assign output to temp variables
+                                        //https://msdn.microsoft.com/en-us/library/twcw2f1c%28v=vs.110%29.aspx
+                                        tempSize = rSize.Match(fullDetails[0]).ToString();
+                                        if (rAttach.Match(fullDetails[0]).ToString() == "")
+                                        {
+                                            tempAttach = "No";
+                                        }
+                                        else
+                                        {
+                                            tempAttach = "Yes";
+                                        }
+                                        tempDir = rDir.Match(fullDetails[0]).ToString();
+                                        if (rLabel.Match(fullDetails[0]).ToString() == "" && tempDir != "Inbound")
+                                        {
+                                            tempLabel = "public";
+                                        }
+                                        else
+                                        {
+                                            tempLabel = rLabel.Match(fullDetails[0]).ToString();
+                                        }
+                                        tempEmailId2 = rEmailId.Match(fullDetails[0]).ToString();
+                                        //if (concatDetails[0].id == "1180" && concatDetails[0].id == "1112")
+                                        //{
+                                        //    tempTimeOut = concatDetails[0].time;
+                                        //} else
+                                        //{
+                                        //    tempTimeOut = "00:00:00";
+                                        //}
+                                        //MessageBox.Show(tempTimeOut);
+                                        log tempLogObject2 = new log { id2 = tempId, emailId2 = tempEmailId2, timeOut = tempTimeOut, size = tempSize, attach = tempAttach, label = tempLabel, direction = tempDir };
+                                        logList2.Insert(0, tempLogObject2);
+
+                                        //if (concatDetails[0].id == "1180" && logList2[0].id2 == "1112" && concatDetails[0].emailId == logList2[0].emailId2)
+                                        //{
+                                        //    if (logList[0].id == "1112" || logList2[0].id2 == "1112")
+                                        //    {
+                                        //        logList2[0].timeOut = concatDetails[0].time;
+                                        //    }
+                                        //}
+                                        //select time from loglist where ((loglist.id = 1180 and loglist2.id == 1112) and  (loglist.emailtempid = loglist2.emailtempid2)) or ((loglist.id == 1180 and loglist2.id == 1113) and  ((loglist.emailtempid = loglist2.emailtempid2))
+
+                                        //spliting date and time and performing a subtraction in order to find difference
+                                        //https://msdn.microsoft.com/en-us/library/system.timespan.totalseconds(v=vs.110).aspx
+                                        //https://msdn.microsoft.com/en-us/library/ms228388.aspx
+                                        //https://msdn.microsoft.com/en-us/library/8ysw4sby%28v=vs.110%29.aspx
+                                        text = concatDetails[0].time;
+                                        text2 = concatDetails[0].date;
+                                        times = text.Split(splitChar);
+                                        dates = text2.Split(splitChar2);
+                                        timeouts = text3.Split(splitChar);
+                                        time1 = new DateTime(Convert.ToInt32(dates[0]), Convert.ToInt32(dates[1]), Convert.ToInt32(dates[2]), Convert.ToInt32(times[0]), Convert.ToInt32(times[1]), Convert.ToInt32(times[2]));
+                                        time2 = new DateTime(Convert.ToInt32(dates[0]), Convert.ToInt32(dates[1]), Convert.ToInt32(dates[2]), Convert.ToInt32(timeouts[0]), Convert.ToInt32(timeouts[1]), Convert.ToInt32(timeouts[2]));
+                                        diff = time2.Subtract(time1);
+                                        secs = diff.TotalSeconds.ToString();
+
+                                        //display in the grid     
+                                        dtMetrics.Rows.Add(concatDetails[0].date, concatDetails[0].time, text3, secs, logList2[0].size, logList2[0].attach, logList2[0].label, logList2[0].direction, concatDetails[0].id);
+
+                                        //clear temp variables for next group
+                                        tempBlockDetails = "";
+                                        concatDetails.Clear();
+
                                     }
-                                    tempEmailId2 = rEmailId.Match(fullDetails[0]).ToString();
-                                    //if (concatDetails[0].id == "1180" && concatDetails[0].id == "1112")
-                                    //{
-                                    //    tempTimeOut = concatDetails[0].time;
-                                    //} else
-                                    //{
-                                    //    tempTimeOut = "00:00:00";
-                                    //}
-                                    //MessageBox.Show(tempTimeOut);
-                                    log tempLogObject2 = new log { id2 = tempId, emailId2 = tempEmailId2, timeOut = tempTimeOut, size = tempSize, attach = tempAttach, label = tempLabel, direction = tempDir };
-                                    logList2.Insert(0, tempLogObject2);
-
-                                    //if (concatDetails[0].id == "1180" && logList2[0].id2 == "1112" && concatDetails[0].emailId == logList2[0].emailId2)
-                                    //{
-                                    //    if (logList[0].id == "1112" || logList2[0].id2 == "1112")
-                                    //    {
-                                    //        logList2[0].timeOut = concatDetails[0].time;
-                                    //    }
-                                    //}
-                                    //select time from loglist where ((loglist.id = 1180 and loglist2.id == 1112) and  (loglist.emailtempid = loglist2.emailtempid2)) or ((loglist.id == 1180 and loglist2.id == 1113) and  ((loglist.emailtempid = loglist2.emailtempid2))
-
-                                    //spliting date and time and performing a subtraction in order to find difference
-                                    //https://msdn.microsoft.com/en-us/library/system.timespan.totalseconds(v=vs.110).aspx
-                                    //https://msdn.microsoft.com/en-us/library/ms228388.aspx
-                                    //https://msdn.microsoft.com/en-us/library/8ysw4sby%28v=vs.110%29.aspx
-                                    text = concatDetails[0].time;
-                                    text2 = concatDetails[0].date;
-                                    times = text.Split(splitChar);
-                                    dates = text2.Split(splitChar2);
-                                    timeouts = text3.Split(splitChar);
-                                    time1 = new DateTime(Convert.ToInt32(dates[0]), Convert.ToInt32(dates[1]), Convert.ToInt32(dates[2]), Convert.ToInt32(times[0]), Convert.ToInt32(times[1]), Convert.ToInt32(times[2]));
-                                    time2 = new DateTime(Convert.ToInt32(dates[0]), Convert.ToInt32(dates[1]), Convert.ToInt32(dates[2]), Convert.ToInt32(timeouts[0]), Convert.ToInt32(timeouts[1]), Convert.ToInt32(timeouts[2]));
-                                    diff = time2.Subtract(time1);
-                                    secs = diff.TotalSeconds.ToString();
-
-                                    //display in the grid     
-                                    dtMetrics.Rows.Add(concatDetails[0].date, concatDetails[0].time, text3, secs, logList2[0].size, logList2[0].attach, logList2[0].label, logList2[0].direction, concatDetails[0].id);
-                                    
-                                    //clear temp variables for next group
-                                    tempBlockDetails = "";
-                                    concatDetails.Clear();
-
                                 }
+
                             }
-                            
+                            //close the file after use
+                            sr.Close();
                         }
-                        //close the file after use
-                        sr.Close();
                     }
                 }
             }
