@@ -68,7 +68,7 @@ namespace WindowsFormsApplication1
 
             //get file path from user
             //https://msdn.microsoft.com/en-us/library/microsoft.visualbasic.interaction.inputbox(v=vs.110).aspx
-            String x = Interaction.InputBox("Please enter the file location of the logs", "File Location", "D:\\Hasaan\\Desktop\\Logs", -1, -1);
+            String x = Interaction.InputBox("Please enter the file location of the logs", "File Location", "C:\\Program Files\\Egress\\SDX\\logs", -1, -1);
 
             //ensure file path exists, if not display error message
             //https://msdn.microsoft.com/en-us/library/system.io.directory.exists%28v=vs.110%29.aspx
@@ -439,7 +439,7 @@ namespace WindowsFormsApplication1
         //deleteing the log files in the specified location
         private void deleteFiles_Click(object sender, EventArgs e)
         {
-            String x = Interaction.InputBox("Please enter the file location of the logs", "File Location", "D:\\Hasaan\\Desktop\\Logs", -1, -1);
+            String x = Interaction.InputBox("Please enter the file location of the logs", "File Location", "C:\\Program Files\\Egress\\SDX\\logs", -1, -1);
             if (!Directory.Exists(x))
             {
                 MessageBox.Show("The path '" + x + "' does not exist. Please try again.", null, MessageBoxButtons.OK, MessageBoxIcon.Error);
