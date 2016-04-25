@@ -51,7 +51,6 @@
             this.deleteFiles = new System.Windows.Forms.Button();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -270,21 +269,11 @@
             this.label10.TabIndex = 21;
             this.label10.Text = "Please enter  \'To\' email addresses (comma-separated):";
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(765, 412);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(159, 13);
-            this.label11.TabIndex = 22;
-            this.label11.Text = "Please enter your email address:";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1052, 564);
-            this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.deleteFiles);
@@ -340,7 +329,6 @@
         private System.Windows.Forms.Button deleteFiles;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
     }
 }
 
