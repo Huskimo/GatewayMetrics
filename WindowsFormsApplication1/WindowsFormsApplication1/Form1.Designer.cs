@@ -49,6 +49,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.deleteFiles = new System.Windows.Forms.Button();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -92,7 +94,7 @@
             // 
             this.sendEmail.AutoSize = true;
             this.sendEmail.Enabled = false;
-            this.sendEmail.Location = new System.Drawing.Point(765, 480);
+            this.sendEmail.Location = new System.Drawing.Point(765, 539);
             this.sendEmail.Name = "sendEmail";
             this.sendEmail.Size = new System.Drawing.Size(75, 23);
             this.sendEmail.TabIndex = 3;
@@ -102,14 +104,14 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(765, 182);
+            this.textBox1.Location = new System.Drawing.Point(765, 172);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 4;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(765, 244);
+            this.textBox2.Location = new System.Drawing.Point(765, 234);
             this.textBox2.Name = "textBox2";
             this.textBox2.PasswordChar = '*';
             this.textBox2.Size = new System.Drawing.Size(100, 20);
@@ -118,7 +120,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(762, 156);
+            this.label1.Location = new System.Drawing.Point(762, 146);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(159, 13);
             this.label1.TabIndex = 6;
@@ -127,7 +129,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(762, 218);
+            this.label2.Location = new System.Drawing.Point(762, 208);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(245, 13);
             this.label2.TabIndex = 7;
@@ -189,7 +191,7 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(765, 303);
+            this.textBox4.Location = new System.Drawing.Point(765, 362);
             this.textBox4.Multiline = true;
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(255, 131);
@@ -198,7 +200,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(765, 277);
+            this.label5.Location = new System.Drawing.Point(765, 336);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(188, 13);
             this.label5.TabIndex = 14;
@@ -225,7 +227,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(762, 440);
+            this.label8.Location = new System.Drawing.Point(762, 499);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(123, 13);
             this.label8.TabIndex = 17;
@@ -234,7 +236,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(762, 453);
+            this.label9.Location = new System.Drawing.Point(762, 512);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(121, 13);
             this.label9.TabIndex = 18;
@@ -243,7 +245,7 @@
             // deleteFiles
             // 
             this.deleteFiles.AutoSize = true;
-            this.deleteFiles.Location = new System.Drawing.Point(927, 480);
+            this.deleteFiles.Location = new System.Drawing.Point(927, 539);
             this.deleteFiles.Name = "deleteFiles";
             this.deleteFiles.Size = new System.Drawing.Size(93, 23);
             this.deleteFiles.TabIndex = 19;
@@ -251,11 +253,29 @@
             this.deleteFiles.UseVisualStyleBackColor = true;
             this.deleteFiles.Click += new System.EventHandler(this.deleteFiles_Click);
             // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(765, 303);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(100, 20);
+            this.textBox5.TabIndex = 20;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(762, 270);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(263, 13);
+            this.label10.TabIndex = 21;
+            this.label10.Text = "Please enter  \'To\' email addresses (comma-separated):";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1052, 564);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.textBox5);
             this.Controls.Add(this.deleteFiles);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -307,6 +327,8 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button deleteFiles;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Label label10;
     }
 }
 

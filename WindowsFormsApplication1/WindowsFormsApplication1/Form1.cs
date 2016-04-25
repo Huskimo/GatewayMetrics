@@ -149,16 +149,20 @@ namespace WindowsFormsApplication1
                     for (int j = 0; j < fileCount; j++)
                     {
                         //reading in from text file
-                        StreamReader file = new StreamReader(dirs[j]);
+                        //Stream s = new FileStream(dirs[j], FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
+                        //StreamReader file = new StreamReader(dirs[j]);
+                        FileStream fs = File.Open(dirs[j], FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
+                        BufferedStream bs = new BufferedStream(fs);
+                        StreamReader sr = new StreamReader(bs);
 
-                        //getting line count of the text file
-                        int logLineCount = File.ReadLines(dirs[j]).Count();
+                            //getting line count of the text file
+                            int logLineCount = File.ReadLines(dirs[j]).Count();
 
                         //On every line
                         for (int i = 0; i < logLineCount; i++)
                         {
                             //getting line from file to variable
-                            string tempLogs = file.ReadLine();
+                            string tempLogs = sr.ReadLine();
 
                             //getting length of each line
                             int logLength = tempLogs.Length;
@@ -260,7 +264,7 @@ namespace WindowsFormsApplication1
                             
                         }
                         //close the file after use
-                        file.Close();
+                        sr.Close();
                     }
                 }
             }
@@ -342,7 +346,7 @@ namespace WindowsFormsApplication1
                 else
                 {
                     password = textBox2.Text;
-                    emailAddTo = Interaction.InputBox("Please enter the email address(es) that you are sending to (comma-separated)", "Email Address", "a@egress.com, b@egress.com", -1, -1);
+                    emailAddTo = textBox5.Text;
                     match = Regex.Match(emailAddTo, "[a-zA-Z]+@egress.com");
                     if (!match.Success)
                     {
@@ -361,15 +365,40 @@ namespace WindowsFormsApplication1
                         client.Credentials = new NetworkCredential(emailAddFrom, password);
                         mail.Subject = "Gateway Metrics";
                         mail.Body = textBox4.Text;
-                        OpenFileDialog ofd = new OpenFileDialog();
-                        ofd.ShowDialog();
-                        //http://stackoverflow.com/questions/2825950/sending-email-with-attachments-from-c-attachments-arrive-as-part-1-2-in-thunde
-                        mail.Attachments.Add(new Attachment(ofd.FileName));
-                        client.SendMailAsync(mail);
-                        textBox1.Text = "";
-                        textBox2.Text = "";
-                        textBox4.Text = "";
-                        password = "";
+                        String yn = MessageBox.Show("Would you like to send an attachment?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question).ToString();
+                        if (yn == "Yes")
+                        {
+                            OpenFileDialog ofd = new OpenFileDialog();
+                            ofd.ShowDialog();
+                            //http://stackoverflow.com/questions/2825950/sending-email-with-attachments-from-c-attachments-arrive-as-part-1-2-in-thunde
+                            if (ofd.FileName == "")
+                            {
+                                client.SendMailAsync(mail);
+                                textBox1.Text = "";
+                                textBox2.Text = "";
+                                textBox4.Text = "";
+                                textBox5.Text = "";
+                                password = "";
+                            }
+                            else
+                            {
+                                mail.Attachments.Add(new Attachment(ofd.FileName));
+                                client.SendMailAsync(mail);
+                                textBox1.Text = "";
+                                textBox2.Text = "";
+                                textBox4.Text = "";
+                                textBox5.Text = "";
+                                password = "";
+                            }
+                        } else
+                        {
+                            client.SendMailAsync(mail);
+                            textBox1.Text = "";
+                            textBox2.Text = "";
+                            textBox4.Text = "";
+                            textBox5.Text = "";
+                            password = "";
+                        }
                     }
                 }  
             }
